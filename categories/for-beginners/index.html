@@ -1,55 +1,442 @@
 ---
 layout: default
-title: Technical SEO for Non-Technical Marketers
-description: Technical SEO checklist for non-developers. What you can do without touching code, when to call a developer, and free tools that do the work.
+title: Technical SEO for Non-Technical Marketers | Beginner-Friendly Guide
+description: Technical SEO checklist for non-developers. What you can fix without touching code, when to call a developer, free tools that do the work, and how to talk to developers.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Technical SEO for Non-Technical Marketers",
+    "description": "15 beginner-friendly technical SEO checks for non-developers. Fix issues yourself without code, know when to call a developer, and use free tools that automate the hard work.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-07-01",
+    "dateModified": "2026-07-29"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Can I do technical SEO without knowing how to code?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many technical SEO tasks can be done through Google Search Console, your CMS, SEO plugins, and free tools. You can fix meta tags, submit sitemaps, check page speed, and find broken links without writing a single line of code." } },
+      { "@type": "Question", "name": "When should I call a developer for technical SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Call a developer for: server-level redirects, caching and CDN setup, security headers, server-side schema markup, TTFB optimization, and JavaScript rendering fixes." } },
+      { "@type": "Question", "name": "What free tools can I use for technical SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Google Search Console, Google PageSpeed Insights, Screaming Frog (free tier), Google Rich Results Test, Bing Webmaster Tools, and securityheaders.com are all free and require no coding." } }
+    ]
+  }
+  </script>
 ---
 
-<section class="category-page-header">
+<section class="category-hero">
   <div class="container">
-    <h1>Technical SEO for Non-Technical Marketers</h1>
-    <p>You do not need to be a developer to improve technical SEO. Here is what you can fix yourself, when to call for help, and which free tools to use.</p>
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      15 Beginner-Friendly Checks - Updated July 2026
+    </div>
+    <h1>Technical SEO for <span>Non-Technical</span> Marketers</h1>
+    <p>You do not need to be a developer to improve technical SEO. Here is what you can fix yourself, when to call for help, which free tools to use, and how to communicate with developers effectively.</p>
   </div>
 </section>
 
-<section class="category-content">
+<section class="intro-section">
   <div class="container">
-    <h2>You Can Do More Than You Think</h2>
-    <p>Most technical SEO issues are detected with free tools, not code. As a marketer, you can identify problems, document them clearly, and in many cases fix them yourself through your CMS or site settings.</p>
-
-    <h2>What You Can Fix Yourself (No Code)</h2>
-    <ul>
-      <li><strong>Monitor index coverage</strong> -- Open GSC and review the Pages report weekly.</li>
-      <li><strong>Submit sitemaps</strong> -- Generate and submit XML sitemaps through your CMS or SEO plugin.</li>
-      <li><strong>Fix meta tags</strong> -- Add title tags and meta descriptions in your CMS.</li>
-      <li><strong>Check page speed</strong> -- Run PageSpeed Insights and share the recommendations with your developer.</li>
-      <li><strong>Review mobile usability</strong> -- Check GSC Mobile Usability report. Resize images, simplify layouts.</li>
-      <li><strong>Update internal links</strong> -- Add contextual links between related content in your CMS editor.</li>
-      <li><strong>Remove thin content</strong> -- Identify low-value pages and consolidate or remove them.</li>
-    </ul>
-
-    <h2>When to Call a Developer</h2>
-    <ul>
-      <li>Server-level redirects (htaccess, Nginx config)</li>
-      <li>Caching configuration and CDN setup</li>
-      <li>Security headers and HSTS implementation</li>
-      <li>Schema markup in the page head (if CMS does not support it)</li>
-      <li>Server response time optimization (TTFB)</li>
-      <li>JavaScript rendering issues</li>
-    </ul>
-
-    <h2>Free Tools That Do the Work</h2>
-    <ul>
-      <li><strong>Google Search Console</strong> -- Index coverage, crawl errors, CWV, security</li>
-      <li><strong>Google PageSpeed Insights</strong> -- Performance scores and fix recommendations</li>
-      <li><strong>Screaming Frog (Free tier)</strong> -- Crawl up to 500 URLs, find broken links</li>
-      <li><strong>Bing Webmaster Tools</strong> -- Index coverage, IndexNow submission</li>
-      <li><strong>Rich Results Test</strong> -- Validate schema markup</li>
-      <li><strong>securityheaders.com</strong> -- Check your security headers</li>
-    </ul>
-
-    <div class="category-navigation">
-      <a href="{{ site.baseurl }}/categories/audit-checklist/">&larr; Previous: Audit Checklist</a>
-      <a href="{{ site.baseurl }}/categories/tools-comparison/">Next: Tools Comparison &rarr;</a>
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>You Can Do More <span>Than You Think</span></h2>
+        <p>Most technical SEO issues are detected with free tools, not code. As a marketer, you can identify problems, document them clearly, and in many cases fix them yourself through your CMS or site settings.</p>
+        <p>The misconception that technical SEO requires a developer stops many marketers from making simple, high-impact fixes. Checking index coverage, reviewing mobile usability, and finding broken links are all done with free tools that anyone can learn in minutes.</p>
+        <p>This guide separates what you can fix yourself from what requires a developer, with exact instructions for both scenarios.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">10</span>
+            <span class="intro-stat-label">fixes you can do yourself</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">6</span>
+            <span class="intro-stat-label">free tools to use</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">Zero</span>
+            <span class="intro-stat-label">code required</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Marketer vs Developer Tasks</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Task</span>
+              <span class="premium-comp-value gold">Who</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Monitor index coverage</span>
+              <span class="premium-comp-value green">Marketer</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Submit sitemaps</span>
+              <span class="premium-comp-value green">Marketer</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Fix meta tags</span>
+              <span class="premium-comp-value green">Marketer</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Check page speed</span>
+              <span class="premium-comp-value green">Marketer</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Review mobile usability</span>
+              <span class="premium-comp-value green">Marketer</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Update internal links</span>
+              <span class="premium-comp-value green">Marketer</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Server redirects</span>
+              <span class="premium-comp-value gold">Developer</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">CDN and caching</span>
+              <span class="premium-comp-value gold">Developer</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Security headers</span>
+              <span class="premium-comp-value gold">Developer</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 15 Beginner Checks</h2>
+      <p>Organized by what you can do yourself vs what needs a developer.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Who Does It</th>
+            <th>Tool</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Monitor index coverage weekly</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Submit and update XML sitemaps</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC / CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Fix title tags and meta descriptions</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Run page speed tests</td>
+            <td class="highlight-cell">You</td>
+            <td>PageSpeed</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Check mobile usability</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Update internal links between posts</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Find and remove thin content</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC / GA</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Review search performance and queries</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Set up Google Search Console alerts</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Run a free Screaming Frog crawl</td>
+            <td class="highlight-cell">You</td>
+            <td>Screaming Frog</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Server-level 301 redirects</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Caching and CDN configuration</td>
+            <td class="highlight-cell">Developer</td>
+            <td>CDN</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Security headers and HSTS</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Schema markup in page head</td>
+            <td class="highlight-cell">Both</td>
+            <td>CMS / Dev</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>TTFB optimization (server speed)</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Hard</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: What You Can Fix Yourself</h2>
+      <p>Step-by-step guides for the 10 things you can do without a developer.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Monitor Index Coverage Weekly</h4>
+      <p>Open Google Search Console, go to Pages report. Check the total indexed vs not indexed count. Click each exclusion reason to understand why pages are not indexed. If important pages are not indexed, check if they have internal links and quality content.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Submit and Update XML Sitemaps</h4>
+      <p>If you use Yoast, Rank Math, or another SEO plugin, your sitemap is auto-generated. Submit the sitemap URL to GSC under Sitemaps. After publishing new content, request indexing for the specific URL in GSC URL Inspection tool.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Fix Title Tags and Meta Descriptions</h4>
+      <p>In your CMS (WordPress, Shopify, Webflow), edit each page's SEO title and meta description. Title: include the target keyword near the start, keep under 60 characters. Meta description: 2-3 sentences summarizing the page, include a call to action.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Run Page Speed Tests</h4>
+      <p>Go to PageSpeed Insights, enter your URL. Review the suggestions in the "Opportunities" section. Screenshot the results and share with your developer. Common fixes: compress images, remove unused CSS, defer JavaScript.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Check Mobile Usability</h4>
+      <p>Check GSC Mobile Usability report. Common issues: content wider than screen, clickable elements too close, text too small to read. Resize images, increase button sizes, and increase font size to 16px minimum in your theme settings.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Update Internal Links Between Posts</h4>
+      <p>While editing a blog post in your CMS, add 2-3 links to other relevant posts on your site. Use descriptive anchor text. This distributes PageRank and helps Google understand content relationships.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Find and Remove Thin Content</h4>
+      <p>Use Google Analytics to find pages with high bounce rate and low time on page. Check GSC for pages with zero impressions. Consolidate or remove thin content pages that add no value. Set up 301 redirects to related pages.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Review Search Performance and Queries</h4>
+      <p>GSC Performance report shows which queries drive traffic, average position, click-through rate, and impressions. Identify pages ranking on page 2 (positions 10-20) and improve their content and internal links.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Set Up GSC Email Alerts</h4>
+      <p>In GSC Settings, configure email notifications for: index coverage changes, crawl errors, security issues, and manual actions. This ensures you know about critical issues within hours, not weeks.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Run a Free Screaming Frog Crawl</h4>
+      <p>Download Screaming Frog (free tier crawls 500 URLs). Enter your URL and start the crawl. Review the report for: 404 errors, missing title tags, missing meta descriptions, duplicate content. Share the report with your developer for fixes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>How to Talk to Developers</h2>
+      <p>Sample messages to request specific technical fixes.</p>
+    </div>
+    <div class="premium-comp-card" style="margin-top: 32px;">
+      <div class="premium-comp-header">
+        <h3>Say This, Not That</h3>
+      </div>
+      <div class="premium-comp-body">
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Dont say</span>
+          <span class="premium-comp-label">Say Instead</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">"Fix my SEO"</span>
+          <span class="premium-comp-value green">"Please add HSTS header with max-age set to 1 year"</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">"My site is slow"</span>
+          <span class="premium-comp-value green">"PageSpeed shows TTFB at 1.2s. Can you check server caching and PHP config?"</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">"We need HTTPS"</span>
+          <span class="premium-comp-value green">"Please install Let's Encrypt SSL and force 301 redirect from HTTP to HTTPS"</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">"Add schema"</span>
+          <span class="premium-comp-value green">"Please add Organization schema to homepage with name, logo, and social profiles"</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Free Tools for Marketers</h2>
+      <p>Six free tools that cover 80% of technical SEO needs.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>Index coverage, crawl errors, CWV, mobile usability, security alerts, and search performance data.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>PageSpeed Insights</h4>
+        <p>Performance scores with specific fix recommendations for mobile and desktop.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Screaming Frog</h4>
+        <p>Crawl up to 500 URLs free. Find broken links, duplicate content, redirects, and meta tag issues.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Rich Results Test</h4>
+        <p>Test schema markup validity and see a preview of rich results.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Bing Webmaster Tools</h4>
+        <p>Index coverage, IndexNow submission, crawl data, and SEO reports for Bing.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>securityheaders.com</h4>
+        <p>Check your site's security headers. Get a letter grade and a list of missing headers to share with your developer.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions from non-technical marketers.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Can I do technical SEO without knowing how to code?</div>
+        <div class="faq-answer"><p>Yes. Many technical SEO tasks are done through Google Search Console, your CMS (WordPress, Shopify, Webflow), SEO plugins (Yoast, Rank Math), and free tools. You can fix meta tags, submit sitemaps, check page speed, and find broken links without code.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">When should I call a developer for technical SEO?</div>
+        <div class="faq-answer"><p>Call a developer for: server-level redirects (htaccess, Nginx), caching configuration and CDN setup, security headers and HSTS, server-side schema markup, TTFB and server response optimization, and JavaScript rendering fixes.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What free tools can I use for technical SEO?</div>
+        <div class="faq-answer"><p>Google Search Console (indexing, CWV, errors), PageSpeed Insights (performance), Screaming Frog free tier (crawling up to 500 URLs), Rich Results Test (schema), Bing Webmaster Tools (IndexNow), and securityheaders.com (security audit). All free, all no-code.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I explain technical SEO to my boss?</div>
+        <div class="faq-answer"><p>Technical SEO is like the foundation of a building. Nobody sees it, but if it cracks, everything on top falls apart. It makes sure search engines can find, understand, and trust your website. Without it, content and backlinks cannot do their job.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Should I hire an agency or learn technical SEO myself?</div>
+        <div class="faq-answer"><p>Learn the basics yourself (this checklist covers everything). For complex issues like site migrations, JavaScript SEO, or enterprise-level infrastructure, hire an agency. The knowledge you gain will help you evaluate agency work and communicate effectively.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/categories/audit-checklist/">&larr; Previous: Audit Checklist</a>
+    <a href="{{ site.baseurl }}/categories/tools-comparison/">Next: Tools Comparison &rarr;</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+});
+</script>
