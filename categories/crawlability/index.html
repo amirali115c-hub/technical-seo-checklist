@@ -1,30 +1,295 @@
 ---
 layout: default
-title: Crawlability and Indexing Checklist
-description: Complete guide to crawlability and indexing SEO. Robots.txt, XML sitemaps, redirect chains, broken links, crawl budget, and IndexNow with code examples.
+title: Crawlability and Indexing Checklist 2026 | Technical SEO Guide
+description: Complete guide to crawlability and indexing SEO. Fix robots.txt, XML sitemaps, redirect chains, broken links, crawl budget, IndexNow, and orphan pages with code examples.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Crawlability and Indexing Checklist 2026",
+    "description": "20 premium crawlability and indexing checks with code examples, covering robots.txt, XML sitemaps, redirect chains, crawl budget, IndexNow, and orphan page fixes.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-07-01",
+    "dateModified": "2026-07-29"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is crawlability in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Crawlability is the ability of search engine bots to discover and access pages on your website. If a page cannot be crawled, it cannot be indexed or ranked." } },
+      { "@type": "Question", "name": "How do I check if my site is crawlable?", "acceptedAnswer": { "@type": "Answer", "text": "Use Google Search Console's Pages report, run Screaming Frog, check robots.txt and sitemap, and test URLs with the URL Inspection tool." } },
+      { "@type": "Question", "name": "What blocks search engine crawling?", "acceptedAnswer": { "@type": "Answer", "text": "Robots.txt disallow rules, noindex tags, password protection, server errors (5xx), redirect chains, broken internal links, orphan pages, and JavaScript-dependent navigation." } },
+      { "@type": "Question", "name": "How do I optimize crawl budget?", "acceptedAnswer": { "@type": "Answer", "text": "Block low-value URLs in robots.txt, consolidate thin content, use noindex on unimportant pages, prioritize best content in your sitemap, and fix crawl errors quickly." } },
+      { "@type": "Question", "name": "What is IndexNow and how does it work?", "acceptedAnswer": { "@type": "Answer", "text": "IndexNow is a protocol that instantly notifies search engines when content changes. Supported by Bing, Yandex, Naver, and Seznam. You ping an API endpoint with the changed URL list." } }
+    ]
+  }
+  </script>
 ---
 
-<section class="category-page-header">
+<section class="category-hero">
   <div class="container">
-    <h1>Crawlability and Indexing Checklist</h1>
-    <p>Ensure search engines and AI systems can discover, crawl, and index every important page on your site. 12 checks with code examples.</p>
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      20 Premium Checks - Updated July 2026
+    </div>
+    <h1>Crawlability and <span>Indexing</span> Checklist</h1>
+    <p>Ensure search engines and AI systems can discover, crawl, and index every important page on your site. If search engines cannot find your content, nothing else matters. These 20 checks cover the full crawl pipeline from discovery to index.</p>
   </div>
 </section>
 
-<section class="category-content">
+<section class="intro-section">
   <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Why <span>Crawlability</span> Matters</h2>
+        <p>Before Google, Bing, ChatGPT, or Perplexity can rank or cite your content, they must first find it, crawl it, and add it to their index. If any step in this pipeline breaks, your content is invisible across <strong>both</strong> traditional search and AI search surfaces.</p>
+        <p>Think of crawlability as the plumbing in a building. You cannot see it. Nobody compliments it. But when it breaks, nothing works. Every page you want ranked needs a clear, unobstructed path from a crawler's starting point.</p>
+        <p>In 2026, crawlability affects not just Google rankings but also whether AI agents can access your content for real-time citations. A single robots.txt mistake can block GPTBot, Claude-Web, and Google-Extended simultaneously.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">30%</span>
+            <span class="intro-stat-label">of pages never indexed</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">62%</span>
+            <span class="intro-stat-label">of sites have crawl errors</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">+40%</span>
+            <span class="intro-stat-label">traffic after fixing crawl issues</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Crawlable vs Not Crawlable</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Page accessible to bots</span>
+              <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Crawlable</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Blocked by robots.txt</span>
+              <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Not Crawlable</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Blocked by noindex tag</span>
+              <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Crawled but not indexed</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Broken internal link</span>
+              <span class="premium-comp-value yellow"><span class="comp-x">&#10007;</span> Reduced crawl chance</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Orphan page (no internal links)</span>
+              <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Invisible to crawlers</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Server error (5xx)</span>
+              <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Crawl aborted</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Redirect chain (3+ hops)</span>
+              <span class="premium-comp-value yellow"><span class="comp-x">&#10007;</span> Wasted crawl budget</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Submitted in XML sitemap</span>
+              <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Priority discovery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>Why Crawlability Matters</h2>
-    <p>Before Google, Bing, ChatGPT, or Perplexity can do anything with your content, they must first find it, crawl it, and add it to their index. If any step in this chain breaks, your content is invisible. Crawlability is the most fundamental layer of technical SEO. Without it, nothing else works.</p>
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 20 Crawlability Checks</h2>
+      <p>Every check ranked by impact. Start at the top and work down.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Category</th>
+            <th>Impact</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Verify index coverage in GSC</td>
+            <td>Monitoring</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Fix duplicate website versions</td>
+            <td>Configuration</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Optimize robots.txt for all crawlers</td>
+            <td>Configuration</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Submit XML sitemap to GSC</td>
+            <td>Configuration</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Fix redirect chains and loops</td>
+            <td>Technical</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Fix broken internal links</td>
+            <td>Technical</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Fix server errors (5xx)</td>
+            <td>Server</td>
+            <td class="highlight-cell">High</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Find and fix orphan pages</td>
+            <td>Content</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Audit canonical tags</td>
+            <td>Configuration</td>
+            <td class="highlight-cell">High</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Check pagination implementation</td>
+            <td>Technical</td>
+            <td>Medium</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Implement IndexNow</td>
+            <td>Configuration</td>
+            <td>Medium</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Review crawl stats and crawl budget</td>
+            <td>Monitoring</td>
+            <td>Medium</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Audit JavaScript rendering for SEO</td>
+            <td>Technical</td>
+            <td>Medium</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Check HTTP status codes on all pages</td>
+            <td>Technical</td>
+            <td>Medium</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Verify Googlebot access and rendering</td>
+            <td>Monitoring</td>
+            <td>Medium</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>Enable compression (Brotli/Gzip)</td>
+            <td>Server</td>
+            <td>Low</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>Review log files for crawl patterns</td>
+            <td>Advanced</td>
+            <td>Low</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>Implement hreflang for multilingual sites</td>
+            <td>Configuration</td>
+            <td>Low</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>Test with text-only browser view</td>
+            <td>Testing</td>
+            <td>Low</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>Set up weekly GSC monitoring alerts</td>
+            <td>Monitoring</td>
+            <td>Low</td>
+            <td>Easy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-    <h2>The 12 Crawlability Checks</h2>
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>Detailed implementation guides with code examples for all 20 checks.</p>
+    </div>
 
-    <h3>1. Check Index Coverage in Google Search Console</h3>
-    <p>Open the Pages report in Google Search Console. Review the total indexed vs. not indexed count. Click each exclusion reason to see which pages are affected. Important pages showing as "Crawled but not indexed" need content improvement.</p>
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Verify Index Coverage in Google Search Console</h4>
+      <p>Open the Pages report in Google Search Console. Review total indexed vs not indexed count. Click each exclusion reason to see which pages are affected. Important pages showing "Crawled but not indexed" typically need content improvement, better internal links, or removal of low-value signals.</p>
+      <p>Set a weekly calendar reminder to check this report. A sudden spike in "Not Indexed" pages is often the first sign of a site-wide issue like a misconfigured robots.txt or a server error.</p>
+    </div>
 
-    <h3>2. Fix Duplicate Website Versions</h3>
-    <p>Your site should resolve to one canonical version. Test all four combinations: http/https and www/non-www. Each should redirect to your preferred version with a 301 redirect.</p>
-    <pre># Apache: Force HTTPS + WWW
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Fix Duplicate Website Versions</h4>
+      <p>Your site should resolve to one canonical version. Test all four combinations: <code>http://</code>, <code>https://</code>, <code>www</code>, and <code>non-www</code>. Each should 301 redirect to your chosen version. Search engines see each unique URL as a separate site if not redirected, splitting your authority across four versions.</p>
+      <pre class="gold-code-block"># Apache: Force HTTPS + WWW
 RewriteEngine On
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
@@ -36,15 +301,19 @@ server {
     server_name yourdomain.com www.yourdomain.com;
     return 301 https://www.yourdomain.com$request_uri;
 }</pre>
+    </div>
 
-    <h3>3. Optimize Robots.txt</h3>
-    <p>Check your robots.txt at yourdomain.com/robots.txt. Ensure it allows Googlebot, Bingbot, GPTBot, and Claude-Web while blocking low-value paths like admin, login, and cart pages.</p>
-    <pre>User-agent: *
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Optimize Robots.txt for All Crawlers</h4>
+      <p>Your robots.txt is the first file every crawler reads. A single mistake here can block your entire site. Allow Googlebot, Bingbot, GPTBot, and Claude-Web while blocking low-value paths. Use the URL Inspection tool in GSC to test whether specific pages are actually blocked.</p>
+      <pre class="gold-code-block">User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /login/
 Disallow: /cart/
 Disallow: /checkout/
+Disallow: /wp-admin/
+Disallow: /tmp/
 
 User-agent: GPTBot
 Allow: /
@@ -52,25 +321,17 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://www.yourdomain.com/sitemap.xml</pre>
+      <p>Test your robots.txt using Google's robots.txt tester in GSC or the Robots Exclusion Checker tool. Verify that important pages are not accidentally blocked.</p>
+    </div>
 
-    <h3>4. Fix Redirect Chains and Loops</h3>
-    <p>Use Screaming Frog or Semrush Site Audit to detect redirect chains. Every redirect should point directly to the final URL, not through intermediate URLs.</p>
-
-    <h3>5. Fix Broken Links</h3>
-    <p>Internal and external broken links waste crawl budget and frustrate users. Run a full crawl with Screaming Frog and fix all 4xx errors. Restore deleted pages, set up 301 redirects, or update the links to working URLs.</p>
-    <pre># Bulk check URLs with curl
-for url in $(cat urls.txt); do
-  status=$(curl -o /dev/null -s -w "%{http_code}" $url)
-  echo "$url - $status"
-done</pre>
-
-    <h3>6. Fix Server Errors (5xx)</h3>
-    <p>5xx errors completely block crawling. Check GSC for server error reports. Review server logs for patterns. Common causes: overloaded servers, PHP memory limits, database connection failures.</p>
-
-    <h3>7. Submit XML Sitemap to Google Search Console</h3>
-    <p>Generate a clean XML sitemap containing only canonical, indexable URLs. Submit it in GSC under Sitemaps. Monitor for errors and warnings.</p>
-    <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Submit XML Sitemap to Google Search Console</h4>
+      <p>An XML sitemap is your direct channel to tell search engines which pages exist and when they were last updated. Only include canonical, indexable URLs. Exclude paginated pages, parameter-based URLs, and thin content. Submit the sitemap URL in GSC under the Sitemaps section.</p>
+      <pre class="gold-code-block">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
   &lt;url&gt;
     &lt;loc&gt;https://www.yourdomain.com/&lt;/loc&gt;
@@ -78,33 +339,340 @@ done</pre>
     &lt;changefreq&gt;weekly&lt;/changefreq&gt;
     &lt;priority&gt;1.0&lt;/priority&gt;
   &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.yourdomain.com/technical-seo-checklist&lt;/loc&gt;
+    &lt;lastmod&gt;2026-07-29&lt;/lastmod&gt;
+    &lt;changefreq&gt;monthly&lt;/changefreq&gt;
+    &lt;priority&gt;0.9&lt;/priority&gt;
+  &lt;/url&gt;
 &lt;/urlset&gt;</pre>
-
-    <h3>8. Find and Fix Orphan Pages</h3>
-    <p>Orphan pages have zero internal links. They are invisible to crawlers and users. Cross-reference your sitemap URLs with crawl data to identify orphans, then add contextual internal links.</p>
-
-    <h3>9. Optimize Crawl Budget</h3>
-    <p>Google allocates limited crawl resources per site. Block low-value URLs in robots.txt, consolidate thin content, use noindex on unimportant pages, and prioritize your best content in the sitemap.</p>
-
-    <h3>10. Implement IndexNow</h3>
-    <p>IndexNow notifies search engines instantly when content changes. Supported by Bing, Yandex, Naver, and Seznam. Send a ping every time you publish or update a page.</p>
-    <pre># IndexNow API call
-curl -X POST https://bing.com/IndexNow \
-  -H "Content-Type: application/json" \
-  -d '{"host":"www.yourdomain.com","key":"your-key",
-       "keyLocation":"https://www.yourdomain.com/your-key.txt",
-       "urlList":["https://www.yourdomain.com/new-page"]}'</pre>
-
-    <h3>11. Check Pagination</h3>
-    <p>Paginated series should use rel="next" and rel="prev" tags to signal the relationship between pages. Apply canonical tags pointing to the main series page.</p>
-
-    <h3>12. Monitor Google Search Console Weekly</h3>
-    <p>GSC is your early warning system. Check it weekly for index coverage drops, new crawl errors, manual actions, and Core Web Vitals issues. Set up email alerts for critical changes.</p>
-
-    <div class="category-navigation">
-      <a href="{{ site.baseurl }}/">&larr; Back to Home</a>
-      <a href="{{ site.baseurl }}/categories/core-web-vitals/">Next: Core Web Vitals &rarr;</a>
+      <p>Large sites should split sitemaps into a sitemap index file with individual sitemaps of up to 50,000 URLs each. Use Yoast SEO, Rank Math, or Screaming Frog to auto-generate sitemaps.</p>
     </div>
 
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Fix Redirect Chains and Loops</h4>
+      <p>Every hop in a redirect chain adds latency and wastes crawl budget. A page that requires 3+ redirects to reach the final URL is wasting 60-70% of its crawl equity. Use Screaming Frog or Semrush to detect chains and flatten every redirect to point directly at the final destination.</p>
+      <pre class="gold-code-block"># Screaming Frog: Export redirect chains
+# Crawl your site, go to Response Codes tab
+# Filter by Status Code = 301, 302, 303, 307, 308
+# Sort by "Redirect URL" to see chains
+
+# Use a redirect checker tool
+curl -I https://www.yourdomain.com/old-page | grep "location:"</pre>
+      <p>A redirect loop (A &rarr; B &rarr; C &rarr; A) will cause the crawler to give up and treat the URL as broken. Test all major redirect paths manually.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Fix Broken Internal Links</h4>
+      <p>Broken internal links waste crawl budget and frustrate users. Every 404 on your site represents a failed crawl opportunity. Run a full crawl with Screaming Frog, export all 4xx errors, and fix each one by restoring the page, adding a 301 redirect, or updating the link.</p>
+      <pre class="gold-code-block"># Bulk check URLs with curl
+for url in $(cat urls.txt); do
+  status=$(curl -o /dev/null -s -w "%{http_code}" "$url")
+  echo "$url - $status"
+done
+
+# Find broken links with wget
+wget --spider --force-html -r -l2 https://www.yourdomain.com 2>&1 | grep "404"</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Fix Server Errors (5xx)</h4>
+      <p>5xx errors completely block crawling. Googlebot will retry a few times, but persistent errors lead to deindexing. Check GSC for server error spikes. Common causes: overloaded servers, exhausted PHP memory, database connection failures, or faulty CDN configurations.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Find and Fix Orphan Pages</h4>
+      <p>Orphan pages have zero internal links pointing to them. They are invisible to crawlers because spiders navigate by following links. Cross-reference your sitemap with a full crawl to identify orphans, then add contextual internal links from relevant parent pages.</p>
+      <pre class="gold-code-block"># Orphan detection process:
+# 1. Export all URLs from your sitemap
+# 2. Run a full site crawl
+# 3. Cross-reference: URLs in sitemap but not in crawl = orphans
+# 4. For each orphan: find a relevant page and add a link
+
+# Use Screaming Frog's "Extraction" feature
+# Export all inlinks per page, filter for pages with 0 inlinks</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Audit Canonical Tags</h4>
+      <p>Canonical tags tell search engines which version of a page is the authoritative one. Common mistakes: canonicals pointing to different domains, multiple canonicals on one page, canonical pointing to a 404, or missing self-referencing canonicals on paginated pages.</p>
+      <pre class="gold-code-block">&lt;!-- Self-referencing canonical --&gt;
+&lt;link rel="canonical" href="https://www.yourdomain.com/current-page" /&gt;
+
+&lt;!-- Cross-domain canonical (rare, use with caution) --&gt;
+&lt;link rel="canonical" href="https://www.yourdomain.com/original-article" /&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Check Pagination Implementation</h4>
+      <p>Paginated series confuse crawlers without proper signals. Use <code>rel="next"</code> and <code>rel="prev"</code> to show relationships between pages. Apply a self-referencing canonical on each page. For SEO, consider merging paginated content into a single page or using "View All" pages.</p>
+      <pre class="gold-code-block">&lt;!-- Page 1 of a series --&gt;
+&lt;link rel="next" href="https://www.yourdomain.com/series/page/2/" /&gt;
+&lt;link rel="canonical" href="https://www.yourdomain.com/series/" /&gt;
+
+&lt;!-- Page 2 of a series --&gt;
+&lt;link rel="prev" href="https://www.yourdomain.com/series/" /&gt;
+&lt;link rel="next" href="https://www.yourdomain.com/series/page/3/" /&gt;
+&lt;link rel="canonical" href="https://www.yourdomain.com/series/" /&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Implement IndexNow</h4>
+      <p>IndexNow notifies search engines the instant content changes, bypassing the normal recrawl schedule. Supported by Bing, Yandex, Naver, and Seznam (Google uses a similar but separate system). Every content management system should ping IndexNow on publish or update.</p>
+      <pre class="gold-code-block"># IndexNow API call
+curl -X POST "https://api.indexnow.org/indexnow" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "host": "www.yourdomain.com",
+    "key": "a1b2c3d4e5f6",
+    "keyLocation": "https://www.yourdomain.com/a1b2c3d4e5f6.txt",
+    "urlList": [
+      "https://www.yourdomain.com/new-page",
+      "https://www.yourdomain.com/updated-page"
+    ]
+  }'
+
+# Generate your IndexNow key
+openssl rand -hex 16 > a1b2c3d4e5f6.txt
+# Place the key file at the root of your domain</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Review Crawl Stats and Crawl Budget</h4>
+      <p>Google allocates limited crawl resources to each site. If your site has thousands of low-value URLs, Google may not crawl your best content frequently. Block thin pages, consolidate duplicate content, and monitor crawl stats in GSC to see how Google spends its budget.</p>
+      <p>Check the Crawl Stats report in GSC Settings. Look for: total crawl requests, average response time, and host status. A sudden drop in crawl requests may indicate a server issue or robots.txt change.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Audit JavaScript Rendering for SEO</h4>
+      <p>Google renders JavaScript, but with limits. Critical content (headings, text, links) must be in the initial HTML response, not injected via JS. Use the URL Inspection tool to see the rendered HTML. If Google sees a blank page, your JS SEO is broken.</p>
+      <pre class="gold-code-block">&lt;!-- Server-side render critical content --&gt;
+&lt;h1&gt;This heading is visible without JavaScript&lt;/h1&gt;
+&lt;div id="app"&gt;
+  &lt;!-- Static fallback content --&gt;
+  &lt;p&gt;Core content that renders without JS.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Use dynamic rendering as a safety net --&gt;
+# Nginx: Serve static cached version to bots
+if ($http_user_agent ~* "Googlebot|Bingbot|GPTBot") {
+  rewrite ^(.*)$ /__static$1 last;
+}</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">14</span> Check HTTP Status Codes on All Pages</h4>
+      <p>Every page on your site should return the correct HTTP status code. 200 for live pages, 301/308 for moved pages, 410 for permanently deleted content, and 404 only when the page truly does not exist. Pages returning 200 with thin or no content confuse crawlers.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">15</span> Verify Googlebot Access and Rendering</h4>
+      <p>Use the URL Inspection tool in Google Search Console to test how Googlebot sees each page. Check the "Crawled" and "Indexing" tabs. If Googlebot cannot access resources (CSS, JS, images), the rendered page may be incomplete or broken.</p>
+      <pre class="gold-code-block"># Test with Googlebot user agent
+curl -A "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) \
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z \
+Mobile Safari/537.36 (compatible; Googlebot/2.1; \
++http://www.google.com/bot.html)" \
+https://www.yourdomain.com</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">16</span> Enable Compression (Brotli/Gzip)</h4>
+      <p>Compression reduces transfer size by 60-80%, speeding up crawl time and improving server response. Brotli offers better compression than Gzip and is supported by all modern browsers and crawlers.</p>
+      <pre class="gold-code-block"># Nginx: Enable Brotli
+brotli on;
+brotli_types text/html text/css application/javascript image/svg+xml;
+brotli_comp_level 6;
+
+# Apache: Enable Brotli
+AddOutputFilterByType BROTLI_COMPRESS text/html text/css application/javascript</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">17</span> Review Log Files for Crawl Patterns</h4>
+      <p>Server log files reveal exactly how Googlebot crawls your site. Use tools like GoAccess, AWStats, or Logstash to analyze crawl frequency, which bots visit most, and which URLs get the most crawl attention. Look for abnormal crawl patterns that may indicate a problem.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">18</span> Implement hreflang for Multilingual Sites</h4>
+      <p>If your site serves content in multiple languages, hreflang tags tell search engines which language version to show in each region. Incorrect hreflang implementation causes wrong pages to appear in wrong regions or no pages to appear at all.</p>
+      <pre class="gold-code-block">&lt;link rel="alternate" hreflang="en" href="https://www.yourdomain.com/page" /&gt;
+&lt;link rel="alternate" hreflang="es" href="https://www.yourdomain.com/es/pagina" /&gt;
+&lt;link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/fr/page" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/page" /&gt;
+
+&lt;!-- Or use sitemap-based hreflang --&gt;
+&lt;url&gt;
+  &lt;loc&gt;https://www.yourdomain.com/page&lt;/loc&gt;
+  &lt;xhtml:link rel="alternate" hreflang="es"
+    href="https://www.yourdomain.com/es/pagina"/&gt;
+  &lt;xhtml:link rel="alternate" hreflang="fr"
+    href="https://www.yourdomain.com/fr/page"/&gt;
+&lt;/url&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">19</span> Test with Text-Only Browser View</h4>
+      <p>Use a text-only browser or disable JavaScript in Chrome DevTools to see what crawlers experience. If critical navigation or content disappears, your site relies too heavily on JavaScript for crawling. AI agents often parse raw HTML without executing JS, making this test essential for GEO readiness.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">20</span> Set Up Weekly GSC Monitoring Alerts</h4>
+      <p>GSC is your early warning system for crawl issues. Set up email alerts for: index coverage drops, new 404 spikes, server error increases, manual actions, and Core Web Vitals regressions. A 5-minute weekly check prevents small issues from becoming ranking disasters.</p>
+    </div>
   </div>
 </section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Crawlability Pitfalls</h2>
+      <p>Mistakes we see most often and how to fix them.</p>
+    </div>
+    <div class="premium-comp-card" style="margin-top: 32px;">
+      <div class="premium-comp-header">
+        <h3>Bad Practice vs Best Practice</h3>
+      </div>
+      <div class="premium-comp-body">
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Using noindex instead of fixing thin content</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Improve or consolidate content</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Blocking CSS/JS in robots.txt</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Allows all resources for rendering</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Dynamic URLs with query parameters</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Clean, static-like URL structure</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Sitemap includes all URLs (even noindexed)</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Sitemap contains only indexable URLs</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Deleting pages without 301 redirects</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Always redirect deleted pages to relevant live pages</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Using multiple H1s on one page</span>
+          <span class="premium-comp-value yellow"><span class="comp-x">&#10007;</span> One H1 per page for clear hierarchy</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Pages behind login or paywall (no indexing)</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Use structured data for paywall content</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Crawlability Tools</h2>
+      <p>Free and paid tools to audit and monitor crawl health.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>Index coverage reports, URL inspection, sitemap submission, and crawl stats tracking.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Screaming Frog</h4>
+        <p>Full site crawling with redirect chain detection, broken link identification, and sitemap generation.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Semrush Site Audit</h4>
+        <p>Automated crawlability checks with priority scoring and issue tracking over time.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Sitebulb</h4>
+        <p>Visual crawl reports with orphan page detection and crawl budget optimization recommendations.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>DeepCrawl (Lumar)</h4>
+        <p>Enterprise crawl analysis with log file integration and JavaScript rendering audit.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>IndexNow API</h4>
+        <p>Instant URL submission protocol. Supported by Bing, Yandex, Naver, and Seznam.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about crawlability and indexing.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is crawlability in SEO?</div>
+        <div class="faq-answer"><p>Crawlability is the ability of search engine bots to discover and access pages on your website by following links. A page that cannot be crawled cannot be indexed or ranked. Crawlability is the most fundamental requirement for SEO success.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I check if my site is crawlable?</div>
+        <div class="faq-answer"><p>Use Google Search Console's Pages report, run a Screaming Frog crawl, check your robots.txt and sitemap, and test individual URLs with the URL Inspection tool in GSC. If all return positive signals, your site is crawlable.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What blocks search engine crawling?</div>
+        <div class="faq-answer"><p>Robots.txt disallow rules, noindex meta tags, password protection or login gates, server errors (5xx), redirect chains with 3+ hops, broken internal links, orphan pages with zero internal links, JavaScript-dependent navigation that hides links, and pages behind forms.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I optimize crawl budget?</div>
+        <div class="faq-answer"><p>Block low-value URLs in robots.txt, consolidate thin content pages, apply noindex to unimportant pages (archives, tags, filtered pages), prioritize your best content in your XML sitemap, fix crawl errors immediately, and improve server response time to under 200ms.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is IndexNow and how does it work?</div>
+        <div class="faq-answer"><p>IndexNow is an open protocol that lets websites notify search engines instantly when content is created, updated, or deleted. You send a POST request to the IndexNow API with your host, a verification key, and the list of changed URLs. Supported by Bing, Yandex, Naver, and Seznam.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Should I block AI crawlers like GPTBot?</div>
+        <div class="faq-answer"><p>It depends on your goal. If you want AI search engines to cite your content in answers, allow GPTBot, Claude-Web, and Google-Extended. If you want to prevent your content from being used for model training but still allow real-time retrieval, use the separate retrieval-only directives.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How often does Google crawl my site?</div>
+        <div class="faq-answer"><p>Crawl frequency depends on your site's authority, update frequency, and crawl budget allocation. High-authority news sites may be crawled hourly. Smaller sites may be crawled weekly or monthly. The more high-quality content you publish and the faster your server responds, the more often Google crawls.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/">&larr; Back to Home</a>
+    <a href="{{ site.baseurl }}/categories/core-web-vitals/">Next: Core Web Vitals &rarr;</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+});
+</script>
