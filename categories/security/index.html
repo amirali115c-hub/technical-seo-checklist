@@ -1,14 +1,15 @@
 ---
 layout: default
-title: Security and HTTPS Checklist 2026 | SEO Security Headers Guide
-description: Technical SEO security checklist. SSL certificates, mixed content, HSTS headers, CSP, security headers audit, and AI crawler security considerations with code examples.
+title: Security and HTTPS Checklist 2026 | DNS-over-HTTPS and SEO Security Headers Guide
+description: Technical SEO security checklist covering SSL certificates, mixed content, HSTS, CSP, DNS-over-HTTPS, security headers audit, and AI crawler security considerations with code examples.
+google-site-verification: I2ClvAPdwW9B8IHx7KTarIjirQHkrITDXl8SDoX3Jb8
 schema: |
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Security and HTTPS Checklist 2026",
-    "description": "12 premium security checks for SEO covering SSL certificates, mixed content, HSTS, CSP, security headers, TLS versions, and AI crawler security with code examples.",
+    "description": "13 premium security checks for SEO covering SSL certificates, mixed content, HSTS, CSP, DNS-over-HTTPS, security headers, TLS versions, and AI crawler security with code examples.",
     "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
     "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
     "datePublished": "2026-07-01",
@@ -27,16 +28,42 @@ schema: |
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Security and HTTPS Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/security/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Secure Your Site for SEO",
+    "description": "13 security checks covering SSL certificates, mixed content, HSTS, CSP, DNS-over-HTTPS, and security headers.",
+    "step": [
+      { "@type": "HowToStep", "text": "Install and maintain a valid SSL certificate from a trusted certificate authority." },
+      { "@type": "HowToStep", "text": "Fix mixed content issues by ensuring all resources load over HTTPS." },
+      { "@type": "HowToStep", "text": "Implement HSTS header to force HTTPS connections and prevent downgrade attacks." },
+      { "@type": "HowToStep", "text": "Add Content Security Policy headers to prevent XSS and data injection attacks." },
+      { "@type": "HowToStep", "text": "Set X-Frame-Options to DENY to prevent clickjacking." },
+      { "@type": "HowToStep", "text": "Audit all security headers using securityheaders.com and fix any failing grades." }
+    ]
+  }
+  </script>
 ---
 
 <section class="category-hero">
   <div class="container">
     <div class="hero-badge">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
-      12 Premium Checks - Updated July 2026
+      13 Premium Checks - Updated July 2026
     </div>
     <h1>Security and <span>HTTPS</span> Checklist</h1>
-    <p>Secure your site for users, search engines, and AI agents. HTTPS is a confirmed ranking signal, and security breaches can lead to manual actions and deindexing. These 12 checks cover the full security stack.</p>
+    <p>Secure your site for users, search engines, and AI agents. HTTPS is a confirmed ranking signal, and security breaches can lead to manual actions and deindexing. These 13 checks cover the full security stack including DNS-over-HTTPS.</p>
   </div>
 </section>
 
@@ -113,7 +140,7 @@ schema: |
 <section class="dark-section">
   <div class="container">
     <div class="section-header">
-      <h2>The 12 Security Checks</h2>
+      <h2>The 13 Security Checks</h2>
       <p>Ranked by security impact and SEO relevance.</p>
     </div>
     <div class="premium-table-wrapper">
@@ -339,7 +366,29 @@ ssl_ecdh_curve prime256v1:secp384r1;</pre>
     </div>
 
     <div class="check-card">
-      <h4><span class="check-num">12</span> Monitor GSC Security and Manual Actions</h4>
+      <h4><span class="check-num">12</span> Implement DNS-over-HTTPS (DoH)</h4>
+      <p>DNS-over-HTTPS encrypts DNS queries to prevent eavesdropping and manipulation. While not a direct ranking signal, DoH improves privacy, security, and can speed up DNS resolution. Modern browsers and operating systems support DoH natively. For SEO, DoH ensures that DNS queries related to your site cannot be intercepted or manipulated, preserving the integrity of your traffic and protecting against DNS-based attacks that could harm your search presence.</p>
+      <pre class="gold-code-block"># What is DNS-over-HTTPS and why it matters for SEO
+# DoH encrypts DNS queries using HTTPS, preventing:
+# - DNS spoofing/cache poisoning attacks
+# - ISP-level DNS hijacking
+# - Man-in-the-middle DNS interception
+#
+# How to test if your DNS uses DoH:
+curl -s https://dns.google/resolve?name=yourdomain.com&type=A
+
+# Enable DoH in browsers (user-side):
+# Chrome: Settings > Privacy > Use secure DNS
+# Firefox: Settings > Network Settings > Enable DNS over HTTPS
+# Edge: Settings > Privacy > Use secure DNS
+#
+# Server-side: Use a DNS provider that supports DoH
+# Cloudflare: 1.1.1.1 (supports DoH)
+# Google: 8.8.8.8 (supports DoH)
+# Quad9: 9.9.9.9 (supports DoH)</pre>
+    </div>
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Monitor GSC Security and Manual Actions</h4>
       <p>Check Google Search Console weekly for security issues and manual actions. A manual action can remove your site from search results entirely until the issue is fixed and reviewed.</p>
     </div>
   </div>
@@ -426,6 +475,24 @@ ssl_ecdh_curve prime256v1:secp384r1;</pre>
   </div>
 </section>
 
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Need <span>Technical SEO</span> Help?</h2>
+      <p>Get professional SEO audit services and technical SEO solutions from Clienvora. Our expert team delivers measurable results for businesses of all sizes.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today.</p>
+  </div>
+</section>
+
 <section class="faq-section">
   <div class="container">
     <div class="section-header">
@@ -448,6 +515,10 @@ ssl_ecdh_curve prime256v1:secp384r1;</pre>
       <div class="faq-item">
         <div class="faq-question">Does security affect AI search visibility?</div>
         <div class="faq-answer"><p>Yes. AI agents verify TLS certificates before rendering content. An expired certificate or misconfigured security headers can prevent AI systems from accessing your page entirely.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is DNS over HTTPS (DoH) and how does it affect SEO?</div>
+        <div class="faq-answer"><p>DNS over HTTPS (DoH) encrypts DNS queries to prevent eavesdropping and manipulation. While not a direct ranking signal, DoH improves security and privacy for your users. It ensures DNS queries to your site cannot be intercepted, protecting against DNS spoofing and hijacking that could harm traffic and search presence.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-question">How often should I check my SSL certificate?</div>

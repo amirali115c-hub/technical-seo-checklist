@@ -40,6 +40,28 @@ schema: |
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Technical SEO Checklist 2026",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ site.url }}{{ site.baseurl }}/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 ---
 
 <section class="hero">
@@ -49,14 +71,14 @@ schema: |
       60+ Checklist Items - Updated July 2026
     </div>
     <h1>The Ultimate <span>Technical SEO</span> Checklist</h1>
-    <p class="hero-sub">A complete, interactive checklist covering crawlability, Core Web Vitals, structured data, AI search readiness, and technical audits. Every item includes code examples and step-by-step fixes.</p>
+    <p class="hero-sub">A complete, interactive technical SEO checklist and SEO technical checklist covering crawlability, Core Web Vitals, structured data, AI search readiness, and technical audits. Updated for 2026, 2025, and 2021 onwards. Every item includes code examples and step-by-step fixes.</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <span class="hero-stat-number">60+</span>
         <span class="hero-stat-label">Actionable Items</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-number">8</span>
+        <span class="hero-stat-number">10</span>
         <span class="hero-stat-label">Categories</span>
       </div>
       <div class="hero-stat">
@@ -87,6 +109,7 @@ schema: |
       <div class="what-text">
         <p>Technical SEO is the practice of optimizing your website's infrastructure so search engines can find, crawl, understand, and index your content. Think of it as building the foundation of a house. No matter how beautiful the furniture (your content) or how many people talk about it (your backlinks), if the foundation is cracked, the house collapses.</p>
         <p>It covers everything that happens <strong>behind the scenes</strong>: server configuration, site speed, URL structure, robots.txt, XML sitemaps, schema markup, security certificates, mobile responsiveness, and more.</p>
+        <p>A <strong>what is a technical SEO checklist example</strong> would include items like verifying index coverage in Google Search Console, fixing duplicate website versions, optimizing robots.txt for all crawlers, submitting XML sitemaps, and auditing canonical tags. Each item has a specific fix with code examples and verification steps.</p>
         <h3>Why It Matters More in 2026</h3>
         <p>Technical SEO now serves <strong>two masters</strong>: traditional search engines (Google, Bing) and AI-powered search systems (ChatGPT, Perplexity, Claude, Google AI Overviews). The same fixes that help Google index your pages also determine whether AI agents can access and cite your content.</p>
         <p>A single technical issue, like blocking GPTBot in robots.txt or using broken HTML structure, can make you invisible across both surfaces simultaneously. The stakes have never been higher.</p>
@@ -167,7 +190,7 @@ schema: |
             <span class="intro-stat-label">Checklist Items</span>
           </div>
           <div class="intro-stat">
-            <span class="intro-stat-number">8</span>
+            <span class="intro-stat-number">10</span>
             <span class="intro-stat-label">Categories</span>
           </div>
           <div class="intro-stat">
@@ -260,64 +283,64 @@ schema: |
       <a href="{{ site.baseurl }}/categories/crawlability/" class="category-card">
     <div class="category-icon icon-crawl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
     <h3>Crawlability and Indexing</h3>
-    <p>Robots.txt, XML sitemaps, redirect chains, broken links, crawl budget, IndexNow, and more. 12 checks.</p>
-    <span class="item-count">12 items &rarr;</span>
+    <p>Robots.txt, XML sitemaps, redirect chains, broken links, crawl budget, IndexNow, and more. 20 checks.</p>
+    <span class="item-count">20 items &rarr;</span>
   </a>
 
       <a href="{{ site.baseurl }}/categories/core-web-vitals/" class="category-card">
     <div class="category-icon icon-speed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
     <h3>Core Web Vitals and Performance</h3>
-    <p>LCP, INP, CLS optimization, image compression, CDN, caching, minification. 8 checks.</p>
-    <span class="item-count">8 items &rarr;</span>
+    <p>LCP, INP, CLS optimization, image compression, CDN, caching, TTFB, performance budgets. 12 checks.</p>
+    <span class="item-count">12 items &rarr;</span>
   </a>
 
       <a href="{{ site.baseurl }}/categories/site-architecture/" class="category-card">
     <div class="category-icon icon-arch"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
     <h3>Site Architecture</h3>
-    <p>URL structure, internal linking, breadcrumbs, navigation, silo structure, orphan pages. 7 checks.</p>
-    <span class="item-count">7 items &rarr;</span>
+    <p>URL structure, internal linking, breadcrumbs, navigation, silo structure, topic clusters, orphan pages. 12 checks.</p>
+    <span class="item-count">12 items &rarr;</span>
   </a>
 
       <a href="{{ site.baseurl }}/categories/schema-markup/" class="category-card">
     <div class="category-icon icon-schema"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
     <h3>Structured Data and Schema</h3>
-    <p>Article, Organization, Breadcrumb, FAQ, Product schema. JSON-LD examples for every type. 6 checks.</p>
-    <span class="item-count">6 items &rarr;</span>
+    <p>Article, Organization, Breadcrumb, FAQ, Product, HowTo, Person, and more. JSON-LD examples for 12 schema types.</p>
+    <span class="item-count">12 items &rarr;</span>
   </a>
 
       <a href="{{ site.baseurl }}/categories/security/" class="category-card">
     <div class="category-icon icon-security"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
     <h3>Security and HTTPS</h3>
-    <p>SSL certificates, mixed content, HSTS headers, security headers audit. 4 checks.</p>
-    <span class="item-count">4 items &rarr;</span>
+    <p>SSL certificates, mixed content, HSTS headers, CSP, TLS configuration, security headers audit. 12 checks.</p>
+    <span class="item-count">12 items &rarr;</span>
   </a>
 
       <a href="{{ site.baseurl }}/categories/mobile-ux/" class="category-card">
     <div class="category-icon icon-mobile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
     <h3>Mobile and UX</h3>
-    <p>Mobile-friendliness, viewport configuration, interstitials, touch targets, font readability. 5 checks.</p>
-    <span class="item-count">5 items &rarr;</span>
+    <p>Mobile-first indexing, responsive design, viewport, touch targets, font readability, interstitials, PWA. 12 checks.</p>
+    <span class="item-count">12 items &rarr;</span>
   </a>
 
       <a href="{{ site.baseurl }}/categories/ai-search-geo/" class="category-card">
     <div class="category-icon icon-ai"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="2"><path d="M12 2a10 10 0 0110 10c0 5-4 8-10 8-6 0-10-3-10-8 0-5 4-10 10-10z"/><path d="M8 12h8M12 8v8"/></svg></div>
     <h3>AI Search and GEO</h3>
-    <p>AI crawler access, semantic HTML, entity optimization, llms.txt, agentic commerce readiness. 6 checks.</p>
-    <span class="item-count">6 items &rarr;</span>
+    <p>AI crawler access, semantic HTML, entity optimization, llms.txt, OKF bundles, agentic commerce, and more. 12 checks.</p>
+    <span class="item-count">12 items &rarr;</span>
   </a>
 
       <a href="{{ site.baseurl }}/categories/audit-checklist/" class="category-card">
     <div class="category-icon icon-audit"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
     <h3>Technical SEO Audit</h3>
-    <p>Weekly, monthly, quarterly, and annual audit routines. Agency-grade audit framework. 16 checks.</p>
-    <span class="item-count">16 items &rarr;</span>
+    <p>Weekly, monthly, quarterly, and annual audit routines. Agency-grade audit framework with P0-P3 priority. 20+ checks.</p>
+    <span class="item-count">20+ items &rarr;</span>
   </a>
 
       <a href="{{ site.baseurl }}/categories/for-beginners/" class="category-card">
     <div class="category-icon icon-beginner"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
     <h3>For Non-Technical Marketers</h3>
-    <p>What you can do without touching code. When to call a developer. Free tools that do the work. 5 checks.</p>
-    <span class="item-count">5 items &rarr;</span>
+    <p>What you can do without touching code. When to call a developer. Free tools that do the work. 15 checks.</p>
+    <span class="item-count">15 items &rarr;</span>
   </a>
 
       <a href="{{ site.baseurl }}/categories/tools-comparison/" class="category-card">
@@ -887,7 +910,7 @@ schema: |
     <h2>Download the Checklist</h2>
     <p>Get the complete technical SEO checklist as a printable PDF. Includes all 60+ items, code examples, and audit schedule.</p>
     <div class="download-buttons">
-      <a href="#" class="btn btn-gold" onclick="alert('PDF version coming soon. Use the interactive checklist above for now.'); return false;">
+      <a href="{{ site.baseurl }}/assets/pdfs/technical-seo-checklist-2026.pdf" class="btn btn-gold" target="_blank" rel="noopener noreferrer">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2V12M9 12L5 8M9 12L13 8M3 14V16H15V14" stroke="currentColor" stroke-width="1.5"/></svg>
         Download PDF
       </a>

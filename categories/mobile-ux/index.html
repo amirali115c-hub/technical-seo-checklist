@@ -27,6 +27,32 @@ schema: |
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Mobile SEO and UX Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/mobile-ux/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Optimize Mobile SEO and UX",
+    "description": "12 mobile SEO checks covering mobile-first indexing, responsive design, viewport, touch targets, and mobile performance.",
+    "step": [
+      { "@type": "HowToStep", "text": "Verify mobile-first indexing readiness in Google Search Console." },
+      { "@type": "HowToStep", "text": "Implement responsive design with proper viewport meta tag configuration." },
+      { "@type": "HowToStep", "text": "Ensure touch targets are at least 48x48 pixels with adequate spacing." },
+      { "@type": "HowToStep", "text": "Set body font size to at least 16px on mobile for readability." },
+      { "@type": "HowToStep", "text": "Remove intrusive interstitials and use slide-in banners instead." },
+      { "@type": "HowToStep", "text": "Test mobile Core Web Vitals using Google PageSpeed Insights mobile report." }
+    ]
+  }
+  </script>
 ---
 
 <section class="category-hero">

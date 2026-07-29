@@ -2,6 +2,7 @@
 layout: default
 title: Site Architecture Checklist 2026 | URL Structure Internal Linking Guide
 description: Technical SEO site architecture guide. URL structure, breadcrumbs, internal linking, navigation, silo structure, topic clusters, and orphan page fixes with code examples.
+google-site-verification: I2ClvAPdwW9B8IHx7KTarIjirQHkrITDXl8SDoX3Jb8
 schema: |
   <script type="application/ld+json">
   {
@@ -28,6 +29,32 @@ schema: |
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Site Architecture Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/site-architecture/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Improve Site Architecture for SEO",
+    "description": "12 architecture checks covering URL structure, breadcrumbs, internal linking, topic clusters, and navigation.",
+    "step": [
+      { "@type": "HowToStep", "text": "Flatten your site structure so every important page is reachable within 3 clicks from the homepage." },
+      { "@type": "HowToStep", "text": "Implement breadcrumb navigation with BreadcrumbList schema markup." },
+      { "@type": "HowToStep", "text": "Use descriptive, keyword-rich URL structures with hyphens instead of underscores or parameters." },
+      { "@type": "HowToStep", "text": "Build topic clusters with pillar pages linking to related cluster content pages." },
+      { "@type": "HowToStep", "text": "Find and fix orphan pages by cross-referencing your sitemap with a full crawl." },
+      { "@type": "HowToStep", "text": "Audit internal link anchor text for descriptive, keyword-rich links rather than generic click here text." }
+    ]
+  }
+  </script>
 ---
 
 <section class="category-hero">
@@ -36,8 +63,8 @@ schema: |
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
       12 Premium Checks - Updated July 2026
     </div>
-    <h1>Site Architecture <span>Checklist</span></h1>
-    <p>Build a site structure that search engines and users can navigate effortlessly. Architecture determines how authority flows through your site and how easily AI agents extract your content hierarchy.</p>
+    <h1>Site Architecture <span>SEO Guide</span></h1>
+    <p>Build a site structure that search engines and AI agents can navigate effortlessly. Architecture determines how authority flows through your site and how easily your content hierarchy is understood. Master technical site architecture for SEO to optimize your page hierarchy, internal linking, and URL structure for optimal indexing and AI agent access.</p>
   </div>
 </section>
 
@@ -463,6 +490,24 @@ Pillar: /technical-seo-guide
         <span class="badge badge-paid">Paid</span>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Need <span>Technical SEO</span> Help?</h2>
+      <p>Get professional SEO audit services and technical SEO solutions from Clienvora. Our expert team delivers measurable results for businesses of all sizes.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today.</p>
   </div>
 </section>
 

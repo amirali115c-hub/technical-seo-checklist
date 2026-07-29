@@ -26,6 +26,32 @@ schema: |
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Technical SEO for Non-Technical Marketers", "item": "{{ site.url }}{{ site.baseurl }}/categories/for-beginners/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Do Technical SEO Without Coding",
+    "description": "A technical SEO checklist for the non technical marketer. Fix SEO issues yourself without writing code.",
+    "step": [
+      { "@type": "HowToStep", "text": "Check index coverage in Google Search Console to see which pages are in Google's index." },
+      { "@type": "HowToStep", "text": "Run a free Screaming Frog crawl to find broken links and missing meta tags." },
+      { "@type": "HowToStep", "text": "Check page speed with Google PageSpeed Insights and follow the improvement suggestions." },
+      { "@type": "HowToStep", "text": "Submit your XML sitemap to Google Search Console for faster indexing." },
+      { "@type": "HowToStep", "text": "Ensure all images have descriptive alt text and proper file names." },
+      { "@type": "HowToStep", "text": "Check for mixed content errors using your browser's developer tools." }
+    ]
+  }
+  </script>
 ---
 
 <section class="category-hero">
@@ -34,8 +60,8 @@ schema: |
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
       15 Beginner-Friendly Checks - Updated July 2026
     </div>
-    <h1>Technical SEO for <span>Non-Technical</span> Marketers</h1>
-    <p>You do not need to be a developer to improve technical SEO. Here is what you can fix yourself, when to call for help, which free tools to use, and how to communicate with developers effectively.</p>
+    <h1>Technical SEO <span>Checklist</span> for Non-Technical Marketers</h1>
+    <p>This is a technical SEO checklist for the non technical marketer. You do not need to be a developer to improve technical SEO. Here is what you can fix yourself, when to call for help, which free tools to use, and how to communicate with developers effectively.</p>
   </div>
 </section>
 

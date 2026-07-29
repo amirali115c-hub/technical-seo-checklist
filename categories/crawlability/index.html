@@ -28,6 +28,32 @@ schema: |
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Crawlability and Indexing Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/crawlability/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Fix Crawlability and Indexing Issues",
+    "description": "20 checks to ensure search engines and AI systems can discover, crawl, and index every page on your site.",
+    "step": [
+      { "@type": "HowToStep", "text": "Verify index coverage in Google Search Console to see which pages are indexed and why others are not." },
+      { "@type": "HowToStep", "text": "Fix duplicate website versions with 301 redirects to one canonical domain." },
+      { "@type": "HowToStep", "text": "Optimize robots.txt with separate rules for Googlebot, GPTBot, Claude-Web, and other crawlers." },
+      { "@type": "HowToStep", "text": "Submit XML sitemap to Google Search Console for faster page discovery." },
+      { "@type": "HowToStep", "text": "Fix redirect chains and loops by flattening every redirect to point directly at the final URL." },
+      { "@type": "HowToStep", "text": "Fix broken internal links and server errors that block crawl progress." }
+    ]
+  }
+  </script>
 ---
 
 <section class="category-hero">
@@ -273,6 +299,81 @@ schema: |
   </div>
 </section>
 
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>2025/2026 <span>Crawlability</span> Updates</h2>
+      <p>Recent changes that affect how search engines and AI systems crawl your site.</p>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-text">
+        <div style="margin-bottom: 32px;">
+          <h3 style="color: #C9A227; margin-bottom: 8px;">December 2025 Google Rendering Update</h3>
+          <p>Google now <strong>excludes non-200 pages from its JavaScript rendering queue entirely</strong>. Pages returning 404, 410, or 5xx no longer get rendered content seen by Google's indexer. Previously, Googlebot might still render a soft-404 page and salvage some content. Now, any non-200 response skips rendering entirely, meaning the page is treated as blank.</p>
+          <p><strong>Impact:</strong> If your 404 pages contain useful navigation or content, that content no longer passes signals. Ensure all pages you want indexed return a 200 status code. For deleted pages, use 410 Gone instead of 404 to communicate permanence.</p>
+        </div>
+        <div style="margin-bottom: 32px;">
+          <h3 style="color: #C9A227; margin-bottom: 8px;">Soft 404 vs Hard 404</h3>
+          <p>Soft 404s are pages that return a 200 status code but display empty or low-value content (e.g., "No products found" on an out-of-stock category page). Search engines treat these as deceptive. They consume crawl budget and can trigger algorithmic demotion.</p>
+          <p>Return a proper 404 or 410 for empty categories, out-of-stock products without alternatives, and search results with no matches. This signals to Google that the page genuinely does not exist.</p>
+        </div>
+        <div>
+          <h3 style="color: #C9A227; margin-bottom: 8px;">Index Budget vs Crawl Budget</h3>
+          <p>Having too many low-quality indexed pages drags down domain-wide quality signals. Every page submitted in your sitemap should offer unique value. Thin, duplicate, or low-utility pages dilute your index budget and can suppress the crawl frequency of your best content.</p>
+          <p>Audit your indexed pages quarterly. Remove or noindex pages that do not drive traffic, conversions, or topical authority. Fewer, higher-quality indexed pages outperform a large index of mixed-quality pages.</p>
+        </div>
+        <div class="intro-stats" style="margin-top: 32px;">
+          <div class="intro-stat">
+            <span class="intro-stat-number">Dec 2025</span>
+            <span class="intro-stat-label">Rendering update</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">60%</span>
+            <span class="intro-stat-label">of soft 404s go undetected</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">-40%</span>
+            <span class="intro-stat-label">crawl budget wasted on low-value pages</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Rendering Status Outcomes</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">HTTP 200 with content</span>
+              <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Rendered and indexed</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">HTTP 200 (soft 404, thin content)</span>
+              <span class="premium-comp-value yellow"><span class="comp-x">&#10007;</span> Rendered but flagged</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">HTTP 404</span>
+              <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Not rendered (post Dec 2025)</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">HTTP 410</span>
+              <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Not rendered, removed faster</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">HTTP 5xx</span>
+              <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Not rendered, retry limited</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Redirect (3xx, 1 hop)</span>
+              <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Followed, destination rendered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="grey-section">
   <div class="container">
     <div class="section-header">
@@ -490,7 +591,29 @@ AddOutputFilterByType BROTLI_COMPRESS text/html text/css application/javascript<
 
     <div class="check-card">
       <h4><span class="check-num">17</span> Review Log Files for Crawl Patterns</h4>
-      <p>Server log files reveal exactly how Googlebot crawls your site. Use tools like GoAccess, AWStats, or Logstash to analyze crawl frequency, which bots visit most, and which URLs get the most crawl attention. Look for abnormal crawl patterns that may indicate a problem.</p>
+      <p>Server log files reveal how Googlebot actually crawls your site, not just what GSC reports. GSC shows what Google found. Logs show what Google attempted, how often, and at what speed. This is your most accurate source of crawl behavior data.</p>
+      <p>Log file analysis answers questions GSC cannot: Which bots visit most frequently? Which URL patterns get the most crawl attention? Is Googlebot hitting rate limits? Are there abnormal crawl patterns that indicate a technical problem?</p>
+      <pre class="gold-code-block"># Quick log analysis with GoAccess
+goaccess /var/log/nginx/access.log \
+  --log-format=COMBINED \
+  --agent-list \
+  --ignore-crawlers \
+  -o report.html
+
+# Filter for Googlebot only
+grep "Googlebot" /var/log/nginx/access.log | \
+  awk '{print $7}' | sort | uniq -c | sort -rn | head -20
+
+# Check crawl frequency per URL
+awk '$1 ~ /Googlebot/ {count[$7]++}
+  END {for (url in count) print count[url], url}' \
+  /var/log/nginx/access.log | sort -rn | head -20
+
+# Detect crawl rate limiting (429 responses)
+grep " 429 " /var/log/nginx/access.log | \
+  grep "Googlebot" | awk '{print $7}' | sort | uniq -c</pre>
+      <p><strong>What to look for:</strong> Sudden drops in crawl volume (may indicate a robots.txt block or server issue), excessive crawl on low-value pages (crawl budget waste), 429 rate-limiting responses (server too slow), and uncrawled important pages (internal linking gap). Cross-reference log patterns with GSC crawl stats monthly.</p>
+      <p>Tools for log analysis: <strong>GoAccess</strong> (free, terminal-based), <strong>AWStats</strong> (free, web UI), <strong>Logstash + Elasticsearch</strong> (enterprise), and <strong>Screaming Frog Log File Analyzer</strong> (SEO-specific, paid). For most sites, GoAccess run weekly on the last 7 days of logs provides sufficient insight.</p>
     </div>
 
     <div class="check-card">
