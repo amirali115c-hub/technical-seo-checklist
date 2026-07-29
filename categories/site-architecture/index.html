@@ -1,40 +1,256 @@
 ---
 layout: default
-title: Site Architecture Checklist for Developers
-description: Technical SEO site architecture guide. URL structure, breadcrumbs, internal linking, navigation, silo structure, and orphan pages with code examples.
+title: Site Architecture Checklist 2026 | URL Structure Internal Linking Guide
+description: Technical SEO site architecture guide. URL structure, breadcrumbs, internal linking, navigation, silo structure, topic clusters, and orphan page fixes with code examples.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Site Architecture Checklist 2026",
+    "description": "12 premium site architecture checks covering URL structure, breadcrumbs, internal linking, topic clusters, navigation, orphan pages, and site depth optimization with code examples.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-07-01",
+    "dateModified": "2026-07-29"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is site architecture in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Site architecture is how your website pages are organized, linked, and structured. A flat, logical structure helps search engines understand topical authority and distribute PageRank effectively." } },
+      { "@type": "Question", "name": "How deep should my site structure be?", "acceptedAnswer": { "@type": "Answer", "text": "Every important page should be reachable within 3 clicks from the homepage. A flat structure distributes authority better than a deep one." } },
+      { "@type": "Question", "name": "What is a topic cluster?", "acceptedAnswer": { "@type": "Answer", "text": "A topic cluster is a content structure with one pillar page covering a broad topic and multiple cluster pages covering subtopics in detail. All cluster pages link back to the pillar page." } },
+      { "@type": "Question", "name": "How do I find orphan pages?", "acceptedAnswer": { "@type": "Answer", "text": "Cross-reference your XML sitemap with a full crawl from Screaming Frog. Any URL in your sitemap that has zero internal inlinks from the crawl is an orphan page." } },
+      { "@type": "Question", "name": "What is a good URL structure for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Short, descriptive, keyword-rich URLs with hyphens between words. Avoid parameters, underscores, and deep folder structures. Example: /technical-seo-checklist instead of /blog/2026/07/15/post-123." } }
+    ]
+  }
+  </script>
 ---
 
-<section class="category-page-header">
+<section class="category-hero">
   <div class="container">
-    <h1>Site Architecture Checklist</h1>
-    <p>Build a site structure that search engines and users can navigate effortlessly. 7 checks with implementation guides for developers.</p>
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      12 Premium Checks - Updated July 2026
+    </div>
+    <h1>Site Architecture <span>Checklist</span></h1>
+    <p>Build a site structure that search engines and users can navigate effortlessly. Architecture determines how authority flows through your site and how easily AI agents extract your content hierarchy.</p>
   </div>
 </section>
 
-<section class="category-content">
+<section class="intro-section">
   <div class="container">
-    <h2>Why Site Architecture Matters</h2>
-    <p>Site architecture determines how authority flows through your site and how easily users find content. A flat, logical structure helps Google understand your topical authority. A deep, messy structure buries your best pages.</p>
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Why <span>Site Architecture</span> Matters</h2>
+        <p>Site architecture determines how authority flows through your site and how easily users and search engines find content. A flat, logical structure helps Google understand your topical authority. A deep, messy structure buries your best pages.</p>
+        <p>Every page should be reachable within 3 clicks from the homepage. Pages deeper than 4 clicks receive significantly less crawl attention and authority flow. Architecture decisions compound over time. Getting it right early means every new page inherits authority naturally.</p>
+        <p>For AI search, clean site architecture means AI agents can navigate your content hierarchy, understand topic relationships, and extract coherent answers. A well-structured site is both human-friendly and AI-friendly.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">3</span>
+            <span class="intro-stat-label">clicks max to any page</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">80%</span>
+            <span class="intro-stat-label">of pages never get crawled (deep sites)</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">+45%</span>
+            <span class="intro-stat-label">more crawl depth with flat architecture</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Flat vs Deep Architecture</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Structure</span>
+              <span class="premium-comp-value gold">Flat</span>
+              <span class="premium-comp-value gray">Deep</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Clicks from homepage</span>
+              <span class="premium-comp-value green">2-3</span>
+              <span class="premium-comp-value gray">4-6</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Authority distribution</span>
+              <span class="premium-comp-value green">Even</span>
+              <span class="premium-comp-value gray">Diluted</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Crawl efficiency</span>
+              <span class="premium-comp-value green">High</span>
+              <span class="premium-comp-value gray">Low</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">User experience</span>
+              <span class="premium-comp-value green">Easy navigation</span>
+              <span class="premium-comp-value gray">Hard to find content</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">URL structure</span>
+              <span class="premium-comp-value green">Short paths</span>
+              <span class="premium-comp-value gray">Deep folders</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">AI agent parsing</span>
+              <span class="premium-comp-value green">Clear hierarchy</span>
+              <span class="premium-comp-value gray">Confusing structure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>The 7 Architecture Checks</h2>
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 12 Architecture Checks</h2>
+      <p>Grouped by layer: URLs, navigation, internal links, and content structure.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Layer</th>
+            <th>Impact</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Use flat URL structure (max 3 clicks)</td>
+            <td>URLs</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Create keyword-rich, readable URLs</td>
+            <td>URLs</td>
+            <td class="highlight-cell">High</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Implement breadcrumb navigation with schema</td>
+            <td>Nav</td>
+            <td class="highlight-cell">High</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Build strategic internal links with descriptive anchor text</td>
+            <td>Links</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Optimize primary navigation (5-7 items, 2 levels deep)</td>
+            <td>Nav</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Fix orphan pages (add internal links)</td>
+            <td>Links</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Create topic clusters (pillar + cluster pages)</td>
+            <td>Content</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Audit and fix broken internal links</td>
+            <td>Links</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Add related posts / contextual cross-links</td>
+            <td>Links</td>
+            <td>Medium</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Implement HTML sitemap for users</td>
+            <td>Nav</td>
+            <td>Medium</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Use canonical tags correctly</td>
+            <td>URLs</td>
+            <td class="highlight-cell">High</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Review and flatten paginated archives</td>
+            <td>Content</td>
+            <td>Medium</td>
+            <td>Medium</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-    <h3>1. Use a Flat URL Structure</h3>
-    <p>Every important page should be reachable within 3 clicks from the homepage. Avoid deep folder structures like /blog/2026/07/technical/seo/ instead of /technical-seo-guide.</p>
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>Implementation guides with code examples for all 12 architecture checks.</p>
+    </div>
 
-    <h3>2. Create Logical, Keyword-Rich URLs</h3>
-    <p>URLs should be readable and descriptive. Use hyphens between words. Include the target keyword. Keep them short. Never use underscores or ID-based parameters.</p>
-    <pre># Good
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Use a Flat URL Structure</h4>
+      <p>Every important page should be reachable within 3 clicks from the homepage. Avoid deep folder structures like <code>/blog/2026/07/technical/seo/</code>. Use <code>/technical-seo-guide</code> instead. Flat structures distribute PageRank more evenly and make it easier for crawlers to discover all pages.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Create Keyword-Rich URLs</h4>
+      <p>URLs should be readable, descriptive, and include the target keyword. Use hyphens between words. Keep them short. Never use underscores, ID-based parameters, or session IDs in URLs.</p>
+      <pre class="gold-code-block"># Good URLs
 /technical-seo-checklist
 /how-to-improve-core-web-vitals
+/schema-markup-guide
 
-# Bad
+# Bad URLs
 /p=123
 /index.php?page_id=45
-/2026/07/15/random-post</pre>
+/2026/07/15/random-post-title-that-is-way-too-long
+/blog/category/subcategory/another/post-title</pre>
+    </div>
 
-    <h3>3. Implement Breadcrumb Navigation</h3>
-    <p>Breadcrumbs improve usability and create internal link paths. Implement with schema.org BreadcrumbList markup for rich snippets in search results.</p>
-    <pre>&lt;nav aria-label="Breadcrumb"&gt;
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Implement Breadcrumb Navigation with Schema</h4>
+      <p>Breadcrumbs improve usability and create internal link paths. Implement with schema.org BreadcrumbList markup for rich snippets in search results. Breadcrumbs reduce bounce rate by giving users a clear path back to higher-level content.</p>
+      <pre class="gold-code-block">&lt;nav aria-label="Breadcrumb"&gt;
   &lt;ol itemscope itemtype="https://schema.org/BreadcrumbList"&gt;
     &lt;li itemprop="itemListElement" itemscope
         itemtype="https://schema.org/ListItem"&gt;
@@ -44,33 +260,277 @@ description: Technical SEO site architecture guide. URL structure, breadcrumbs, 
     &lt;/li&gt;
     &lt;li itemprop="itemListElement" itemscope
         itemtype="https://schema.org/ListItem"&gt;
-      &lt;span itemprop="name"&gt;Technical SEO Checklist&lt;/span&gt;
+      &lt;a itemprop="item" href="/technical-seo"&gt;
+        &lt;span itemprop="name"&gt;Technical SEO&lt;/span&gt;&lt;/a&gt;
       &lt;meta itemprop="position" content="2"&gt;
+    &lt;/li&gt;
+    &lt;li itemprop="itemListElement" itemscope
+        itemtype="https://schema.org/ListItem"&gt;
+      &lt;span itemprop="name"&gt;Site Architecture&lt;/span&gt;
+      &lt;meta itemprop="position" content="3"&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/nav&gt;</pre>
+    </div>
 
-    <h3>4. Build Strategic Internal Links</h3>
-    <p>Internal links distribute PageRank. Link from your homepage to pillar content. Link from pillar pages to cluster content. Use descriptive anchor text. Update old posts with links to new content.</p>
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Build Strategic Internal Links</h4>
+      <p>Internal links distribute PageRank and establish content relationships. Link from your homepage to pillar content. Link from pillar pages to cluster pages. Update old posts with links to new content. Use descriptive anchor text that includes the target keyword.</p>
+      <pre class="gold-code-block">&lt;!-- Good: descriptive anchor text --&gt;
+&lt;a href="/crawlability-guide"&gt;Complete crawlability guide for SEO&lt;/a&gt;
 
-    <h3>5. Optimize Navigation Menus</h3>
-    <p>Primary navigation should have 5-7 items. Dropdown menus should go no more than 2 levels deep. Use keyword-rich labels. Include a search bar for content-heavy sites.</p>
+&lt;!-- Bad: generic anchor text --&gt;
+&lt;a href="/crawlability-guide"&gt;click here&lt;/a&gt;
 
-    <h3>6. Fix Orphan Pages</h3>
-    <p>Any page with zero internal links is an orphan. Run a crawl, export all inlinks, find pages with zero, and add contextual links from relevant parent pages.</p>
+# Internal linking strategy checklist:
+# - Homepage links to all pillar pages
+# - Each pillar page links to its cluster pages
+# - Each cluster page links back to its pillar
+# - Blog posts link to related blog posts
+# - Footer links to important static pages
+# - Every page has at least 1 internal link (except homepage)</pre>
+    </div>
 
-    <h3>7. Create Topic Clusters (Silo Structure)</h3>
-    <p>Organize content into topic clusters. A pillar page covers the broad topic. Cluster pages cover subtopics in depth. All cluster pages link back to the pillar. This builds topical authority.</p>
-    <pre># Example: Technical SEO Topic Cluster
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Optimize Navigation Menus</h4>
+      <p>Primary navigation should have 5-7 items maximum. Dropdown menus should go no more than 2 levels deep. Use keyword-rich labels. Include a search bar for content-heavy sites. Every page in the main nav should link to a page that exists (no broken nav links).</p>
+      <pre class="gold-code-block">&lt;!-- Example: Clean, flat navigation --&gt;
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/services"&gt;Services&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/services/seo-audit"&gt;SEO Audit&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/services/technical-seo"&gt;Technical SEO&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href="/blog"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Fix Orphan Pages</h4>
+      <p>Any page with zero internal links is an orphan. Orphans are invisible to crawlers because spiders follow links to discover content. Run a crawl, export all inlinks per page, find pages with zero, and add contextual links from relevant parent pages.</p>
+      <pre class="gold-code-block"># Screaming Frog orphan detection process:
+# 1. Export sitemap URLs (list A)
+# 2. Crawl your site and export all discovered URLs (list B)
+# 3. Find items in list A that are NOT in list B
+# 4. Those are your orphan pages
+
+# Alternative: Use Google Analytics
+# Pages with organic traffic but 0 internal links</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Create Topic Clusters (Silo Structure)</h4>
+      <p>Organize content into topic clusters. A pillar page covers the broad topic in depth. Cluster pages cover subtopics. All cluster pages link back to the pillar. This builds topical authority and helps Google understand you are an expert on the subject.</p>
+      <pre class="gold-code-block"># Example: Technical SEO Topic Cluster
 Pillar: /technical-seo-guide
   Cluster: /crawlability-guide
   Cluster: /core-web-vitals-optimization
   Cluster: /schema-markup-guide
-  Cluster: /site-architecture-best-practices</pre>
+  Cluster: /site-architecture-best-practices
+  Cluster: /technical-seo-audit-tools
 
-    <div class="category-navigation">
-      <a href="{{ site.baseurl }}/categories/core-web-vitals/">&larr; Previous: Core Web Vitals</a>
-      <a href="{{ site.baseurl }}/categories/schema-markup/">Next: Structured Data &rarr;</a>
+# Requirements for effective topic clusters:
+# - Pillar covers the broad topic comprehensively
+# - Each cluster covers one specific subtopic in depth
+# - Every cluster links to the pillar with descriptive anchor text
+# - Pillar links to all clusters
+# - Cluster pages link to each other where relevant</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Audit and Fix Broken Internal Links</h4>
+      <p>Broken internal links waste crawl budget and break the user journey. Run a full crawl monthly, export all 4xx URLs, and fix each one. A broken link on a high-authority page is particularly damaging because it wastes the most valuable PageRank.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Add Related Posts and Contextual Cross-Links</h4>
+      <p>Related post sections at the bottom of articles add 3-6 internal links per page automatically. They increase page views, reduce bounce rate, and distribute link equity. Use your CMS or a related posts plugin to automate this.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Implement an HTML Sitemap for Users</h4>
+      <p>An HTML sitemap is a single page that lists all important pages on your site organized by category. It helps users find content and gives crawlers a single page with links to everything. Link to it from your footer.</p>
+      <pre class="gold-code-block">&lt;!-- HTML sitemap structure --&gt;
+&lt;h1&gt;Sitemap&lt;/h1&gt;
+&lt;h2&gt;Technical SEO&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="/crawlability-guide"&gt;Crawlability Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/core-web-vitals"&gt;Core Web Vitals&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Blog&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="/blog/seo-tips"&gt;SEO Tips 2026&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Use Canonical Tags Correctly</h4>
+      <p>Canonical tags prevent duplicate content issues by telling search engines which version of a page is the authoritative one. Every page should have a self-referencing canonical. Paginated pages should canon to the main series page.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Review and Flatten Paginated Archives</h4>
+      <p>Paginated archives (blog page 2, 3, 4) create unnecessary depth and dilute authority. Consider merging paginated content into a single page or using a "View All" page. Use rel="next/prev" if you must paginate.</p>
     </div>
   </div>
 </section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Architecture Mistakes</h2>
+      <p>Errors that hurt crawl efficiency and authority flow.</p>
+    </div>
+    <div class="premium-comp-card" style="margin-top: 32px;">
+      <div class="premium-comp-header">
+        <h3>Bad Practice vs Best Practice</h3>
+      </div>
+      <div class="premium-comp-body">
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Deep folder URLs (/blog/2026/07/post)</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Flat URLs (/post-title)</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">ID-based URLs (?p=123)</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Keyword-rich readable URLs</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">No breadcrumbs</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Breadcrumb navigation with schema</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">All pages organized by date</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Pages organized by topic cluster</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">10+ items in main navigation</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> 5-7 items, clear hierarchy</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">No internal links in blog posts</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Every post links to 3-5 related pages</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Orphan pages from deleted content</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> 301 redirect or internal link added</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Architecture Tools</h2>
+      <p>Tools to audit and improve your site structure.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Screaming Frog</h4>
+        <p>Crawl your site, visualize architecture depth, find orphan pages, audit internal links.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>Internal links report shows how Google sees your link graph. Find pages with few internal links.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Sitebulb</h4>
+        <p>Visual architecture maps, crawl depth analysis, orphan detection, and internal link audits.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Semrush Site Audit</h4>
+        <p>Automatic crawl depth reporting, internal link scoring, and orphan page detection.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Netpeak Spider</h4>
+        <p>Visual site structure tree, internal link analysis, and breadcrumb validation.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Lumar (DeepCrawl)</h4>
+        <p>Enterprise architecture visualization, PageRank flow analysis, and link graph mapping.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about site architecture and internal linking.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is site architecture in SEO?</div>
+        <div class="faq-answer"><p>Site architecture is how your website pages are organized, linked, and structured. It includes URL structure, navigation menus, internal linking, and content hierarchy. Good architecture helps crawlers discover all pages and helps users find what they need.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How deep should my site structure be?</div>
+        <div class="faq-answer"><p>Every important page should be reachable within 3 clicks from the homepage. Pages deeper than 4 clicks receive significantly less crawl attention and PageRank flow. Use a flat structure whenever possible.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is a topic cluster?</div>
+        <div class="faq-answer"><p>A topic cluster is an SEO content strategy where a single pillar page covers a broad topic comprehensively, and multiple cluster pages cover related subtopics in depth. All cluster pages link back to the pillar. This builds topical authority and improves rankings for both the pillar and cluster pages.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I find orphan pages?</div>
+        <div class="faq-answer"><p>Cross-reference your XML sitemap with a full crawl from Screaming Frog. URLs in the sitemap that received zero internal inlinks during the crawl are orphan pages. You can also use Google Search Console's Internal Links report to find pages with few or no internal links.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is a good URL structure for SEO?</div>
+        <div class="faq-answer"><p>Short, descriptive, keyword-rich URLs with hyphens between words. Avoid parameters, underscores, and deep folder structures. A good URL tells both users and search engines what the page is about before they click.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How many internal links per page is ideal?</div>
+        <div class="faq-answer"><p>There is no fixed limit, but each internal link should provide value. A blog post typically links to 3-5 related pages. A pillar page may link to 10-20 cluster pages. Navigation links should be 5-7 items. Quality over quantity applies here.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Should I use nofollow on internal links?</div>
+        <div class="faq-answer"><p>Generally no. Nofollow on internal links prevents PageRank flow and is rarely necessary. Exceptions include login/register links, terms of service, and privacy policy pages on some sites. Google recommends keeping internal links follow by default.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/categories/core-web-vitals/">&larr; Previous: Core Web Vitals</a>
+    <a href="{{ site.baseurl }}/categories/schema-markup/">Next: Structured Data &rarr;</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+});
+</script>
