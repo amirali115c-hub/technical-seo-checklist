@@ -1,101 +1,652 @@
 ---
 layout: default
-title: Core Web Vitals and Performance Checklist
-description: Complete guide to optimizing Core Web Vitals (LCP, INP, CLS). Fix site speed, caching, images, CDN, and TTFB with code examples.
+title: Core Web Vitals Checklist 2026 | LCP INP CLS Optimization Guide
+description: Complete guide to optimizing Core Web Vitals (LCP, INP, CLS). Fix site speed, caching, images, CDN, TTFB, and performance budgets with code examples for developers.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Core Web Vitals and Performance Checklist 2026",
+    "description": "12 premium performance checks covering LCP, INP, CLS, caching, CDN, image optimization, TTFB, performance budgets, and real-user monitoring with code examples.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-07-01",
+    "dateModified": "2026-07-29"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What are Core Web Vitals?", "acceptedAnswer": { "@type": "Answer", "text": "Core Web Vitals are Google's three metrics for measuring user experience during page load: Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS)." } },
+      { "@type": "Question", "name": "How do I fix poor LCP?", "acceptedAnswer": { "@type": "Answer", "text": "Optimize the largest element by preloading it, eliminating render-blocking resources, optimizing images, and improving server response time. Target under 2.5 seconds." } },
+      { "@type": "Question", "name": "What causes high CLS?", "acceptedAnswer": { "@type": "Answer", "text": "Images without dimensions, dynamically injected content, web fonts causing FOIT/FOUT, ads without reserved space, and embeds that resize after loading." } },
+      { "@type": "Question", "name": "How do I improve INP?", "acceptedAnswer": { "@type": "Answer", "text": "Break up long JavaScript tasks, defer third-party scripts, debounce event handlers, avoid heavy DOM manipulations on input, and yield to the main thread frequently." } },
+      { "@type": "Question", "name": "What is a good TTFB?", "acceptedAnswer": { "@type": "Answer", "text": "Under 200ms. TTFB is the time until the server sends the first byte of the response. It is affected by hosting quality, server config, CDN, database speed, and application code." } }
+    ]
+  }
+  </script>
 ---
 
-<section class="category-page-header">
+<section class="category-hero">
   <div class="container">
-    <h1>Core Web Vitals and Performance Checklist</h1>
-    <p>Optimize your site speed, interactivity, and visual stability. 8 checks covering LCP, INP, CLS, caching, CDN, images, and server response time.</p>
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      12 Premium Checks - Updated July 2026
+    </div>
+    <h1>Core Web Vitals and <span>Performance</span> Checklist</h1>
+    <p>Optimize loading speed, interactivity, and visual stability across all devices. Core Web Vitals are ranking signals for Google and accessibility signals for AI agents. These 12 checks cover every layer from server to browser.</p>
   </div>
 </section>
 
-<section class="category-content">
+<section class="intro-section">
   <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>What <span>Core Web Vitals</span> Measure</h2>
+        <p>Core Web Vitals are Google's three metrics that quantify the real-world user experience of a web page. They are confirmed ranking signals and directly impact user engagement, conversion rates, and bounce rates.</p>
+        <p>In 2026, CWV also affects AI search visibility. AI agents that render pages for screenshots or parse HTML expect fast, stable content. Poor CWV correlates with poor user experience across all surfaces including AI-generated answers.</p>
+        <p>Each metric measures a different aspect of the loading experience:</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">&lt;2.5s</span>
+            <span class="intro-stat-label">LCP Target</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">&lt;200ms</span>
+            <span class="intro-stat-label">INP Target</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">&lt;0.1</span>
+            <span class="intro-stat-label">CLS Target</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>CWV Metrics Comparison</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Metric</span>
+              <span class="premium-comp-label">Measures</span>
+              <span class="premium-comp-label">Good</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">LCP</span>
+              <span class="premium-comp-value gray">Loading speed</span>
+              <span class="premium-comp-value green">Under 2.5s</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">INP</span>
+              <span class="premium-comp-value gray">Interactivity</span>
+              <span class="premium-comp-value green">Under 200ms</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">CLS</span>
+              <span class="premium-comp-value gray">Visual stability</span>
+              <span class="premium-comp-value green">Under 0.1</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">TTFB</span>
+              <span class="premium-comp-value gray">Server response</span>
+              <span class="premium-comp-value green">Under 200ms</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">FID (legacy)</span>
+              <span class="premium-comp-value gray">First input delay</span>
+              <span class="premium-comp-value yellow">Replaced by INP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>Why Core Web Vitals Matter</h2>
-    <p>Core Web Vitals are Google's three metrics for measuring user experience during page load. They are ranking signals and directly impact user satisfaction. Slow pages lose visitors. Poor CLS frustrates readers. Unresponsive pages drive users away.</p>
-    <p>In 2026, Core Web Vitals also affect AI search visibility. AI agents that render pages in screenshots or parse HTML expect fast, stable content delivery. Poor CWV signals indicate a poor user experience across all surfaces.</p>
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 12 Performance Checks</h2>
+      <p>Grouped by metric and ranked by impact. Fix in priority order.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Metric</th>
+            <th>Impact</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Optimize LCP element (preload, eliminate blockers)</td>
+            <td>LCP</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Eliminate render-blocking resources</td>
+            <td>LCP</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Optimize images (next-gen formats, responsive)</td>
+            <td>LCP</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Reduce server response time (TTFB)</td>
+            <td>LCP</td>
+            <td class="highlight-cell">High</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Break up long JavaScript tasks</td>
+            <td>INP</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Defer and audit third-party scripts</td>
+            <td>INP</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Debounce and throttle event handlers</td>
+            <td>INP</td>
+            <td>Medium</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Set explicit dimensions on all media</td>
+            <td>CLS</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Reserve space for ads and embeds</td>
+            <td>CLS</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Use font-display: swap for web fonts</td>
+            <td>CLS</td>
+            <td class="highlight-cell">High</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Enable CDN and caching strategy</td>
+            <td>All</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Set a performance budget and monitor CrUX</td>
+            <td>All</td>
+            <td>Medium</td>
+            <td>Hard</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-    <h2>The 8 Performance Checks</h2>
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>Implementation guides with code examples for all 12 checks.</p>
+    </div>
 
-    <h3>1. Optimize Largest Contentful Paint (LCP)</h3>
-    <p>Target: under 2.5 seconds. LCP measures loading performance. The LCP element is usually a hero image, heading, or video poster. Preload the LCP resource and eliminate render-blocking scripts.</p>
-    <pre>&lt;!-- Preload the LCP image --&gt;
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Optimize Largest Contentful Paint (LCP)</h4>
+      <p>Target: under 2.5 seconds. Identify the LCP element using Lighthouse or Chrome DevTools. It is usually a hero image, large heading, or video poster. Preload the LCP resource and eliminate any render-blocking scripts or stylesheets above the fold.</p>
+      <pre class="gold-code-block">&lt;!-- Preload the LCP image with high priority --&gt;
 &lt;link rel="preload" as="image" href="/images/hero.webp" fetchpriority="high"&gt;
+
+&lt;!-- Preload critical CSS --&gt;
+&lt;link rel="preload" as="style" href="/css/critical.css" onload="this.onload=null;this.rel='stylesheet'"&gt;
 
 &lt;!-- Defer non-critical JavaScript --&gt;
 &lt;script defer src="/js/main.js"&gt;&lt;/script&gt;</pre>
+      <p>Monitor LCP in the field using the CrUX report in Google Search Console. Lab tools (Lighthouse) show potential issues; field data shows real user impact.</p>
+    </div>
 
-    <h3>2. Optimize Interaction to Next Paint (INP)</h3>
-    <p>Target: under 200ms. INP measures responsiveness. Long JavaScript tasks, slow event handlers, and third-party scripts cause poor INP. Break up long tasks and defer non-critical scripts.</p>
-    <pre>// Break up long tasks by yielding to the main thread
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Eliminate Render-Blocking Resources</h4>
+      <p>Render-blocking resources delay the browser from painting anything on screen. Inline critical CSS in the head and defer all non-critical CSS and JS. This is the single highest-impact fix for LCP on most sites.</p>
+      <pre class="gold-code-block">&lt;!-- Inline critical CSS directly in the HTML head --&gt;
+&lt;style&gt;
+  /* Critical above-the-fold styles */
+  body { font-family: sans-serif; margin: 0; }
+  .hero { display: flex; ... }
+&lt;/style&gt;
+
+&lt;!-- Load non-critical CSS asynchronously --&gt;
+&lt;link rel="preload" as="style" href="/css/full.css"
+      onload="this.onload=null;this.rel='stylesheet'"&gt;
+&lt;noscript&gt;&lt;link rel="stylesheet" href="/css/full.css"&gt;&lt;/noscript&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Optimize Images</h4>
+      <p>Images account for 50-70% of page weight on most sites. Use next-gen formats (WebP, AVIF), serve responsive sizes with srcset, lazy load below-the-fold images, and compress aggressively without visible quality loss.</p>
+      <pre class="gold-code-block">&lt;picture&gt;
+  &lt;source srcset="/image.avif" type="image/avif"&gt;
+  &lt;source srcset="/image.webp" type="image/webp"&gt;
+  &lt;img src="/image.jpg"
+       srcset="/image-400.jpg 400w,
+               /image-800.jpg 800w,
+               /image-1200.jpg 1200w"
+       sizes="(max-width: 600px) 100vw, 800px"
+       width="800" height="450"
+       loading="lazy"
+       decoding="async"
+       alt="Description"&gt;
+&lt;/picture&gt;
+
+# Bulk convert to WebP with cwebp
+for img in *.jpg; do
+  cwebp -q 80 "$img" -o "${img%.jpg}.webp"
+done
+
+# Convert to AVIF with avifenc
+for img in *.jpg; do
+  avifenc --speed 6 --min 20 --max 40 "$img" "${img%.jpg}.avif"
+done</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Reduce Server Response Time (TTFB)</h4>
+      <p>Target: under 200ms. Slow TTFB indicates server-side bottlenecks. Upgrade hosting, enable PHP OPcache, optimize database queries, implement server-side page caching, and use a reverse proxy like Nginx or Varnish.</p>
+      <pre class="gold-code-block"># Test TTFB from multiple locations
+curl -o /dev/null -s -w "TTFB: %{time_starttransfer}s\n" \
+  https://www.yourdomain.com
+
+# PHP OPcache configuration
+opcache.enable=1
+opcache.memory_consumption=256
+opcache.max_accelerated_files=10000
+opcache.revalidate_freq=60
+
+# Nginx fastcgi cache
+fastcgi_cache_path /tmp/nginx_cache levels=1:2 keys_zone=mycache:10m;
+fastcgi_cache_key "$scheme$request_method$host$request_uri";
+fastcgi_cache_use_stale error timeout updating;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Break Up Long JavaScript Tasks</h4>
+      <p>Target INP: under 200ms. Long tasks (over 50ms) block the main thread and make the page feel unresponsive. Break them up by yielding to the main thread, using async/await, and splitting work into smaller chunks.</p>
+      <pre class="gold-code-block">// Break up long tasks by yielding to the main thread
 async function processItems(items) {
   for (const item of items) {
     heavyProcess(item);
-    await new Promise(r =&gt; setTimeout(r, 0));  // yield
+    await new Promise(r =&gt; setTimeout(r, 0));  // yield to main thread
   }
-}</pre>
+}
 
-    <h3>3. Optimize Cumulative Layout Shift (CLS)</h3>
-    <p>Target: under 0.1. CLS measures visual stability. Always set explicit width and height on images, videos, and iframes. Reserve space for dynamic content like ads and embeds. Use font-display: swap.</p>
-    <pre>&lt;!-- Explicit dimensions prevent layout shift --&gt;
-&lt;img src="/image.webp" width="800" height="450" alt="" loading="lazy"&gt;
+// Use requestIdleCallback for non-critical work
+function scheduleWork(task) {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(task, { timeout: 2000 });
+  } else {
+    setTimeout(task, 1);
+  }
+}
 
-&lt;!-- Reserve space for ads --&gt;
-&lt;div style="min-height: 250px;" id="ad-slot"&gt;&lt;/div&gt;</pre>
+// Avoid forced reflows
+// Bad: Reading layout after writing
+element.style.width = '100px';
+const width = element.offsetWidth;  // triggers forced reflow
 
-    <h3>4. Minify CSS, JavaScript, and HTML</h3>
-    <p>Minification removes whitespace, comments, and unnecessary characters. Reduces file size by 20-50%. Use build tools like Webpack, Vite, or Terser for automated minification.</p>
-    <pre># HTML minification
-npx html-minifier index.html -o index.min.html \
-  --remove-comments --collapse-whitespace
-
-# CSS minification
-npx cleancss -o style.min.css style.css
-
-# JavaScript minification
-npx terser input.js -o output.min.js --compress --mangle</pre>
-
-    <h3>5. Enable Browser Caching</h3>
-    <p>Set Cache-Control headers for static assets. Images and fonts can be cached for a year. CSS and JS for a month. HTML should have shorter cache duration or be uncached.</p>
-    <pre># Apache .htaccess
-&lt;IfModule mod_expires.c&gt;
-  ExpiresActive On
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType font/woff2 "access plus 1 year"
-&lt;/IfModule&gt;</pre>
-
-    <h3>6. Use a Content Delivery Network (CDN)</h3>
-    <p>A CDN serves content from servers closest to the user, reducing latency by 30-60%. Cloudflare offers a generous free tier. Enable Brotli compression, auto-minification, and HTTP/2 or HTTP/3.</p>
-
-    <h3>7. Optimize Images</h3>
-    <p>Use next-gen formats (WebP, AVIF) instead of JPEG/PNG. Implement lazy loading for below-the-fold images. Serve responsive images with srcset. Compress aggressively without visible quality loss.</p>
-    <pre>&lt;picture&gt;
-  &lt;source srcset="/image.avif" type="image/avif"&gt;
-  &lt;source srcset="/image.webp" type="image/webp"&gt;
-  &lt;img src="/image.jpg" width="800" height="450"
-       loading="lazy" alt=""&gt;
-&lt;/picture&gt;</pre>
-
-    <h3>8. Reduce Server Response Time (TTFB)</h3>
-    <p>Target: under 200ms. Slow TTFB indicates server-side issues. Upgrade hosting, enable PHP OPcache, use a faster database, implement server-side caching, and consider a reverse proxy like Nginx or Varnish.</p>
-    <pre># Test TTFB
-curl -o /dev/null -s -w "TTFB: %{time_starttransfer}\n" \
-  https://www.yourdomain.com
-
-# Enable PHP OPcache
-opcache.enable=1
-opcache.memory_consumption=256</pre>
-
-    <div class="category-navigation">
-      <a href="{{ site.baseurl }}/categories/crawlability/">&larr; Previous: Crawlability</a>
-      <a href="{{ site.baseurl }}/categories/site-architecture/">Next: Site Architecture &rarr;</a>
+// Good: Batch reads separately from writes
+const reads = [];
+// ... all writes first, then reads</pre>
     </div>
 
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Defer and Audit Third-Party Scripts</h4>
+      <p>Third-party scripts (analytics, ads, social widgets, chatbots) are the #1 cause of poor INP. Each script competes for the main thread. Audit every third-party script, load them async, and remove any that are not essential.</p>
+      <pre class="gold-code-block">&lt;!-- Load third-party scripts with async or defer --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXX"&gt;&lt;/script&gt;
+
+&lt;!-- Use IntersectionObserver to lazy load non-critical widgets --&gt;
+const observer = new IntersectionObserver((entries) =&gt; {
+  entries.forEach(entry =&gt; {
+    if (entry.isIntersecting) {
+      const script = document.createElement('script');
+      script.src = entry.target.dataset.src;
+      document.body.appendChild(script);
+      observer.unobserve(entry.target);
+    }
+  });
+});
+document.querySelectorAll('[data-lazy-script]').forEach(el =&gt; observer.observe(el));</pre>
+      <p>Use Chrome DevTools Performance tab to record page load and identify which scripts take the most main thread time. Remove any tag that does not provide clear business value.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Debounce and Throttle Event Handlers</h4>
+      <p>Event handlers attached to scroll, resize, mousemove, or keydown fire hundreds of times per second. Without debouncing, each invocation runs on the main thread and degrades INP. Debounce delays execution until after a pause; throttle limits execution to once per interval.</p>
+      <pre class="gold-code-block">// Debounce: waits for a pause before executing
+function debounce(fn, delay = 150) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() =&gt; fn.apply(this, args), delay);
+  };
+}
+
+window.addEventListener('resize', debounce(() =&gt; {
+  // handle resize
+}, 150));
+
+// Throttle: limits execution rate
+function throttle(fn, limit = 100) {
+  let inThrottle;
+  return function(...args) {
+    if (!inThrottle) {
+      fn.apply(this, args);
+      inThrottle = true;
+      setTimeout(() =&gt; { inThrottle = false; }, limit);
+    }
+  };
+}
+
+window.addEventListener('scroll', throttle(() =&gt; {
+  // handle scroll
+}, 100));</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Set Explicit Dimensions on All Media</h4>
+      <p>CLS is caused primarily by images, videos, iframes, and ads that load without reserved space. Always set explicit width and height attributes on all media elements. This allows the browser to reserve the correct space before the resource loads.</p>
+      <pre class="gold-code-block">&lt;!-- Always set explicit width and height --&gt;
+&lt;img src="/image.webp" width="800" height="450" alt="" loading="lazy"&gt;
+
+&lt;!-- For responsive images with unknown aspect ratios, use aspect-ratio CSS --&gt;
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: attr(width) / attr(height);
+}
+
+&lt;!-- Reserve space for embeds with a wrapper --&gt;
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0;"&gt;
+  &lt;iframe src="https://www.youtube.com/embed/..."
+          style="position: absolute; top: 0; left: 0;
+                 width: 100%; height: 100%;"&gt;&lt;/iframe&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Reserve Space for Ads and Embeds</h4>
+      <p>Dynamic content like ads and embeds cause the most disruptive layout shifts because they load after the initial paint. Reserve the exact space they will occupy using min-height placeholders.</p>
+      <pre class="gold-code-block">&lt;!-- Reserve ad space with a placeholder --&gt;
+&lt;div style="min-height: 250px; width: 100%; background: #f0f0f0;"
+     id="ad-slot-desktop"&gt;
+  &lt;!-- Ad loads here --&gt;
+&lt;/div&gt;
+
+&lt;!-- For multi-size ads, reserve the maximum possible space --&gt;
+&lt;div class="ad-container" style="min-height: 90px;"&gt;
+  &lt;div id="ad-slot-responsive"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Use font-display: swap for Web Fonts</h4>
+      <p>Custom web fonts cause CLS in two ways: FOIT (Flash of Invisible Text) where text is hidden until the font loads, and FOUT (Flash of Unstyled Text) where text swaps from fallback to custom font. Use font-display: swap to show text immediately with a fallback font.</p>
+      <pre class="gold-code-block">@font-face {
+  font-family: 'CustomFont';
+  src: url('/fonts/custom-font.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+}
+
+/* Preload the font for earlier discovery */
+&lt;link rel="preload" as="font" href="/fonts/custom-font.woff2"
+      type="font/woff2" crossorigin&gt;
+
+/* Use font-size-adjust to minimize layout shift during swap */
+body {
+  font-family: 'CustomFont', Arial, sans-serif;
+  font-size-adjust: 0.5;
+}</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Enable CDN and Caching Strategy</h4>
+      <p>A CDN serves content from servers closest to the user, reducing latency by 30-60%. Cloudflare, BunnyCDN, and AWS CloudFront offer generous free or low-cost tiers. Combine with proper Cache-Control headers and Brotli compression.</p>
+      <pre class="gold-code-block"># Cache-Control headers for different asset types
+# Images and fonts: cache for 1 year
+location ~* \.(webp|avif|jpg|png|woff2)$ {
+  expires 1y;
+  add_header Cache-Control "public, immutable";
+}
+
+# CSS and JS: cache for 1 month
+location ~* \.(css|js)$ {
+  expires 1M;
+  add_header Cache-Control "public";
+}
+
+# HTML: short cache or no cache
+location ~* \.html$ {
+  expires 0;
+  add_header Cache-Control "no-cache";
+}
+
+# Enable Brotli compression on CDN
+brotli on;
+brotli_comp_level 6;
+brotli_types text/html text/css application/javascript
+             image/svg+xml application/json;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Set a Performance Budget and Monitor CrUX</h4>
+      <p>A performance budget defines the maximum allowed size or time for each page. Track it in CI/CD to prevent regressions. Monitor Chrome User Experience Report (CrUX) data in Google Search Console for real-user performance trends.</p>
+      <pre class="gold-code-block">// Performance budget example (budget.json)
+{
+  "resources": {
+    "total": { "maxSize": "500kB" },
+    "javascript": { "maxSize": "200kB" },
+    "css": { "maxSize": "50kB" },
+    "images": { "maxSize": "300kB" },
+    "fonts": { "maxSize": "50kB" }
+  },
+  "timings": {
+    "lcp": { "maxTime": 2500 },
+    "inp": { "maxTime": 200 },
+    "cls": { "maxScore": 0.1 },
+    "ttfb": { "maxTime": 200 }
+  }
+}
+
+# Use Lighthouse CI to enforce budgets
+# npx lhci collect --no-lr
+# npx lhci assert --budget-file budget.json
+# npx lhci upload</pre>
+    </div>
   </div>
 </section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Performance Mistakes</h2>
+      <p>Bad practices that wreck Core Web Vitals.</p>
+    </div>
+    <div class="premium-comp-card" style="margin-top: 32px;">
+      <div class="premium-comp-header">
+        <h3>Bad Practice vs Best Practice</h3>
+      </div>
+      <div class="premium-comp-body">
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">JPEG/PNG only, no compression</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> WebP/AVIF with 80% quality compression</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">All JavaScript loaded synchronously</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Critical JS inlined, rest deferred with async/defer</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">No image dimensions set</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Explicit width/height on all images and videos</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Third-party scripts loading on every page</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Conditional loading per page type</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">No Cache-Control headers</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Aggressive caching with immutable flag for assets</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Single large CSS file</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Critical CSS inlined, rest loaded async</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">No CDN</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Cloudflare free tier or equivalent CDN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Performance Tools</h2>
+      <p>Tools for measuring, monitoring, and debugging Core Web Vitals.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Google PageSpeed Insights</h4>
+        <p>Lab and field data for any URL. Shows LCP, INP, CLS with improvement suggestions.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>CrUX Dashboard</h4>
+        <p>Real-user performance data from Chrome users. Track CWV trends over time for your entire site.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Lighthouse CI</h4>
+        <p>Automated performance testing in CI/CD pipelines. Enforce performance budgets on every deployment.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>WebPageTest</h4>
+        <p>Detailed waterfall charts, filmstrip view, and multi-location testing for advanced debugging.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Chrome DevTools</h4>
+        <p>Performance tab, Network tab, Coverage tab, and Lighthouse panel for in-browser debugging.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Request Metrics</h4>
+        <p>Real user monitoring (RUM) with weekly reports and alerting for CWV regressions.</p>
+        <span class="badge badge-paid">Paid (free tier)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about Core Web Vitals and site performance.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What are Core Web Vitals?</div>
+        <div class="faq-answer"><p>Core Web Vitals are Google's three metrics for measuring real-world user experience: Largest Contentful Paint (LCP for loading speed), Interaction to Next Paint (INP for interactivity), and Cumulative Layout Shift (CLS for visual stability). They are confirmed ranking signals.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I fix poor LCP?</div>
+        <div class="faq-answer"><p>Identify the LCP element using Lighthouse, preload it with fetchpriority=high, eliminate render-blocking resources, optimize images to WebP/AVIF, reduce TTFB under 200ms, and remove unnecessary third-party scripts.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What causes high CLS?</div>
+        <div class="faq-answer"><p>Images and videos without explicit dimensions, dynamically injected content without reserved space, web fonts with FOIT, ads and embeds that resize after loading, and custom fonts that cause FOUT without proper font-display settings.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I improve INP?</div>
+        <div class="faq-answer"><p>Break up long JavaScript tasks by yielding to the main thread, defer third-party scripts, debounce event handlers, avoid forced reflows, minimize DOM size, and use web workers for heavy computation.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is a good TTFB?</div>
+        <div class="faq-answer"><p>Under 200ms. TTFB (Time to First Byte) measures how long the server takes to start responding. Poor TTFB is usually caused by slow hosting, unoptimized databases, missing cache layers, or slow application code.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Should I use lab data or field data?</div>
+        <div class="faq-answer"><p>Both. Lab data (Lighthouse) helps you debug specific issues. Field data (CrUX, RUM) shows real user experience. Always prioritize field data for ranking decisions because Google uses field data for the CWV ranking signal.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How often should I check Core Web Vitals?</div>
+        <div class="faq-answer"><p>Check the CrUX report in Google Search Console weekly. Set up alerts for CWV regressions using tools like Request Metrics or DebugBear. Run Lighthouse after every significant deployment to catch regressions early.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/categories/crawlability/">&larr; Previous: Crawlability</a>
+    <a href="{{ site.baseurl }}/categories/site-architecture/">Next: Site Architecture &rarr;</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+});
+</script>
