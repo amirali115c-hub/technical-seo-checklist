@@ -1,83 +1,600 @@
 ---
 layout: default
-title: Structured Data and Schema Markup Checklist
-description: Complete guide to implementing schema markup for SEO. Article, Organization, Breadcrumb, FAQ, and Product schema with JSON-LD code examples.
+title: Schema Markup Checklist 2026 | Structured Data Implementation Guide
+description: Complete guide to implementing schema markup for SEO. Article, Organization, Breadcrumb, FAQ, HowTo, Product, Review, LocalBusiness, VideoObject, SoftwareApp, Event, Person JSON-LD examples.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Schema Markup and Structured Data Checklist 2026",
+    "description": "12 premium schema types with complete JSON-LD examples covering Article, Organization, Breadcrumb, FAQ, HowTo, Product, Review, LocalBusiness, VideoObject, SoftwareApplication, Event, and Person markup.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-07-01",
+    "dateModified": "2026-07-29"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is schema markup?", "acceptedAnswer": { "@type": "Answer", "text": "Schema markup is structured data added to your HTML that helps search engines understand your content. It enables rich results in SERPs and helps AI systems extract entities and facts." } },
+      { "@type": "Question", "name": "Which schema types are most important for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Organization, Article, Breadcrumb, FAQ, HowTo, Product, LocalBusiness, and VideoObject are the most impactful for most sites. Each enables different rich result types." } },
+      { "@type": "Question", "name": "Does schema markup improve rankings?", "acceptedAnswer": { "@type": "Answer", "text": "Schema markup is not a direct ranking factor but enables rich results that improve CTR by 20-30%. It also helps Google understand your content and is critical for AI search entity recognition." } },
+      { "@type": "Question", "name": "How do I test my schema markup?", "acceptedAnswer": { "@type": "Answer", "text": "Use Google's Rich Results Test for validation, Schema.org Validator for technical correctness, and Google Search Console's enhancements reports to monitor rich result status." } },
+      { "@type": "Question", "name": "What is JSON-LD vs microdata vs RDFa?", "acceptedAnswer": { "@type": "Answer", "text": "JSON-LD is Google's recommended format. It is a script tag in the head or body that is separate from HTML. Microdata and RDFa embed schema attributes directly in HTML tags. JSON-LD is easier to implement and maintain." } }
+    ]
+  }
+  </script>
 ---
 
-<section class="category-page-header">
+<section class="category-hero">
   <div class="container">
-    <h1>Structured Data and Schema Markup Checklist</h1>
-    <p>Help search engines and AI systems understand your content with structured data. 6 checks with JSON-LD code examples.</p>
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      12 Premium Schema Types - Updated July 2026
+    </div>
+    <h1>Schema Markup and <span>Structured Data</span> Checklist</h1>
+    <p>Help search engines and AI systems understand your content with structured data. Schema markup enables rich results, improves CTR, and is essential for AI entity recognition in GEO.</p>
   </div>
 </section>
 
-<section class="category-content">
+<section class="intro-section">
   <div class="container">
-    <h2>Why Schema Markup Matters</h2>
-    <p>Schema markup is the language search engines use to understand your content. It enables rich results in SERPs, which improve click-through rates. It also helps AI systems extract entities, facts, and relationships from your pages. For GEO optimization, schema is critical.</p>
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Why <span>Schema Markup</span> Matters</h2>
+        <p>Schema markup is the language search engines use to understand your content at a semantic level. It enables rich results in SERPs (star ratings, FAQs, breadcrumbs, product prices), which improve click-through rates by 20-30%.</p>
+        <p>For GEO and AI search, schema is even more critical. AI systems extract entities, facts, and relationships from structured data. A page with clean schema markup is much more likely to be cited in AI-generated answers than one without.</p>
+        <p>Google supports three formats. JSON-LD is the recommended format. It is easier to implement, maintain, and debug than microdata or RDFa. Every schema type on this page uses JSON-LD.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">+30%</span>
+            <span class="intro-stat-label">CTR lift with rich results</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">12</span>
+            <span class="intro-stat-label">high-impact schema types</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">JSON-LD</span>
+            <span class="intro-stat-label">Google's recommended format</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Schema Formats Comparison</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Format</span>
+              <span class="premium-comp-value gold">JSON-LD</span>
+              <span class="premium-comp-value gray">Microdata</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Location</span>
+              <span class="premium-comp-value green">Script tag</span>
+              <span class="premium-comp-value gray">HTML attributes</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Ease of implementation</span>
+              <span class="premium-comp-value green">Easy</span>
+              <span class="premium-comp-value gray">Harder</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Separate from content</span>
+              <span class="premium-comp-value green">Yes</span>
+              <span class="premium-comp-value gray">No (embedded)</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Google recommendation</span>
+              <span class="premium-comp-value green">Recommended</span>
+              <span class="premium-comp-value gray">Supported</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Dynamic generation</span>
+              <span class="premium-comp-value green">Easy via JS</span>
+              <span class="premium-comp-value gray">Template-dependent</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">AI/GEO benefit</span>
+              <span class="premium-comp-value green">High</span>
+              <span class="premium-comp-value yellow">Medium</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>The 6 Schema Checks</h2>
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 12 Schema Types</h2>
+      <p>Ranked by impact and rich result potential.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Schema Type</th>
+            <th>Rich Result</th>
+            <th>Impact</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Organization</td>
+            <td>Knowledge Panel</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Article / BlogPosting</td>
+            <td>Top Stories, Rich snippets</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>BreadcrumbList</td>
+            <td>Breadcrumb trail in SERPs</td>
+            <td class="highlight-cell">High</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>FAQPage</td>
+            <td>Expandable FAQ results</td>
+            <td class="highlight-cell">High</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>HowTo</td>
+            <td>Step-by-step rich result</td>
+            <td class="highlight-cell">High</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Product</td>
+            <td>Price, availability, reviews</td>
+            <td class="highlight-cell">Critical (ecom)</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Review / AggregateRating</td>
+            <td>Star ratings in SERPs</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>LocalBusiness</td>
+            <td>Local pack, map results</td>
+            <td class="highlight-cell">Critical (local)</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>VideoObject</td>
+            <td>Video rich snippets</td>
+            <td>Medium</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>SoftwareApplication</td>
+            <td>App rich snippets</td>
+            <td>Medium</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Event</td>
+            <td>Event rich results</td>
+            <td>Medium</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Person</td>
+            <td>Author info, knowledge panel</td>
+            <td>Low</td>
+            <td>Easy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-    <h3>1. Implement Organization Schema</h3>
-    <p>Every site should have Organization schema on the homepage. Include name, URL, logo, and social profiles.</p>
-    <pre>{
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: JSON-LD Examples</h2>
+      <p>Complete, copy-paste-ready schema markup for all 12 types.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Organization Schema</h4>
+      <p>Every site must have Organization schema on the homepage. It tells Google your business name, logo, and social profiles. Required for knowledge panels.</p>
+      <pre class="gold-code-block">{
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Your Company Name",
   "url": "https://www.yourdomain.com",
   "logo": "https://www.yourdomain.com/logo.png",
+  "description": "Brief description of your company.",
   "sameAs": [
     "https://www.linkedin.com/company/yourcompany",
-    "https://twitter.com/yourcompany"
-  ]
+    "https://twitter.com/yourcompany",
+    "https://www.facebook.com/yourcompany"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-000-0000",
+    "contactType": "customer service"
+  }
 }</pre>
+    </div>
 
-    <h3>2. Implement Article Schema</h3>
-    <p>Add Article or BlogPosting schema to every content page. Include headline, author, publisher, datePublished, and dateModified.</p>
-    <pre>{
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Article / BlogPosting Schema</h4>
+      <p>Add Article or BlogPosting schema to every content page. Include headline, description, author, publisher, datePublished, and dateModified. This enables rich snippets and helps AI systems attribute authorship.</p>
+      <pre class="gold-code-block">{
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Your Article Title",
-  "description": "Article description here.",
+  "headline": "Your Article Title Here",
+  "description": "A compelling description of the article, 2-3 sentences.",
+  "image": "https://www.yourdomain.com/images/hero.jpg",
   "author": {
     "@type": "Person",
-    "name": "Author Name"
+    "name": "Author Name",
+    "url": "https://www.yourdomain.com/author"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Your Company"
+    "name": "Your Company",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.yourdomain.com/logo.png"
+    }
   },
   "datePublished": "2026-07-15",
-  "dateModified": "2026-07-29"
+  "dateModified": "2026-07-29",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.yourdomain.com/article"
+  }
 }</pre>
+    </div>
 
-    <h3>3. Implement Breadcrumb Schema</h3>
-    <p>Breadcrumb schema generates a rich breadcrumb trail in search results. Implement it on every page that has breadcrumbs.</p>
+    <div class="check-card">
+      <h4><span class="check-num">3</span> BreadcrumbList Schema</h4>
+      <p>Breadcrumb schema generates a rich breadcrumb trail in search results. Implement it on every page that has breadcrumbs. Google shows breadcrumbs in search results to help users understand where your page fits in your site structure.</p>
+      <pre class="gold-code-block">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.yourdomain.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Technical SEO",
+      "item": "https://www.yourdomain.com/technical-seo"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Schema Markup Guide",
+      "item": "https://www.yourdomain.com/technical-seo/schema-markup"
+    }
+  ]
+}</pre>
+    </div>
 
-    <h3>4. Implement FAQ Schema</h3>
-    <p>FAQ schema enables expandable FAQ rich results in SERPs. Add it to any page containing a FAQ section. Only use it if the questions and answers are visible on the page.</p>
-    <pre>{
+    <div class="check-card">
+      <h4><span class="check-num">4</span> FAQPage Schema</h4>
+      <p>FAQ schema enables expandable FAQ rich results in SERPs. Pages with FAQ schema see an average 2-3x increase in SERP visibility. Only use it if the questions and answers are visible on the page.</p>
+      <pre class="gold-code-block">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is technical SEO?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Technical SEO optimizes website infrastructure for crawling and indexing."
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is technical SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technical SEO optimizes your website infrastructure so search engines can find, crawl, and index your content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is schema markup important?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Schema markup helps search engines understand your content and enables rich results that improve click-through rates."
+      }
     }
-  }]
+  ]
 }</pre>
+    </div>
 
-    <h3>5. Implement Product Schema (Ecommerce)</h3>
-    <p>Ecommerce sites need Product schema with name, description, price, currency, availability, and review data.</p>
+    <div class="check-card">
+      <h4><span class="check-num">5</span> HowTo Schema</h4>
+      <p>HowTo schema enables step-by-step rich results with optional images, videos, and time estimates. Perfect for tutorials, guides, and recipes.</p>
+      <pre class="gold-code-block">{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Implement Schema Markup",
+  "description": "A step-by-step guide to adding JSON-LD schema to your website.",
+  "estimatedCost": { "@type": "MonetaryAmount", "value": "0" },
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Choose your schema type",
+      "text": "Select the most relevant schema type for your content.",
+      "url": "https://www.yourdomain.com/schema-guide#step1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Generate JSON-LD",
+      "text": "Create the JSON-LD script with your content details.",
+      "url": "https://www.yourdomain.com/schema-guide#step2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Test with Rich Results Test",
+      "text": "Validate your markup using Google's Rich Results Test.",
+      "url": "https://www.yourdomain.com/schema-guide#step3"
+    }
+  ]
+}</pre>
+    </div>
 
-    <h3>6. Test with Google Rich Results Test</h3>
-    <p>After implementing schema, validate it using Google's Rich Results Test or Schema.org validator. Fix any errors or warnings immediately. Monitor for schema-related enhancements in GSC.</p>
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Product Schema</h4>
+      <p>Ecommerce sites need Product schema with name, description, price, currency, availability, and review data. This enables price and availability rich results in SERPs.</p>
+      <pre class="gold-code-block">{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Your Product Name",
+  "description": "Product description with key features.",
+  "image": "https://www.yourdomain.com/images/product.jpg",
+  "sku": "PROD-123",
+  "brand": {
+    "@type": "Brand",
+    "name": "Your Brand"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "29.99",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "priceValidUntil": "2026-12-31"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "124"
+  }
+}</pre>
+    </div>
 
-    <div class="category-navigation">
-      <a href="{{ site.baseurl }}/categories/site-architecture/">&larr; Previous: Site Architecture</a>
-      <a href="{{ site.baseurl }}/categories/security/">Next: Security &rarr;</a>
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Review / AggregateRating Schema</h4>
+      <p>Star ratings in SERPs dramatically increase CTR. Implement aggregate rating on product, local business, and review pages.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> LocalBusiness Schema</h4>
+      <p>Local businesses need LocalBusiness schema with address, phone, opening hours, and geo coordinates. This powers local pack results and map visibility.</p>
+      <pre class="gold-code-block">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Your Business Name",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Main Street",
+    "addressLocality": "City",
+    "addressRegion": "State",
+    "postalCode": "12345",
+    "addressCountry": "US"
+  },
+  "telephone": "+1-800-000-0000",
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.7128",
+    "longitude": "-74.0060"
+  }
+}</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> VideoObject Schema</h4>
+      <p>Video schema enables video rich results including thumbnail, duration, and publish date. Required for videos to appear in Google Video search.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> SoftwareApplication Schema</h4>
+      <p>SaaS products and apps use SoftwareApplication schema to show ratings, pricing, and OS support in SERPs.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Event Schema</h4>
+      <p>Event schema enables rich event results in SERPs with date, time, location, and ticket information.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Person Schema</h4>
+      <p>Person schema for author pages helps establish authority. Include name, URL, sameAs (social profiles), and description.</p>
     </div>
   </div>
 </section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Schema Mistakes</h2>
+      <p>Errors that prevent rich results from appearing.</p>
+    </div>
+    <div class="premium-comp-card" style="margin-top: 32px;">
+      <div class="premium-comp-header">
+        <h3>Bad Practice vs Best Practice</h3>
+      </div>
+      <div class="premium-comp-body">
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Missing required fields</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Include all required properties for each type</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">FAQ schema where Q&A not visible on page</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Only add schema for content visible on the page</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Using multiple schema formats on one page</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Use JSON-LD exclusively</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Wrong date format (MM/DD/YYYY vs ISO 8601)</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Always use ISO 8601 dates (2026-07-29)</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Organization logo URL broken</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Verify all referenced URLs resolve correctly</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">No schema testing after implementation</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Test with Rich Results Test and monitor GSC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Schema Tools</h2>
+      <p>Tools for creating, testing, and monitoring schema markup.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Google Rich Results Test</h4>
+        <p>Validate any URL for rich result eligibility. Shows errors, warnings, and previews.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Schema.org Validator</h4>
+        <p>Technical schema validation against Schema.org vocabulary. Shows all properties.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>Enhancements reports show which pages have valid schema and which have errors.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Merchant Center (Product)</h4>
+        <p>Product schema validation and rich result status for ecommerce sites.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Yoast SEO / Rank Math</h4>
+        <p>CMS plugins that auto-generate schema for common types with minimal configuration.</p>
+        <span class="badge badge-paid">Free/Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>JSON-LD Generator</h4>
+        <p>Online tools to generate schema markup without writing code. Hallanalysis.com, Merkle.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about schema markup and structured data.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is schema markup?</div>
+        <div class="faq-answer"><p>Schema markup is structured data that you add to your HTML to help search engines understand your content. It uses a shared vocabulary from Schema.org and enables rich results like star ratings, FAQs, breadcrumbs, and product prices in search results.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Which schema types are most important for SEO?</div>
+        <div class="faq-answer"><p>Organization (homepage), Article (content pages), BreadcrumbList (every page), FAQPage (FAQ sections), HowTo (guides), Product (ecommerce), and LocalBusiness (local SEO) are the highest impact. Most sites should start with Organization + Article + Breadcrumb.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Does schema markup improve rankings?</div>
+        <div class="faq-answer"><p>Schema is not a direct ranking factor, but it enables rich results that improve CTR by 20-30% on average. Higher CTR often leads to better rankings indirectly. Schema also helps Google understand your content and is critical for AI search entity recognition.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I test my schema markup?</div>
+        <div class="faq-answer"><p>Use Google's Rich Results Test for a quick validation with rich result preview. Use Schema.org Validator for a complete technical validation. Monitor Google Search Console's Enhancements reports for any schema errors across your site.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is JSON-LD vs microdata vs RDFa?</div>
+        <div class="faq-answer"><p>JSON-LD is a JavaScript object placed in a script tag, separate from your HTML. Microdata and RDFa embed schema attributes directly in HTML tags. Google recommends JSON-LD because it is easier to implement, maintain, and debug without touching your HTML structure.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How often should I update my schema?</div>
+        <div class="faq-answer"><p>Update schema whenever your content changes: new articles need fresh Article dates, price changes need updated Product offers, and business hours changes need updated LocalBusiness markup. Review GSC Enhancements reports monthly for errors.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/categories/site-architecture/">&larr; Previous: Site Architecture</a>
+    <a href="{{ site.baseurl }}/categories/security/">Next: Security &rarr;</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+});
+</script>
