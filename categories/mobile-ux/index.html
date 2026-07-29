@@ -1,48 +1,519 @@
 ---
 layout: default
-title: Mobile and UX Checklist for SEO
-description: Mobile SEO and user experience optimization checklist. Mobile-friendliness, viewport, interstitials, touch targets, and readability best practices.
+title: Mobile SEO and UX Checklist 2026 | Mobile-First Indexing Guide
+description: Mobile SEO and user experience optimization checklist. Mobile-first indexing, responsive design, viewport, touch targets, font readability, interstitials, PWA, and mobile Core Web Vitals.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Mobile SEO and UX Checklist 2026",
+    "description": "12 premium mobile SEO and UX checks covering mobile-first indexing, responsive design, viewport configuration, touch targets, font readability, interstitials, PWA, and mobile Core Web Vitals.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-07-01",
+    "dateModified": "2026-07-29"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is mobile-first indexing?", "acceptedAnswer": { "@type": "Answer", "text": "Mobile-first indexing means Google primarily uses the mobile version of your content for indexing and ranking. If your mobile site has less content than desktop, you risk losing rankings." } },
+      { "@type": "Question", "name": "How do I check if my site is mobile-friendly?", "acceptedAnswer": { "@type": "Answer", "text": "Use Google's Mobile-Friendly Test, check GSC Mobile Usability report, and test on real devices. Common issues include text too small, touch targets too close, and content wider than screen." } },
+      { "@type": "Question", "name": "What is a good mobile font size?", "acceptedAnswer": { "@type": "Answer", "text": "Body text should be at least 16px on mobile. Headings should scale proportionally. Line height should be 1.5x the font size for readability." } },
+      { "@type": "Question", "name": "Do popups hurt mobile SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Intrusive interstitials that cover content on mobile are penalized by Google. Use slide-ins, banners, or sticky bars instead. Cookie consent banners are exempt if dismissible." } }
+    ]
+  }
+  </script>
 ---
 
-<section class="category-page-header">
+<section class="category-hero">
   <div class="container">
-    <h1>Mobile and UX Checklist</h1>
-    <p>Deliver a seamless experience across all devices. 5 checks covering mobile optimization and user experience fundamentals.</p>
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      12 Premium Checks - Updated July 2026
+    </div>
+    <h1>Mobile SEO and <span>UX</span> Checklist</h1>
+    <p>Deliver a seamless experience across all devices. Google uses mobile-first indexing, and over 58% of web traffic comes from mobile. Bad mobile UX destroys rankings, conversions, and AI search visibility.</p>
   </div>
 </section>
 
-<section class="category-content">
+<section class="intro-section">
   <div class="container">
-    <h2>Why Mobile and UX Matter</h2>
-    <p>Google uses mobile-first indexing. Your mobile site is the primary version for ranking. Over 58% of web traffic comes from mobile devices. Bad mobile UX leads to high bounce rates and lost rankings. AI agents also evaluate page accessibility and mobile responsiveness.</p>
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Why <span>Mobile and UX</span> Matters</h2>
+        <p>Google has used mobile-first indexing since 2021. This means Google primarily crawls and indexes the mobile version of your content. If your mobile site has less content, broken features, or poor usability than your desktop site, your rankings will suffer.</p>
+        <p>Over 58% of all web traffic comes from mobile devices. Mobile users have different expectations: faster load times, larger touch targets, and simplified navigation. A page that works perfectly on desktop but poorly on mobile will lose over half its potential audience.</p>
+        <p>For AI search, mobile responsiveness signals site quality. AI agents evaluating page accessibility consider mobile UX as a trust signal.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">58%+</span>
+            <span class="intro-stat-label">of traffic is mobile</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">100%</span>
+            <span class="intro-stat-label">mobile-first indexing</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">+15%</span>
+            <span class="intro-stat-label">bounce rate with bad mobile UX</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Mobile Optimized vs Not</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Factor</span>
+              <span class="premium-comp-value gold">Optimized</span>
+              <span class="premium-comp-value gray">Not Optimized</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Responsive design</span>
+              <span class="premium-comp-value green">Yes</span>
+              <span class="premium-comp-value gray">Desktop-only</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Viewport meta tag</span>
+              <span class="premium-comp-value green">Configured</span>
+              <span class="premium-comp-value gray">Missing</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Touch targets</span>
+              <span class="premium-comp-value green">48px min</span>
+              <span class="premium-comp-value gray">Too small</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Font size</span>
+              <span class="premium-comp-value green">16px+ body</span>
+              <span class="premium-comp-value gray">Too small</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Popups</span>
+              <span class="premium-comp-value green">Dismissible</span>
+              <span class="premium-comp-value gray">Intrusive</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Content parity</span>
+              <span class="premium-comp-value green">Same as desktop</span>
+              <span class="premium-comp-value gray">Less content</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>The 5 Mobile and UX Checks</h2>
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 12 Mobile and UX Checks</h2>
+      <p>Ranked by SEO impact and user experience priority.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Category</th>
+            <th>Impact</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Verify mobile-first indexing in GSC</td>
+            <td>Indexing</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Use responsive design framework</td>
+            <td>Design</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Configure viewport meta tag correctly</td>
+            <td>Design</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Optimize touch targets (48x48px minimum)</td>
+            <td>UX</td>
+            <td class="highlight-cell">High</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Set minimum 16px font size for body text</td>
+            <td>UX</td>
+            <td class="highlight-cell">High</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Avoid intrusive interstitials and popups</td>
+            <td>UX</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Ensure content parity (mobile = desktop)</td>
+            <td>Content</td>
+            <td class="highlight-cell">Critical</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Test mobile Core Web Vitals separately</td>
+            <td>Performance</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Simplify mobile navigation (hamburger menu)</td>
+            <td>Nav</td>
+            <td>Medium</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Remove horizontal scrolling</td>
+            <td>UX</td>
+            <td class="highlight-cell">High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Implement PWA basics (manifest, service worker)</td>
+            <td>Advanced</td>
+            <td>Medium</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Test on real devices and emulators</td>
+            <td>Testing</td>
+            <td>Medium</td>
+            <td>Easy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-    <h3>1. Test Mobile-Friendliness</h3>
-    <p>Use Google's Mobile-Friendly Test. Check that text is readable without zooming, buttons are tappable, content fits the screen without horizontal scrolling, and popups are easily dismissible.</p>
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>Implementation guides with code examples for all 12 mobile and UX checks.</p>
+    </div>
 
-    <h3>2. Configure Viewport Properly</h3>
-    <p>The viewport meta tag is essential for responsive design. Without it, mobile browsers render pages at desktop width, requiring pinch-to-zoom.</p>
-    <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</pre>
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Verify Mobile-First Indexing in GSC</h4>
+      <p>Open Google Search Console and check your indexing status. Go to Settings and look for "Googlebot" type. It will show whether Google uses mobile or desktop crawling for your site. Most sites are already mobile-first, but verify to be sure.</p>
+    </div>
 
-    <h3>3. Avoid Intrusive Interstitials</h3>
-    <p>Full-screen popups that cover content on mobile are penalized by Google. Use slide-ins, banners, or sticky bars instead. Cookie consent banners and age verification are exempt as long as they are dismissible.</p>
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Use Responsive Design Framework</h4>
+      <p>Responsive design uses CSS media queries to adapt layout to screen size. This is Google's recommended mobile configuration. Avoid separate mobile URLs (m.example.com) or dynamic serving. Responsive design is simpler to maintain and preferred by SEO.</p>
+      <pre class="gold-code-block">/* Responsive media queries */
+/* Mobile: default styles for small screens */
+.container { padding: 0 16px; }
 
-    <h3>4. Optimize Touch Targets</h3>
-    <p>Buttons and links should be at least 48x48 pixels with adequate spacing between them. Small or crowded touch targets frustrate mobile users and increase accidental clicks.</p>
-    <pre>/* Minimum touch target size */
+/* Tablet: 768px+ */
+@media (min-width: 768px) {
+  .container { padding: 0 24px; }
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Desktop: 1024px+ */
+@media (min-width: 1024px) {
+  .container { max-width: 1200px; margin: 0 auto; }
+  .grid { grid-template-columns: 1fr 1fr 1fr; }
+}</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Configure Viewport Meta Tag Correctly</h4>
+      <p>The viewport meta tag is essential for responsive design. Without it, mobile browsers render pages at desktop width requiring pinch-to-zoom.</p>
+      <pre class="gold-code-block">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+<!-- Bad: disables zoom (accessibility issue) -->
+&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Optimize Touch Targets</h4>
+      <p>Buttons and links should be at least 48x48 pixels with adequate spacing. Small targets frustrate mobile users and increase accidental clicks. Google's Mobile Usability report flags touch targets that are too close together.</p>
+      <pre class="gold-code-block">/* Minimum touch target size */
 button, a, .clickable {
   min-width: 48px;
   min-height: 48px;
   padding: 12px;
+}
+
+/* Adequate spacing between targets */
+.nav-item + .nav-item {
+  margin-left: 16px;
 }</pre>
+    </div>
 
-    <h3>5. Ensure Font Readability</h3>
-    <p>Body text should be at least 16px on mobile. Line height should be 1.5x the font size. Avoid long line lengths. Use system fonts for faster loading.</p>
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Set Minimum 16px Font Size for Body Text</h4>
+      <p>Body text below 16px on mobile requires users to pinch-zoom to read, creating a poor experience. Line height should be 1.5x the font size. Use relative units (rem) for scalability.</p>
+      <pre class="gold-code-block">/* Mobile-first font sizing */
+html { font-size: 16px; }
 
-    <div class="category-navigation">
-      <a href="{{ site.baseurl }}/categories/security/">&larr; Previous: Security</a>
-      <a href="{{ site.baseurl }}/categories/ai-search-geo/">Next: AI Search and GEO &rarr;</a>
+body {
+  font-size: 1rem;        /* 16px */
+  line-height: 1.6;
+}
+
+h1 { font-size: 2rem; }     /* 32px */
+h2 { font-size: 1.5rem; }   /* 24px */
+h3 { font-size: 1.25rem; }  /* 20px */
+
+/* Max line length for readability */
+p { max-width: 65ch; }</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Avoid Intrusive Interstitials and Popups</h4>
+      <p>Full-screen popups that cover content on mobile are penalized by Google. Use slide-ins, banners, or sticky bars instead. Cookie consent banners and age verification are exempt as long as they are easily dismissible.</p>
+      <pre class="gold-code-block">&lt;!-- Good: dismissible slide-in banner --&gt;
+&lt;div class="slide-in-banner" role="dialog" aria-label="Newsletter"&gt;
+  &lt;p&gt;Get weekly SEO tips.&lt;/p&gt;
+  &lt;button onclick="this.parentElement.remove()"&gt;No thanks&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Bad: full-screen interstitial --&gt;
+&lt;div class="fullscreen-popup" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;"&gt;
+  &lt;!-- This will trigger Google's intrusive interstitial penalty --&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Ensure Content Parity Between Mobile and Desktop</h4>
+      <p>With mobile-first indexing, Google indexes your mobile content. If your mobile site hides content, text, images, or links that exist on desktop, you lose ranking signals. Use the URL Inspection tool to compare rendered mobile vs desktop content.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Test Mobile Core Web Vitals Separately</h4>
+      <p>Mobile CWV thresholds are the same as desktop (LCP under 2.5s, INP under 200ms, CLS under 0.1), but mobile networks are slower. Test specifically on mobile in PageSpeed Insights and monitor CrUX mobile data separately.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Simplify Mobile Navigation</h4>
+      <p>Mobile navigation should be simplified. Use a hamburger menu for primary navigation. Include a search bar. Keep menus 1 level deep. Avoid mega menus on mobile.</p>
+      <pre class="gold-code-block">&lt;!-- Mobile hamburger navigation --&gt;
+&lt;nav class="mobile-nav"&gt;
+  &lt;button class="hamburger" aria-label="Menu"&gt;
+    &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="nav-menu" hidden&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/blog"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Remove Horizontal Scrolling</h4>
+      <p>Horizontal scrolling is the #1 mobile UX complaint. Ensure all content fits within the viewport width. Use overflow-x: hidden on elements that cause horizontal scroll. Test on a real phone, not just a browser resize.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Implement PWA Basics</h4>
+      <p>Progressive Web App features (manifest.json, service worker) improve mobile UX and can provide SEO benefits. Add to Home Screen capability increases engagement. Service workers enable offline access and faster repeat visits.</p>
+      <pre class="gold-code-block">// manifest.json (PWA manifest)
+{
+  "name": "Your Site Name",
+  "short_name": "Site",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#C9A227",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}</pre>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Test on Real Devices and Emulators</h4>
+      <p>Browser DevTools device emulation is useful but not sufficient. Test on real phones with real mobile connections. Check GSC Mobile Usability report for issues detected by Googlebot. Common issues: content wider than screen, clickable elements too close, text too small.</p>
     </div>
   </div>
 </section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Mobile Mistakes</h2>
+      <p>Errors that hurt mobile rankings and user experience.</p>
+    </div>
+    <div class="premium-comp-card" style="margin-top: 32px;">
+      <div class="premium-comp-header">
+        <h3>Bad Practice vs Best Practice</h3>
+      </div>
+      <div class="premium-comp-body">
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Separate mobile URLs (m.example.com)</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Responsive design (same URL)</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Missing viewport meta tag</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> width=device-width, initial-scale=1</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Full-screen popups on mobile</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Dismissible slide-in banners</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Text under 16px on mobile</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> 16px minimum body text</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Horizontal scrolling</span>
+          <span class="premium-comp-value green"><span class="comp-check">&#10003;</span> Content fits viewport width</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Mobile has less content than desktop</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> Full content parity</span>
+        </div>
+        <div class="premium-comp-row">
+          <span class="premium-comp-label">Touch targets smaller than 48px</span>
+          <span class="premium-comp-value gray"><span class="comp-x">&#10007;</span> 48x48px minimum</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Mobile and UX Tools</h2>
+      <p>Tools for testing and monitoring mobile experience.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Google Mobile-Friendly Test</h4>
+        <p>Test any URL for mobile usability issues. Shows specific problems and recommendations.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>GSC Mobile Usability</h4>
+        <p>Reports mobile usability issues across your entire site. Shows affected URLs and error types.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>PageSpeed Insights</h4>
+        <p>Mobile-specific performance scores with CWV data and improvement suggestions.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Chrome DevTools</h4>
+        <p>Device emulation, network throttling, touch simulation, and mobile rendering preview.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Responsive Checker</h4>
+        <p>View your site on multiple device sizes simultaneously. Quick visual check.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>BrowserStack</h4>
+        <p>Test on real mobile devices in the cloud. 3000+ real device and browser combinations.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about mobile SEO and UX.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is mobile-first indexing?</div>
+        <div class="faq-answer"><p>Mobile-first indexing means Google predominantly uses the mobile version of a page for indexing and ranking. If your mobile site has less content than desktop, you risk losing rankings and visibility in search results.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I check if my site is mobile-friendly?</div>
+        <div class="faq-answer"><p>Use Google's Mobile-Friendly Test for individual URLs and check GSC Mobile Usability report for site-wide issues. Common problems include text too small to read, touch targets too close, and content wider than the screen.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is a good mobile font size?</div>
+        <div class="faq-answer"><p>Body text should be at least 16px on mobile. Line height should be 1.5x the font size. Headings should scale proportionally. Avoid using px units for font sizes; use rem for accessibility.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do popups hurt mobile SEO?</div>
+        <div class="faq-answer"><p>Yes, if they are intrusive interstitials that cover the main content. Google penalizes pages that show hard-to-dismiss popups on mobile. Use slide-ins, sticky bars, or banners instead. Cookie consent is exempt if properly dismissible.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Should I use AMP for mobile SEO?</div>
+        <div class="faq-answer"><p>AMP is no longer required for mobile SEO. Google removed the AMP requirement for Top Stories and other rich results. Responsive design is now the recommended approach. Focus on CWV and mobile usability instead.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/categories/security/">&larr; Previous: Security</a>
+    <a href="{{ site.baseurl }}/categories/ai-search-geo/">Next: AI Search and GEO &rarr;</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+});
+</script>
