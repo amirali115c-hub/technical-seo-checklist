@@ -1,0 +1,105 @@
+---
+layout: default
+title: SEO Tools Comparison 2026 - Free vs Paid
+description: Compare the best SEO tools for technical audits. Google Search Console vs Screaming Frog vs Semrush vs Ahrefs. Find the right tool for every task.
+---
+
+<section class="category-page-header">
+  <div class="container">
+    <h1>SEO Tools Comparison</h1>
+    <p>Compare free and paid SEO tools for technical audits. Find the right tool for every task, from crawling to Core Web Vitals.</p>
+  </div>
+</section>
+
+<section class="category-content">
+  <div class="container">
+    <h2>Free Tools vs Paid Tools</h2>
+    <p>You can run a comprehensive technical SEO audit with free tools alone. Paid tools save time and offer deeper analysis. Here is how they compare across common tasks.</p>
+
+    <h2>Tool Comparison by Task</h2>
+
+    <table style="width:100%; border-collapse: collapse; margin-bottom: 20px;">
+      <tr style="background: var(--navy); color: white;">
+        <th style="padding: 8px 12px; text-align: left;">Task</th>
+        <th style="padding: 8px 12px; text-align: left;">Best Free Tool</th>
+        <th style="padding: 8px 12px; text-align: left;">Best Paid Tool</th>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">Index coverage</td>
+        <td style="padding: 8px 12px;">Google Search Console</td>
+        <td style="padding: 8px 12px;">Semrush / Ahrefs</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">Crawl site</td>
+        <td style="padding: 8px 12px;">Screaming Frog (500 URLs)</td>
+        <td style="padding: 8px 12px;">Screaming Frog (unlimited)</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">Broken links</td>
+        <td style="padding: 8px 12px;">Screaming Frog</td>
+        <td style="padding: 8px 12px;">Semrush Site Audit</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">Core Web Vitals</td>
+        <td style="padding: 8px 12px;">PageSpeed Insights</td>
+        <td style="padding: 8px 12px;">CrUX Dashboard</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">Schema validation</td>
+        <td style="padding: 8px 12px;">Rich Results Test</td>
+        <td style="padding: 8px 12px;">Semrush / Ahrefs</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">Mobile usability</td>
+        <td style="padding: 8px 12px;">GSC Mobile Report</td>
+        <td style="padding: 8px 12px;">Sitebulb</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">Security headers</td>
+        <td style="padding: 8px 12px;">securityheaders.com</td>
+        <td style="padding: 8px 12px;">Qualys SSL Labs</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">Redirect chains</td>
+        <td style="padding: 8px 12px;">Screaming Frog</td>
+        <td style="padding: 8px 12px;">DeepCrawl / Sitebulb</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 12px;">Orphan pages</td>
+        <td style="padding: 8px 12px;">GSC + Screaming Frog</td>
+        <td style="padding: 8px 12px;">Sitebulb</td>
+      </tr>
+    </table>
+
+    <h2>Recommended Stack by Budget</h2>
+
+    <h3>$0/month (Free)</h3>
+    <ul>
+      <li>Google Search Console</li>
+      <li>Google PageSpeed Insights</li>
+      <li>Screaming Frog (free tier)</li>
+      <li>Bing Webmaster Tools</li>
+      <li>Google Rich Results Test</li>
+    </ul>
+
+    <h3>$100-200/month (Professional)</h3>
+    <ul>
+      <li>All free tools above</li>
+      <li>Semrush Guru ($249/month) or Ahrefs Lite ($129/month)</li>
+      <li>Screaming Frog (paid license)</li>
+    </ul>
+
+    <h3>$500+/month (Agency)</h3>
+    <ul>
+      <li>All tools above</li>
+      <li>Sitebulb ($590/year) or DeepCrawl (custom pricing)</li>
+      <li>CrUX Dashboard for historical CWV data</li>
+      <li>Custom logging and monitoring tools</li>
+    </ul>
+
+    <div class="category-navigation">
+      <a href="{{ site.baseurl }}/categories/for-beginners">&larr; Previous: For Beginners</a>
+      <a href="{{ site.baseurl }}/">&larr; Back to Home</a>
+    </div>
+  </div>
+</section>

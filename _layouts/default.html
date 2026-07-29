@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="Amir Ali">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <link rel="sitemap" href="{{ site.url }}{{ site.baseurl }}/sitemap.xml">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:creator" content="@clienvora">
+  {% if page.url == '/' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Technical SEO Checklist 2026",
+    "description": "{{ site.description }}",
+    "url": "{{ site.url }}{{ site.baseurl }}",
+    "author": {
+      "@type": "Person",
+      "name": "Amir Ali",
+      "url": "https://www.clienvora.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Clienvora",
+      "url": "https://www.clienvora.com"
+    }
+  }
+  </script>
+  {% endif %}
+  {% if page.schema %}{{ page.schema }}{% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ site.baseurl }}/" class="logo">Technical SEO Checklist</a>
+      <nav class="main-nav">
+        <a href="{{ site.baseurl }}/">Home</a>
+        <a href="{{ site.baseurl }}/categories/audit-checklist">Audit</a>
+        <a href="{{ site.baseurl }}/categories/for-beginners">Beginners</a>
+        <a href="{{ site.baseurl }}/categories/tools-comparison">Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Technical SEO Checklist</h3>
+          <p>The complete guide to technical SEO for search engines and AI.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="{{ site.baseurl }}/">Home</a></li>
+            <li><a href="{{ site.baseurl }}/categories/crawlability">Crawlability</a></li>
+            <li><a href="{{ site.baseurl }}/categories/core-web-vitals">Core Web Vitals</a></li>
+            <li><a href="{{ site.baseurl }}/categories/ai-search-geo">AI Search</a></li>
+            <li><a href="{{ site.baseurl }}/categories/audit-checklist">Audit</a></li>
+          </ul>
+        </div>
+        <div class="footer-author">
+          <h4>Created by</h4>
+          <p><strong>Amir Ali</strong><br>
+          Founder of <a href="https://www.clienvora.com" target="_blank" rel="noopener">Clienvora</a></p>
+          <p class="footer-tagline">Revenue-focused B2B content marketing. SEO + conversion copywriting + GEO.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {{ site.time | date: '%Y' }} Technical SEO Checklist. Published under MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ site.baseurl }}/assets/js/checklist.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+---
+layout: default
+title: Core Web Vitals and Performance Checklist
+description: Complete guide to optimizing Core Web Vitals (LCP, INP, CLS). Fix site speed, caching, images, CDN, and TTFB with code examples.
+---
+
+<section class="category-page-header">
+  <div class="container">
+    <h1>Core Web Vitals and Performance Checklist</h1>
+    <p>Optimize your site speed, interactivity, and visual stability. 8 checks covering LCP, INP, CLS, caching, CDN, images, and server response time.</p>
+  </div>
+</section>
+
+<section class="category-content">
+  <div class="container">
+
+    <h2>Why Core Web Vitals Matter</h2>
+    <p>Core Web Vitals are Google's three metrics for measuring user experience during page load. They are ranking signals and directly impact user satisfaction. Slow pages lose visitors. Poor CLS frustrates readers. Unresponsive pages drive users away.</p>
+    <p>In 2026, Core Web Vitals also affect AI search visibility. AI agents that render pages in screenshots or parse HTML expect fast, stable content delivery. Poor CWV signals indicate a poor user experience across all surfaces.</p>
+
+    <h2>The 8 Performance Checks</h2>
+
+    <h3>1. Optimize Largest Contentful Paint (LCP)</h3>
+    <p>Target: under 2.5 seconds. LCP measures loading performance. The LCP element is usually a hero image, heading, or video poster. Preload the LCP resource and eliminate render-blocking scripts.</p>
+    <pre>&lt;!-- Preload the LCP image --&gt;
+&lt;link rel="preload" as="image" href="/images/hero.webp" fetchpriority="high"&gt;
+
+&lt;!-- Defer non-critical JavaScript --&gt;
+&lt;script defer src="/js/main.js"&gt;&lt;/script&gt;</pre>
+
+    <h3>2. Optimize Interaction to Next Paint (INP)</h3>
+    <p>Target: under 200ms. INP measures responsiveness. Long JavaScript tasks, slow event handlers, and third-party scripts cause poor INP. Break up long tasks and defer non-critical scripts.</p>
+    <pre>// Break up long tasks by yielding to the main thread
+async function processItems(items) {
+  for (const item of items) {
+    heavyProcess(item);
+    await new Promise(r =&gt; setTimeout(r, 0));  // yield
+  }
+}</pre>
+
+    <h3>3. Optimize Cumulative Layout Shift (CLS)</h3>
+    <p>Target: under 0.1. CLS measures visual stability. Always set explicit width and height on images, videos, and iframes. Reserve space for dynamic content like ads and embeds. Use font-display: swap.</p>
+    <pre>&lt;!-- Explicit dimensions prevent layout shift --&gt;
+&lt;img src="/image.webp" width="800" height="450" alt="" loading="lazy"&gt;
+
+&lt;!-- Reserve space for ads --&gt;
+&lt;div style="min-height: 250px;" id="ad-slot"&gt;&lt;/div&gt;</pre>
+
+    <h3>4. Minify CSS, JavaScript, and HTML</h3>
+    <p>Minification removes whitespace, comments, and unnecessary characters. Reduces file size by 20-50%. Use build tools like Webpack, Vite, or Terser for automated minification.</p>
+    <pre># HTML minification
+npx html-minifier index.html -o index.min.html \
+  --remove-comments --collapse-whitespace
+
+# CSS minification
+npx cleancss -o style.min.css style.css
+
+# JavaScript minification
+npx terser input.js -o output.min.js --compress --mangle</pre>
+
+    <h3>5. Enable Browser Caching</h3>
+    <p>Set Cache-Control headers for static assets. Images and fonts can be cached for a year. CSS and JS for a month. HTML should have shorter cache duration or be uncached.</p>
+    <pre># Apache .htaccess
+&lt;IfModule mod_expires.c&gt;
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+&lt;/IfModule&gt;</pre>
+
+    <h3>6. Use a Content Delivery Network (CDN)</h3>
+    <p>A CDN serves content from servers closest to the user, reducing latency by 30-60%. Cloudflare offers a generous free tier. Enable Brotli compression, auto-minification, and HTTP/2 or HTTP/3.</p>
+
+    <h3>7. Optimize Images</h3>
+    <p>Use next-gen formats (WebP, AVIF) instead of JPEG/PNG. Implement lazy loading for below-the-fold images. Serve responsive images with srcset. Compress aggressively without visible quality loss.</p>
+    <pre>&lt;picture&gt;
+  &lt;source srcset="/image.avif" type="image/avif"&gt;
+  &lt;source srcset="/image.webp" type="image/webp"&gt;
+  &lt;img src="/image.jpg" width="800" height="450"
+       loading="lazy" alt=""&gt;
+&lt;/picture&gt;</pre>
+
+    <h3>8. Reduce Server Response Time (TTFB)</h3>
+    <p>Target: under 200ms. Slow TTFB indicates server-side issues. Upgrade hosting, enable PHP OPcache, use a faster database, implement server-side caching, and consider a reverse proxy like Nginx or Varnish.</p>
+    <pre># Test TTFB
+curl -o /dev/null -s -w "TTFB: %{time_starttransfer}\n" \
+  https://www.yourdomain.com
+
+# Enable PHP OPcache
+opcache.enable=1
+opcache.memory_consumption=256</pre>
+
+    <div class="category-navigation">
+      <a href="{{ site.baseurl }}/categories/crawlability">&larr; Previous: Crawlability</a>
+      <a href="{{ site.baseurl }}/categories/site-architecture">Next: Site Architecture &rarr;</a>
+    </div>
+
+  </div>
+</section>

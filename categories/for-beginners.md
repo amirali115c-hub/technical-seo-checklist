@@ -1,0 +1,55 @@
+---
+layout: default
+title: Technical SEO for Non-Technical Marketers
+description: Technical SEO checklist for non-developers. What you can do without touching code, when to call a developer, and free tools that do the work.
+---
+
+<section class="category-page-header">
+  <div class="container">
+    <h1>Technical SEO for Non-Technical Marketers</h1>
+    <p>You do not need to be a developer to improve technical SEO. Here is what you can fix yourself, when to call for help, and which free tools to use.</p>
+  </div>
+</section>
+
+<section class="category-content">
+  <div class="container">
+    <h2>You Can Do More Than You Think</h2>
+    <p>Most technical SEO issues are detected with free tools, not code. As a marketer, you can identify problems, document them clearly, and in many cases fix them yourself through your CMS or site settings.</p>
+
+    <h2>What You Can Fix Yourself (No Code)</h2>
+    <ul>
+      <li><strong>Monitor index coverage</strong> -- Open GSC and review the Pages report weekly.</li>
+      <li><strong>Submit sitemaps</strong> -- Generate and submit XML sitemaps through your CMS or SEO plugin.</li>
+      <li><strong>Fix meta tags</strong> -- Add title tags and meta descriptions in your CMS.</li>
+      <li><strong>Check page speed</strong> -- Run PageSpeed Insights and share the recommendations with your developer.</li>
+      <li><strong>Review mobile usability</strong> -- Check GSC Mobile Usability report. Resize images, simplify layouts.</li>
+      <li><strong>Update internal links</strong> -- Add contextual links between related content in your CMS editor.</li>
+      <li><strong>Remove thin content</strong> -- Identify low-value pages and consolidate or remove them.</li>
+    </ul>
+
+    <h2>When to Call a Developer</h2>
+    <ul>
+      <li>Server-level redirects (htaccess, Nginx config)</li>
+      <li>Caching configuration and CDN setup</li>
+      <li>Security headers and HSTS implementation</li>
+      <li>Schema markup in the page head (if CMS does not support it)</li>
+      <li>Server response time optimization (TTFB)</li>
+      <li>JavaScript rendering issues</li>
+    </ul>
+
+    <h2>Free Tools That Do the Work</h2>
+    <ul>
+      <li><strong>Google Search Console</strong> -- Index coverage, crawl errors, CWV, security</li>
+      <li><strong>Google PageSpeed Insights</strong> -- Performance scores and fix recommendations</li>
+      <li><strong>Screaming Frog (Free tier)</strong> -- Crawl up to 500 URLs, find broken links</li>
+      <li><strong>Bing Webmaster Tools</strong> -- Index coverage, IndexNow submission</li>
+      <li><strong>Rich Results Test</strong> -- Validate schema markup</li>
+      <li><strong>securityheaders.com</strong> -- Check your security headers</li>
+    </ul>
+
+    <div class="category-navigation">
+      <a href="{{ site.baseurl }}/categories/audit-checklist">&larr; Previous: Audit Checklist</a>
+      <a href="{{ site.baseurl }}/categories/tools-comparison">Next: Tools Comparison &rarr;</a>
+    </div>
+  </div>
+</section>

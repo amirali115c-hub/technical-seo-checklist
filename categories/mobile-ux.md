@@ -1,0 +1,48 @@
+---
+layout: default
+title: Mobile and UX Checklist for SEO
+description: Mobile SEO and user experience optimization checklist. Mobile-friendliness, viewport, interstitials, touch targets, and readability best practices.
+---
+
+<section class="category-page-header">
+  <div class="container">
+    <h1>Mobile and UX Checklist</h1>
+    <p>Deliver a seamless experience across all devices. 5 checks covering mobile optimization and user experience fundamentals.</p>
+  </div>
+</section>
+
+<section class="category-content">
+  <div class="container">
+    <h2>Why Mobile and UX Matter</h2>
+    <p>Google uses mobile-first indexing. Your mobile site is the primary version for ranking. Over 58% of web traffic comes from mobile devices. Bad mobile UX leads to high bounce rates and lost rankings. AI agents also evaluate page accessibility and mobile responsiveness.</p>
+
+    <h2>The 5 Mobile and UX Checks</h2>
+
+    <h3>1. Test Mobile-Friendliness</h3>
+    <p>Use Google's Mobile-Friendly Test. Check that text is readable without zooming, buttons are tappable, content fits the screen without horizontal scrolling, and popups are easily dismissible.</p>
+
+    <h3>2. Configure Viewport Properly</h3>
+    <p>The viewport meta tag is essential for responsive design. Without it, mobile browsers render pages at desktop width, requiring pinch-to-zoom.</p>
+    <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</pre>
+
+    <h3>3. Avoid Intrusive Interstitials</h3>
+    <p>Full-screen popups that cover content on mobile are penalized by Google. Use slide-ins, banners, or sticky bars instead. Cookie consent banners and age verification are exempt as long as they are dismissible.</p>
+
+    <h3>4. Optimize Touch Targets</h3>
+    <p>Buttons and links should be at least 48x48 pixels with adequate spacing between them. Small or crowded touch targets frustrate mobile users and increase accidental clicks.</p>
+    <pre>/* Minimum touch target size */
+button, a, .clickable {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 12px;
+}</pre>
+
+    <h3>5. Ensure Font Readability</h3>
+    <p>Body text should be at least 16px on mobile. Line height should be 1.5x the font size. Avoid long line lengths. Use system fonts for faster loading.</p>
+
+    <div class="category-navigation">
+      <a href="{{ site.baseurl }}/categories/security">&larr; Previous: Security</a>
+      <a href="{{ site.baseurl }}/categories/ai-search-geo">Next: AI Search and GEO &rarr;</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,86 @@
+---
+layout: default
+title: Technical SEO Audit Checklist 2026
+description: Complete technical SEO audit framework organized by frequency. Weekly, monthly, quarterly, and annual checks with tools and processes for agencies.
+---
+
+<section class="category-page-header">
+  <div class="container">
+    <h1>Technical SEO Audit Checklist</h1>
+    <p>An agency-grade audit framework organized by frequency. 16 checks covering weekly monitoring through annual deep dives.</p>
+  </div>
+</section>
+
+<section class="category-content">
+  <div class="container">
+    <h2>Why Run Regular Audits</h2>
+    <p>Technical SEO is not a one-time fix. Sites change constantly: new pages, plugins, code deployments, and third-party scripts. Regular audits catch issues before they become ranking problems. This framework scales from solopreneur to agency.</p>
+
+    <h2>Weekly Checks (5 minutes)</h2>
+    <ul>
+      <li><strong>Index coverage</strong> -- Open GSC Pages report. Look for new exclusion reasons or spike in "Crawled but not indexed."</li>
+      <li><strong>Crawl errors</strong> -- Check for new 404s or server errors. Investigate the affected URLs.</li>
+      <li><strong>Traffic anomalies</strong> -- Compare today's traffic to last week. Investigate sudden drops.</li>
+      <li><strong>Core Web Vitals</strong> -- Quick check of CWV report in GSC. New "Poor" URLs need attention.</li>
+      <li><strong>Security alerts</strong> -- Check GSC Security and Manual Actions for any new issues.</li>
+    </ul>
+
+    <h2>Monthly Checks (30 minutes)</h2>
+    <ul>
+      <li><strong>Broken links scan</strong> -- Full crawl with Screaming Frog. Fix all 4xx and 5xx URLs.</li>
+      <li><strong>Sitemap validation</strong> -- Re-generate and re-submit XML sitemap. Remove noindexed URLs.</li>
+      <li><strong>Robots.txt review</strong> -- Check that no important pages are accidentally blocked.</li>
+      <li><strong>Page speed audit</strong> -- Run PageSpeed Insights on top 10 pages. Track LCP, INP, CLS trends.</li>
+      <li><strong>Mobile usability</strong> -- Check GSC Mobile Usability report for new issues.</li>
+    </ul>
+
+    <h2>Quarterly Checks (2 hours)</h2>
+    <ul>
+      <li><strong>Redirect audit</strong> -- Check for redirect chains, loops, and broken redirects.</li>
+      <li><strong>Orphan page detection</strong> -- Cross-reference sitemap with crawl data. Add internal links.</li>
+      <li><strong>Schema validation</strong> -- Re-test all schema markup with Rich Results Test. Fix errors.</li>
+      <li><strong>Competitor technical comparison</strong> -- Run competitors through Site Audit. Identify gaps.</li>
+      <li><strong>Crawl budget optimization</strong> -- Review crawl stats. Block low-value paths. Consolidate thin content.</li>
+    </ul>
+
+    <h2>Annual Checks (Half day)</h2>
+    <ul>
+      <li><strong>Full technical SEO audit</strong> -- Run all checks from scratch. Compare year-over-year metrics.</li>
+      <li><strong>Security headers review</strong> -- Audit all security headers. Update HSTS preload list submission.</li>
+    </ul>
+
+    <h2>Tools for Audits</h2>
+    <table style="width:100%; border-collapse: collapse; margin-bottom: 20px;">
+      <tr style="background: var(--navy); color: white;">
+        <th style="padding: 8px 12px; text-align: left;">Tool</th>
+        <th style="padding: 8px 12px; text-align: left;">Best For</th>
+        <th style="padding: 8px 12px; text-align: left;">Price</th>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">Google Search Console</td>
+        <td style="padding: 8px 12px;">Index coverage, CWV, security</td>
+        <td style="padding: 8px 12px;">Free</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">Screaming Frog</td>
+        <td style="padding: 8px 12px;">Crawling, broken links, redirects</td>
+        <td style="padding: 8px 12px;">Free (limited) / Paid</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding: 8px 12px;">PageSpeed Insights</td>
+        <td style="padding: 8px 12px;">CWV, performance</td>
+        <td style="padding: 8px 12px;">Free</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 12px;">Semrush Site Audit</td>
+        <td style="padding: 8px 12px;">Full technical audit</td>
+        <td style="padding: 8px 12px;">Paid</td>
+      </tr>
+    </table>
+
+    <div class="category-navigation">
+      <a href="{{ site.baseurl }}/categories/ai-search-geo">&larr; Previous: AI Search</a>
+      <a href="{{ site.baseurl }}/categories/for-beginners">Next: For Beginners &rarr;</a>
+    </div>
+  </div>
+</section>
