@@ -709,6 +709,34 @@ body {
   text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500;
 }
 
+.intro-sources {
+  margin-top: 20px; padding: 16px 18px;
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-left: 3px solid var(--gold); border-radius: var(--radius-sm);
+}
+
+.intro-sources-title {
+  font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-light); margin-bottom: 10px;
+}
+
+.intro-sources-list { list-style: none; padding: 0; margin: 0; }
+
+.intro-sources-list li {
+  font-size: 0.88rem; line-height: 1.65; color: var(--text-light);
+  padding-left: 1.1em; position: relative; margin-bottom: 6px;
+}
+
+.intro-sources-list li:last-child { margin-bottom: 0; }
+
+.intro-sources-list li::before {
+  content: ""; position: absolute; left: 0; top: 0.62em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+}
+
+.intro-sources-list a { color: var(--gold); text-decoration: none; font-weight: 500; }
+.intro-sources-list a:hover { text-decoration: underline; }
+
 /* Premium Competitor Card */
 .premium-comp-card {
   background: linear-gradient(135deg, var(--navy), var(--dark));

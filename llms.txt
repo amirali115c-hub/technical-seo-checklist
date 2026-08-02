@@ -1,0 +1,28 @@
+# Technical SEO Checklist
+
+> The most comprehensive technical SEO checklist with 60+ actionable checks, code examples, and free-to-paid tool recommendations for 2026. Covers crawlability, Core Web Vitals, schema markup, AI search (GEO), migrations, and more.
+
+https://amirali115c-hub.github.io/technical-seo-checklist/
+
+- [Crawlability and Indexing Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/crawlability/): robots.txt, XML sitemaps, redirect chains, broken links, crawl budget, IndexNow, orphan pages.
+- [AI Search Engine Optimization (GEO) Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/ai-search-geo/): get cited by ChatGPT, Perplexity, and Google AI Overviews with AI crawler access, llms.txt, OKF knowledge bundles, and entity optimization.
+- [Technical SEO Audit Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/audit-checklist/): weekly, monthly, quarterly, and annual audit checks with tools, prioritization, and reporting templates.
+- [Core Web Vitals Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/core-web-vitals/): LCP, INP, CLS optimization with code examples. INP replaced FID in March 2024.
+- [Schema Markup and Structured Data Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/schema-markup/): Article, Organization, Breadcrumb, FAQ, HowTo, Product, Review, LocalBusiness, VideoObject, SoftwareApp, Event, and Person JSON-LD examples.
+- [Mobile SEO and UX Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/mobile-ux/): mobile-first indexing, responsive design, viewport, touch targets, interstitials, PWA, and mobile Core Web Vitals.
+- [JavaScript SEO Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/javascript-rendering/): how Google renders JavaScript, CSR vs SSR vs SSG, dynamic rendering, two-wave indexing, Next.js SEO.
+- [Site Architecture Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/site-architecture/): URL structure, breadcrumbs, internal linking, silo structure, topic clusters, orphan page fixes.
+- [Technical On-Page SEO Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/on-page-technical/): title tags, meta descriptions, H1 headings, keyword cannibalization.
+- [E-E-A-T and Entity SEO Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/eeat-entities/): author entities, Person and Organization schema with sameAs, trust signals for core updates.
+- [SEO Site Migration Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/site-migrations/): golden 301 redirect map, staging lockdown, launch steps, change of address, recovery U-curve.
+- [International SEO Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/international-seo/): hreflang tags, x-default, ccTLD vs subdirectory vs subdomain, multilingual SEO.
+- [Image SEO Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/image-seo/): alt text, image file names, WebP and AVIF, lazy loading, image sitemaps.
+- [Security and HTTPS Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/security/): SSL certificates, mixed content, HSTS, CSP, DNS-over-HTTPS, security headers audit, AI crawler security.
+- [Redirect Status Codes Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/redirects-status-codes/): 301 vs 302, redirect chains, soft 404s, 410 gone responses.
+- [Canonicalization and Indexing Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/indexing-canonicalization/): canonical tags, URL canonicalization, crawled currently not indexed fixes, noindex nofollow.
+- [Crawl Budget and Log Analysis Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/crawl-budget-log-analysis/): crawl budget optimization, server log analysis, Googlebot crawl stats.
+- [CDN, Caching, and Hosting Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/cdn-caching-hosting/): what is a CDN cache, TTFB, cache-control headers, browser caching, CDN cache hit rates.
+- [Ecommerce Faceted Navigation Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/ecommerce-faceted-nav/): filter index bloat, crawl budget waste, duplicate product URLs.
+- [Website Accessibility (a11y) SEO Checklist](https://amirali115c-hub.github.io/technical-seo-checklist/categories/accessibility-a11y/): WCAG 2.2 AA compliance, semantic HTML, alt text, color contrast, keyboard navigation, ARIA.
+- [SEO Tools Comparison 2026](https://amirali115c-hub.github.io/technical-seo-checklist/categories/tools-comparison/): Google Search Console vs Screaming Frog vs Semrush vs Ahrefs vs Sitebulb for technical audits.
+- [Technical SEO for Non-Technical Marketers](https://amirali115c-hub.github.io/technical-seo-checklist/categories/for-beginners/): fixes you can make without code, when to call a developer, free tools that do the work.
