@@ -15,16 +15,19 @@ schema: |
     "dateModified": "2026-08-02"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the difference between 301 and 302 redirects?", "acceptedAnswer": { "@type": "Answer", "text": "A 301 is a permanent redirect that passes most ranking signals and updates the index to the new URL. A 302 is a temporary redirect that does not permanently pass equity and keeps the old URL canonical. Use 301 for permanent moves, 302 only for short-term changes like A/B tests." } },
-      { "@type": "Question", "name": "Do 301 redirects pass link equity?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A 301 passes the vast majority of PageRank and ranking signals to the destination URL. That is why correct redirect mapping is critical during site migrations. Redirect chains and loops reduce the equity that gets through." } },
-      { "@type": "Question", "name": "Is a 404 bad for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "No. A true 404 for a genuinely gone page is fine and expected. The problems are soft 404s, where a page returns 200 but shows not-found content, and important pages that 404 without a redirect. Use 410 Gone for intentionally removed content to speed deindexing." } },
-      { "@type": "Question", "name": "What is a redirect chain?", "acceptedAnswer": { "@type": "Answer", "text": "A redirect chain is a series of redirects where URL A redirects to B, which redirects to C. Each hop delays the user, wastes crawl budget, and dilutes link equity. Flatten chains by pointing every old URL directly at its final destination." } },
-      { "@type": "Question", "name": "What is a soft 404 and how do I fix it?", "acceptedAnswer": { "@type": "Answer", "text": "A soft 404 is a page that returns a 200 OK status but shows not-found content. Google flags these in Search Console. Fix by returning a real 404 or 410 status code, or by redirecting to a relevant live page." } }
+      { "@type": "Question", "name": "What is a redirect status code?", "acceptedAnswer": { "@type": "Answer", "text": "A redirect status code is the three-digit HTTP response that tells browsers and crawlers a URL has moved. A 301 means permanent, a 302 means temporary, and both have different effects on link equity and how Google treats the old URL." } },
+      { "@type": "Question", "name": "What is the difference between 301 and 302 redirects?", "acceptedAnswer": { "@type": "Answer", "text": "A 301 is permanent and passes most ranking signals. A 302 is temporary, keeps the old URL canonical, and does not pass equity. Use 301 for permanent moves only." } },
+      { "@type": "Question", "name": "Do 301 redirects pass link equity?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A 301 passes the vast majority of PageRank to the destination URL, which is why correct mapping matters during migrations. Chains and loops reduce what gets through." } },
+      { "@type": "Question", "name": "Is a 404 bad for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "No, if it is a real 404 for a gone page. Use 410 Gone for intentionally removed content to speed deindexing. The problems are soft 404s and important pages that 404 without redirects." } },
+      { "@type": "Question", "name": "What is a redirect chain?", "acceptedAnswer": { "@type": "Answer", "text": "A series of redirects where A goes to B and B goes to C. Each hop delays users and dilutes equity. Flatten chains so every URL points directly to its final destination." } },
+      { "@type": "Question", "name": "What is a soft 404?", "acceptedAnswer": { "@type": "Answer", "text": "A page returning a 200 status with not-found content. Google flags it in Search Console. Fix by returning a real 404 or 410, or redirecting to a relevant page." } },
+      { "@type": "Question", "name": "How long should I keep redirects?", "acceptedAnswer": { "@type": "Answer", "text": "Indefinitely. Old URLs live in backlinks, bookmarks, and email forever. Redirect maps are permanent infrastructure, not temporary launch tools." } }
     ]
   }
   </script>

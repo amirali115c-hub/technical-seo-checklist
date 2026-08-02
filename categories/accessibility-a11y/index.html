@@ -15,17 +15,18 @@ schema: |
     "dateModified": "2026-08-02"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What does WCAG 2.2 AA mean?", "acceptedAnswer": { "@type": "Answer", "text": "WCAG 2.2 is the Web Content Accessibility Guidelines version published by the W3C. Level AA is the conformance target most laws and policies reference. It adds new success criteria on focus appearance, dragging alternatives, and accessible authentication while building on WCAG 2.1." } },
-      { "@type": "Question", "name": "Why does accessibility matter for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Screen readers and search bots both consume the HTML source. Semantic HTML, descriptive link text, and image alt text help assistive technology and crawlers understand content equally. Accessibility overlaps with Core Web Vitals because poorly coded overlays and scripts hurt both." } },
-      { "@type": "Question", "name": "What is the minimum color contrast ratio?", "acceptedAnswer": { "@type": "Answer", "text": "4.5:1 for normal text and 3:1 for large text at least 18pt or 14pt bold, plus 3:1 for UI components and graphical objects, per WCAG 2.2 AA." } },
-      { "@type": "Question", "name": "When should I use ARIA?", "acceptedAnswer": { "@type": "Answer", "text": "Only when native HTML cannot express the behavior. The first rule of ARIA is that native HTML elements, attributes, and values win. Adding ARIA to a plain div button without keyboard support does not make it accessible." } },
-      { "@type": "Question", "name": "Does ADA compliance apply to websites?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Title III of the ADA applies to places of public accommodation, and courts have repeatedly treated websites as covered. WCAG 2.1 or 2.2 AA is the accepted technical standard for demonstrating compliance." } },
-      { "@type": "Question", "name": "How many homepages fail accessibility tests?", "acceptedAnswer": { "@type": "Answer", "text": "The WebAIM Million study found 96.3% of the top one million homepages had detectable WCAG failures, with low-contrast text as the most common issue." } }
+      { "@type": "Question", "name": "What does WCAG 2.2 AA mean?", "acceptedAnswer": { "@type": "Answer", "text": "WCAG 2.2 is the current version of the Web Content Accessibility Guidelines published in October 2023. AA is the compliance level most sites target and most legal actions reference. Level A covers the basics, AA adds contrast and usability requirements, and AAA is rarely practical for full sites." } },
+      { "@type": "Question", "name": "Why does accessibility matter for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Screen readers and search bots both consume HTML source. Semantic HTML, alt text, and link text help both equally, and accessibility fixes overlap with Core Web Vitals performance." } },
+      { "@type": "Question", "name": "What is the minimum color contrast ratio?", "acceptedAnswer": { "@type": "Answer", "text": "4.5:1 for normal text, 3:1 for large text at 18pt or 14pt bold, and 3:1 for UI components and graphical objects per WCAG 2.2 AA." } },
+      { "@type": "Question", "name": "When should I use ARIA?", "acceptedAnswer": { "@type": "Answer", "text": "Only when native HTML cannot express the behavior. The first rule of ARIA is that native elements win. ARIA on a plain div does not add keyboard support by itself." } },
+      { "@type": "Question", "name": "Does ADA compliance apply to websites?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Title III applies to places of public accommodation, and courts treat websites as covered. WCAG 2.1 or 2.2 AA is the accepted technical standard." } },
+      { "@type": "Question", "name": "How many homepages fail accessibility tests?", "acceptedAnswer": { "@type": "Answer", "text": "The WebAIM Million study found 96.3% of the top one million homepages had detectable WCAG failures, with low-contrast text the most common issue." } }
     ]
   }
   </script>

@@ -15,17 +15,19 @@ schema: |
     "dateModified": "2026-08-02"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Does a CDN affect SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, usually positively. A CDN reduces Time to First Byte, improves Core Web Vitals field scores, and absorbs traffic spikes. The catch is misconfiguration: wrong cache headers serve stale content, and bot management can throttle Googlebot. Configure caching and allowlist Googlebot properly." } },
-      { "@type": "Question", "name": "What is browser caching?", "acceptedAnswer": { "@type": "Answer", "text": "Browser caching lets a user's browser store static resources like images, CSS, and JavaScript locally using Cache-Control headers, so repeat visits load them from disk with zero network requests. Versioned static assets should use a long max-age such as one year with the immutable directive." } },
-      { "@type": "Question", "name": "What is a good TTFB for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "TTFB is a diagnostic metric, not a direct ranking factor, but it feeds LCP. If TTFB from multiple global locations is over 300ms, hosting or CDN configuration is the bottleneck. A CDN should serve cached responses from edge locations in roughly 10-50ms." } },
-      { "@type": "Question", "name": "How do I improve cache hit rate on my CDN?", "acceptedAnswer": { "@type": "Answer", "text": "Audit your cache hit rate and target above 80%. Most CDNs run at 15-30% hit rates due to misconfiguration. Common culprits are query strings, Set-Cookie headers, and Vary header abuse. Fix them and check HIT versus MISS via x-cache or cf-cache-status headers." } },
-      { "@type": "Question", "name": "Can a CDN cause duplicate content issues?", "acceptedAnswer": { "@type": "Answer", "text": "Rarely. It happens when your CDN serves assets on a different hostname than your origin, like cdn.example.com and example.com both being crawlable without canonicalization. Serve assets from one hostname only, or set HTTP Link canonical headers." } },
-      { "@type": "Question", "name": "Does HTTP/3 improve SEO performance?", "acceptedAnswer": { "@type": "Answer", "text": "HTTP/3 with QUIC reduces connection setup to a single round-trip versus two or three for HTTP/2 over TLS. For most sites using edge caching it provides a 5-15% improvement in connection establishment time and TTFB, about 20-100ms in absolute terms." } }
+      { "@type": "Question", "name": "What is a CDN cache?", "acceptedAnswer": { "@type": "Answer", "text": "A CDN cache is a copy of your static files stored on servers at edge locations around the world. When a user requests a cached asset, the nearest edge server answers in 10-50ms instead of the origin's hundreds of milliseconds. This is the core of how CDN caching speeds up your site." } },
+      { "@type": "Question", "name": "Does a CDN affect SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, usually positively. It reduces TTFB, improves Core Web Vitals, and absorbs traffic spikes. Misconfiguration can serve stale content or throttle Googlebot, so configure caching and allowlist the crawler." } },
+      { "@type": "Question", "name": "What is browser caching?", "acceptedAnswer": { "@type": "Answer", "text": "Browsers store static resources locally using Cache-Control headers, so repeat visits load from disk with zero network requests. Versioned assets use a long max-age with immutable." } },
+      { "@type": "Question", "name": "What is a good TTFB for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "TTFB is diagnostic, not a direct ranking factor, but it feeds LCP. If it exceeds 300ms from global locations, hosting or CDN is the bottleneck. A CDN serves edges in 10-50ms." } },
+      { "@type": "Question", "name": "How do I improve CDN cache hit rate?", "acceptedAnswer": { "@type": "Answer", "text": "Target above 80%. Most CDNs run at 15-30% due to query strings, Set-Cookie headers, and Vary abuse. Fix the cache key and verify with x-cache or cf-cache-status headers." } },
+      { "@type": "Question", "name": "Can a CDN cause duplicate content?", "acceptedAnswer": { "@type": "Answer", "text": "Rarely. It happens when assets are served from a second hostname without canonicalization. Serve from one hostname or set Link canonical headers." } },
+      { "@type": "Question", "name": "Does HTTP/3 improve SEO performance?", "acceptedAnswer": { "@type": "Answer", "text": "HTTP/3 with QUIC cuts connection setup to one round trip. For edge-cached sites it delivers about 5-15% faster connection establishment and TTFB, roughly 20-100ms." } }
     ]
   }
   </script>

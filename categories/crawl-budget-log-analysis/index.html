@@ -15,17 +15,18 @@ schema: |
     "dateModified": "2026-08-02"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is crawl budget in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Crawl budget is the number of URLs Googlebot is willing and able to crawl on your site within a given timeframe. It depends on crawl rate limit (server capacity, response time, error rate) and crawl demand (page popularity and freshness). Google says it only becomes a limiting factor for very large sites." } },
-      { "@type": "Question", "name": "What is log file analysis in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Log file analysis is reading your server access logs to see exactly which URLs search engine and AI crawlers requested, when, and what status code they received. It is the only source of data showing real crawler behavior rather than an estimate from third-party crawlers." } },
-      { "@type": "Question", "name": "How do I check my crawl budget in Google Search Console?", "acceptedAnswer": { "@type": "Answer", "text": "Open Search Console, go to Settings, then Crawl stats. The report shows total crawl requests, download size, and average response time over a 90-day window. It is only available for root-level domain properties and aimed at advanced users." } },
-      { "@type": "Question", "name": "Does crawl budget affect small sites?", "acceptedAnswer": { "@type": "Answer", "text": "Almost never. Google states that sites with fewer than about a thousand pages do not need to worry about crawl budget. If your pages are crawled the same day they are published, crawl budget is not your bottleneck." } },
-      { "@type": "Question", "name": "How do I verify a request is really Googlebot?", "acceptedAnswer": { "@type": "Answer", "text": "User agents can be spoofed. Run a reverse DNS lookup on the requesting IP; genuine Googlebot resolves to a googlebot.com or google.com hostname, then forward-confirm the hostname resolves back to the same IP. Alternatively match the IP against Google's published crawler ranges." } },
-      { "@type": "Question", "name": "How do I find AI crawlers in my logs?", "acceptedAnswer": { "@type": "Answer", "text": "Filter server logs by known AI crawler user agents: GPTBot, OAI-SearchBot, and ChatGPT-User from OpenAI; ClaudeBot from Anthropic; PerplexityBot from Perplexity; and GoogleOther from Google. Google-Extended is a robots.txt token, not a separate user agent." } }
+      { "@type": "Question", "name": "What is crawl budget in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Crawl budget is the number of URLs Googlebot can and wants to crawl on your site in a given timeframe. It is driven by crawl rate limit (server capacity) and crawl demand (popularity and freshness). Google says it only limits very large sites." } },
+      { "@type": "Question", "name": "What is log file analysis in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Reading your server access logs to see exactly which URLs search and AI crawlers requested, when, and what status they got. It is the only data source showing real crawler behavior, not an estimate." } },
+      { "@type": "Question", "name": "How do I check crawl budget in Search Console?", "acceptedAnswer": { "@type": "Answer", "text": "Go to Settings, then Crawl stats. The report shows crawl requests, download size, and response time over 90 days. It requires a root-level domain property and is aimed at advanced users." } },
+      { "@type": "Question", "name": "Does crawl budget affect small sites?", "acceptedAnswer": { "@type": "Answer", "text": "Almost never. If your pages are crawled the day they publish, crawl budget is not your bottleneck. Reserve this work for large, frequently changing sites." } },
+      { "@type": "Question", "name": "How do I verify a request is really Googlebot?", "acceptedAnswer": { "@type": "Answer", "text": "Run a reverse DNS lookup on the IP. Genuine Googlebot resolves to a googlebot.com or google.com hostname that forward-confirms back to the same IP, or matches Google's published crawler ranges." } },
+      { "@type": "Question", "name": "How do I find AI crawlers in my logs?", "acceptedAnswer": { "@type": "Answer", "text": "Filter for GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot, and GoogleOther. Google-Extended is a robots.txt token, not a user agent. AI crawlers appear sporadically and never show in Search Console." } }
     ]
   }
   </script>

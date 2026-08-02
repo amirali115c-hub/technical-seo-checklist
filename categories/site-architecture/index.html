@@ -15,16 +15,19 @@ schema: |
     "dateModified": "2026-07-29"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is site architecture in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Site architecture is how your website pages are organized, linked, and structured. A flat, logical structure helps search engines understand topical authority and distribute PageRank effectively." } },
-      { "@type": "Question", "name": "How deep should my site structure be?", "acceptedAnswer": { "@type": "Answer", "text": "Every important page should be reachable within 3 clicks from the homepage. A flat structure distributes authority better than a deep one." } },
-      { "@type": "Question", "name": "What is a topic cluster?", "acceptedAnswer": { "@type": "Answer", "text": "A topic cluster is a content structure with one pillar page covering a broad topic and multiple cluster pages covering subtopics in detail. All cluster pages link back to the pillar page." } },
-      { "@type": "Question", "name": "How do I find orphan pages?", "acceptedAnswer": { "@type": "Answer", "text": "Cross-reference your XML sitemap with a full crawl from Screaming Frog. Any URL in your sitemap that has zero internal inlinks from the crawl is an orphan page." } },
-      { "@type": "Question", "name": "What is a good URL structure for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Short, descriptive, keyword-rich URLs with hyphens between words. Avoid parameters, underscores, and deep folder structures. Example: /technical-seo-checklist instead of /blog/2026/07/15/post-123." } }
+      { "@type": "Question", "name": "What is site architecture in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Site architecture is how your website pages are organized, linked, and structured. It includes URL structure, navigation menus, internal linking, and content hierarchy. Good architecture helps crawlers discover all pages and helps users find what they need." } },
+      { "@type": "Question", "name": "How deep should my site structure be?", "acceptedAnswer": { "@type": "Answer", "text": "Every important page should be reachable within 3 clicks from the homepage. Pages deeper than 4 clicks receive significantly less crawl attention and PageRank flow. Use a flat structure whenever possible." } },
+      { "@type": "Question", "name": "What is a topic cluster?", "acceptedAnswer": { "@type": "Answer", "text": "A topic cluster is an SEO content strategy where a single pillar page covers a broad topic comprehensively, and multiple cluster pages cover related subtopics in depth. All cluster pages link back to the pillar. This builds topical authority and improves rankings for both the pillar and cluster pages." } },
+      { "@type": "Question", "name": "How do I find orphan pages?", "acceptedAnswer": { "@type": "Answer", "text": "Cross-reference your XML sitemap with a full crawl from Screaming Frog. URLs in the sitemap that received zero internal inlinks during the crawl are orphan pages. You can also use Google Search Console's Internal Links report to find pages with few or no internal links." } },
+      { "@type": "Question", "name": "What is a good URL structure for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Short, descriptive, keyword-rich URLs with hyphens between words. Avoid parameters, underscores, and deep folder structures. A good URL tells both users and search engines what the page is about before they click." } },
+      { "@type": "Question", "name": "How many internal links per page is ideal?", "acceptedAnswer": { "@type": "Answer", "text": "There is no fixed limit, but each internal link should provide value. A blog post typically links to 3-5 related pages. A pillar page may link to 10-20 cluster pages. Navigation links should be 5-7 items. Quality over quantity applies here." } },
+      { "@type": "Question", "name": "Should I use nofollow on internal links?", "acceptedAnswer": { "@type": "Answer", "text": "Generally no. Nofollow on internal links prevents PageRank flow and is rarely necessary. Exceptions include login/register links, terms of service, and privacy policy pages on some sites. Google recommends keeping internal links follow by default." } }
     ]
   }
   </script>

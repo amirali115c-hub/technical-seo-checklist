@@ -15,15 +15,18 @@ schema: |
     "dateModified": "2026-07-29"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Is HTTPS a ranking signal?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, HTTPS has been a confirmed ranking signal since 2014. Google also uses HTTPS as a tiebreaker for otherwise equal pages." } },
-      { "@type": "Question", "name": "What is mixed content and why is it bad for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Mixed content occurs when an HTTPS page loads HTTP resources. Browsers block mixed content, breaking page functionality and causing a poor user experience that can hurt rankings." } },
-      { "@type": "Question", "name": "What are security headers and which ones matter for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Security headers are HTTP response headers that protect against common attacks. HSTS, CSP, X-Frame-Options, X-Content-Type-Options, and Referrer-Policy are the most important for SEO." } },
-      { "@type": "Question", "name": "Does security affect AI search visibility?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. AI agents verify TLS certificates and may refuse to render content from insecure or misconfigured servers. Security is a trust signal for all automated systems." } }
+      { "@type": "Question", "name": "Is HTTPS a ranking signal?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, HTTPS has been a confirmed ranking signal since 2014. Google also uses HTTPS as a tiebreaker when two pages are otherwise equal." } },
+      { "@type": "Question", "name": "What is mixed content and why is it bad for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Mixed content is when an HTTPS page loads HTTP resources (images, scripts, iframes). Browsers block these resources, breaking page functionality and hurting user experience. This can lead to higher bounce rates and lower rankings." } },
+      { "@type": "Question", "name": "What are security headers and which ones matter for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Security headers are HTTP response headers that protect against common attacks. The most important for SEO are HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy." } },
+      { "@type": "Question", "name": "Does security affect AI search visibility?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. AI agents verify TLS certificates before rendering content. An expired certificate or misconfigured security headers can prevent AI systems from accessing your page entirely." } },
+      { "@type": "Question", "name": "What is DNS over HTTPS (DoH) and how does it affect SEO?", "acceptedAnswer": { "@type": "Answer", "text": "DNS over HTTPS (DoH) encrypts DNS queries to prevent eavesdropping and manipulation. While not a direct ranking signal, DoH improves security and privacy for your users. It ensures DNS queries to your site cannot be intercepted, protecting against DNS spoofing and hijacking that could harm traffic and search presence." } },
+      { "@type": "Question", "name": "How often should I check my SSL certificate?", "acceptedAnswer": { "@type": "Answer", "text": "Monthly. Set up auto-renewal with Let's Encrypt or your certificate provider. Use monitoring tools to alert you before expiry. An expired certificate makes your site completely inaccessible." } }
     ]
   }
   </script>

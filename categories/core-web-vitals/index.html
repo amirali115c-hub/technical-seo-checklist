@@ -15,16 +15,20 @@ schema: |
     "dateModified": "2026-07-29"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What are Core Web Vitals?", "acceptedAnswer": { "@type": "Answer", "text": "Core Web Vitals are Google's three metrics for measuring user experience during page load: Largest Contentful Paint (LCP), Interaction to Next Paint (INP, which replaced FID in March 2024), and Cumulative Layout Shift (CLS)." } },
-      { "@type": "Question", "name": "How do I fix poor LCP?", "acceptedAnswer": { "@type": "Answer", "text": "Optimize the largest element by preloading it, eliminating render-blocking resources, optimizing images, and improving server response time. Target under 2.5 seconds." } },
-      { "@type": "Question", "name": "What causes high CLS?", "acceptedAnswer": { "@type": "Answer", "text": "Images without dimensions, dynamically injected content, web fonts causing FOIT/FOUT, ads without reserved space, and embeds that resize after loading." } },
-      { "@type": "Question", "name": "How do I improve INP?", "acceptedAnswer": { "@type": "Answer", "text": "Break up long JavaScript tasks, defer third-party scripts, debounce event handlers, avoid heavy DOM manipulations on input, and yield to the main thread frequently." } },
-      { "@type": "Question", "name": "What is a good TTFB?", "acceptedAnswer": { "@type": "Answer", "text": "Under 200ms. TTFB is the time until the server sends the first byte of the response. It is affected by hosting quality, server config, CDN, database speed, and application code." } }
+      { "@type": "Question", "name": "What are Core Web Vitals?", "acceptedAnswer": { "@type": "Answer", "text": "Core Web Vitals are Google's three metrics for measuring real-world user experience: Largest Contentful Paint (LCP for loading speed), Interaction to Next Paint (INP for interactivity), and Cumulative Layout Shift (CLS for visual stability). They are confirmed ranking signals." } },
+      { "@type": "Question", "name": "How do I fix poor LCP?", "acceptedAnswer": { "@type": "Answer", "text": "Identify the LCP element using Lighthouse, preload it with fetchpriority=high, eliminate render-blocking resources, optimize images to WebP/AVIF, reduce TTFB under 200ms, and remove unnecessary third-party scripts." } },
+      { "@type": "Question", "name": "What causes high CLS?", "acceptedAnswer": { "@type": "Answer", "text": "Images and videos without explicit dimensions, dynamically injected content without reserved space, web fonts with FOIT, ads and embeds that resize after loading, and custom fonts that cause FOUT without proper font-display settings." } },
+      { "@type": "Question", "name": "How do I improve INP?", "acceptedAnswer": { "@type": "Answer", "text": "Break up long JavaScript tasks by yielding to the main thread, defer third-party scripts, debounce event handlers, avoid forced reflows, minimize DOM size, and use web workers for heavy computation." } },
+      { "@type": "Question", "name": "What is a good TTFB?", "acceptedAnswer": { "@type": "Answer", "text": "Under 200ms. TTFB (Time to First Byte) measures how long the server takes to start responding. Poor TTFB is usually caused by slow hosting, unoptimized databases, missing cache layers, or slow application code." } },
+      { "@type": "Question", "name": "Did INP replace FID? What changed in Core Web Vitals?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, INP (Interaction to Next Paint) replaced FID (First Input Delay) as a Core Web Vital in March 2024. INP measures all interactions throughout the page lifecycle, not just the first one. The good threshold is under 200ms (vs 100ms for FID). This was one of the biggest core web vitals news updates in recent years, affecting 30-40% of sites that previously passed FID." } },
+      { "@type": "Question", "name": "Should I use lab data or field data?", "acceptedAnswer": { "@type": "Answer", "text": "Both. Lab data (Lighthouse) helps you debug specific issues. Field data (CrUX, RUM) shows real user experience. Always prioritize field data for ranking decisions because Google uses field data for the CWV ranking signal." } },
+      { "@type": "Question", "name": "How often should I check Core Web Vitals?", "acceptedAnswer": { "@type": "Answer", "text": "Check the CrUX report in Google Search Console weekly. Set up alerts for CWV regressions using tools like Request Metrics or DebugBear. Run Lighthouse after every significant deployment to catch regressions early." } }
     ]
   }
   </script>

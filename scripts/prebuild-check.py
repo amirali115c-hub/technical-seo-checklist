@@ -93,6 +93,47 @@ def main():
         if free < 1 or paid < 1:
             problems.append(f'{slug}: Tools section lacks free+paid badges (free={free}, paid={paid})')
 
+    # Structured-data consistency: each page must carry exactly one Article,
+    # FAQPage, BreadcrumbList, and HowTo block, all valid JSON, with the FAQ
+    # schema matching the visible FAQ questions on the page.
+    for f in PAGES:
+        slug = f.split('/')[-2]
+        txt = open(f).read()
+        schema_types = []
+        for jm in re.finditer(
+                r'<script type="application/ld\+json">(.*?)</script>',
+                txt, re.S):
+            try:
+                data = json.loads(jm.group(1))
+            except Exception as exc:
+                problems.append(f'{slug}: JSONLD {str(exc)[:60]}')
+                continue
+            objs = data if isinstance(data, list) else [data]
+            for o in objs:
+                if '@graph' in o:
+                    schema_types += [g.get('@type') for g in o['@graph']]
+                else:
+                    schema_types.append(o.get('@type'))
+        for want in ('Article', 'FAQPage', 'BreadcrumbList', 'HowTo'):
+            if schema_types.count(want) != 1:
+                problems.append(
+                    f'{slug}: schema {want} count={schema_types.count(want)}')
+
+        visible_faq = [q.strip().lower() for q in re.findall(
+            r'<div class="faq-question">([^<]+)</div>', txt)]
+        schema_faq = []
+        for jm in re.finditer(
+                r'<script type="application/ld\+json">(.*?)</script>',
+                txt, re.S):
+            data = json.loads(jm.group(1))
+            objs = data if isinstance(data, list) else [data]
+            for o in objs:
+                if o.get('@type') == 'FAQPage':
+                    schema_faq += [q.get('name', '').strip().lower()
+                                   for q in o.get('mainEntity', [])]
+        if visible_faq != schema_faq:
+            problems.append(f'{slug}: FAQ schema does not match visible FAQs')
+
     ok, err = tag_balance(open(f'{ROOT}/index.html').read())
     if not ok:
         problems.append(f'index.html: TAG {err}')

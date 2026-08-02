@@ -15,16 +15,18 @@ schema: |
     "dateModified": "2026-08-02"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is hreflang in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Hreflang is an HTML attribute that tells search engines which language and regional version of a page to show for a given user. It prevents wrong-language pages from competing in the wrong countries and is the core of international SEO." } },
-      { "@type": "Question", "name": "Which URL structure is best for international SEO?", "acceptedAnswer": { "@type": "Answer", "text": "For most businesses the subdirectory structure (site.com/fr/) is best: easy to manage, consolidates domain authority, and works with hreflang. ccTLDs give the strongest local signal but split authority. Subdomains and gTLD+path are also valid with correct hreflang." } },
-      { "@type": "Question", "name": "Do I need x-default in hreflang?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. x-default tells Google which page to show when a user's language or region is not covered by any specific hreflang version. Usually points to the English or homepage version." } },
-      { "@type": "Question", "name": "Can I use hreflang and canonical together?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each localized page keeps a self-referencing canonical, and hreflang tags declare the full set of language versions. Never canonicalize localized pages to a single URL; that would defeat hreflang." } },
-      { "@type": "Question", "name": "What is the difference between hreflang and translated content?", "acceptedAnswer": { "@type": "Answer", "text": "Hreflang tells Google which version to serve; translation is the content itself. You need both: genuine translations plus correct hreflang. Machine-translated duplicate content with correct hreflang still risks a thin-content quality problem." } }
+      { "@type": "Question", "name": "What is hreflang in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Hreflang is an HTML attribute declaring which language and regional version of a page to show for a user. It is the signal that prevents wrong-language pages from competing in the wrong countries." } },
+      { "@type": "Question", "name": "Which URL structure is best for international SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Subdirectories like site.com/fr/ are best for most businesses: one authority pool, easy management, works with hreflang. ccTLDs give the strongest local signal but split authority and cost more to run." } },
+      { "@type": "Question", "name": "Do I need x-default in hreflang?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. x-default tells Google which page to show when no specific language or region matches the user, usually your English version or homepage." } },
+      { "@type": "Question", "name": "Can I use hreflang and canonical together?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each localized page keeps a self-referencing canonical while hreflang declares the full language set. Never canonicalize localized pages to a single URL." } },
+      { "@type": "Question", "name": "How do I check hreflang errors?", "acceptedAnswer": { "@type": "Answer", "text": "Use Google's hreflang testing tool and the Search Console International Targeting report. Both surface missing return tags, malformed codes, and broken URLs." } },
+      { "@type": "Question", "name": "Is machine translation enough for international SEO?", "acceptedAnswer": { "@type": "Answer", "text": "No. Hreflang handles serving, but content quality still matters. Machine-translated duplicates without genuine localization risk thin-content penalties in every market." } }
     ]
   }
   </script>

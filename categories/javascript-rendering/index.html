@@ -15,16 +15,19 @@ schema: |
     "dateModified": "2026-08-02"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Does Google render JavaScript?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Google renders JavaScript with headless Chromium through its Web Rendering Service (WRS). But rendering is a separate second wave after the initial HTML crawl, which can delay indexing by days and slow down discovery of content and links." } },
-      { "@type": "Question", "name": "Is client side rendering bad for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Client side rendering (CSR) is the riskiest pattern for SEO because all content is injected by JavaScript after the page loads. Google can still render it, but indexing is delayed, and most AI crawlers such as GPTBot, ClaudeBot, and PerplexityBot do not execute JavaScript at all, so the content is invisible to AI search." } },
-      { "@type": "Question", "name": "What is the difference between CSR, SSR, and SSG for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "CSR renders everything in the browser, hiding content from non-rendering crawlers. SSR (server side rendering) generates HTML per request, fast to index but slower TTFB. SSG (static site generation) builds static HTML at build time, the best pattern for crawlability and AI visibility. Next.js, Nuxt, and Astro support all three." } },
-      { "@type": "Question", "name": "Do AI search engines render JavaScript?", "acceptedAnswer": { "@type": "Answer", "text": "Mostly no. A Vercel study found that AI crawlers like GPTBot, ClaudeBot, OAI-SearchBot, and PerplexityBot fetch HTML but only roughly 10-25% execute JavaScript. If your key content is JS-rendered, you are largely invisible to AI search engines." } },
-      { "@type": "Question", "name": "Is dynamic rendering still recommended for JavaScript SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Dynamic rendering serves a static snapshot to crawlers and the full app to users. Google deprecated it as a general recommendation. Use it as a temporary stopgap only. The durable fix is SSR or SSG so the same HTML serves crawlers and users." } }
+      { "@type": "Question", "name": "What is JavaScript SEO?", "acceptedAnswer": { "@type": "Answer", "text": "JavaScript SEO is the practice of making JavaScript-rendered websites crawlable, indexable, and visible to search engines and AI systems. It covers rendering mode, structured data, and internal linking so crawlers can access content hidden behind JavaScript." } },
+      { "@type": "Question", "name": "Does Google render JavaScript?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Google renders JavaScript with headless Chromium through its Web Rendering Service. But rendering is a separate second wave, so indexing is delayed compared to server-rendered pages. Check URL Inspection for the rendered HTML Google actually sees." } },
+      { "@type": "Question", "name": "Is client side rendering bad for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Client side rendering is the riskiest pattern. Content injected by JavaScript is invisible to most AI crawlers and delays Google indexing. Use SSR or SSG for any page that needs organic traffic." } },
+      { "@type": "Question", "name": "What is the difference between CSR, SSR, and SSG?", "acceptedAnswer": { "@type": "Answer", "text": "CSR renders in the browser, hiding content from crawlers. SSR renders HTML per request, fast to index. SSG builds static HTML at deploy time, the best pattern for crawlability and AI visibility. Next.js, Nuxt, and Astro support all three." } },
+      { "@type": "Question", "name": "Do AI search engines render JavaScript?", "acceptedAnswer": { "@type": "Answer", "text": "Mostly no. A Vercel study found only about 10-25% of AI crawlers execute JavaScript. GPTBot, ClaudeBot, OAI-SearchBot, and PerplexityBot largely read raw HTML only." } },
+      { "@type": "Question", "name": "Is Next.js good for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Next.js is excellent for SEO because it supports SSR, SSG, and ISR out of the box. It serves full HTML to crawlers when you use these modes instead of pure client components." } },
+      { "@type": "Question", "name": "Is dynamic rendering still recommended?", "acceptedAnswer": { "@type": "Answer", "text": "Google deprecated dynamic rendering as a general recommendation. It still works as a stopgap, but the durable fix is server side rendering or static site generation so the same HTML serves everyone." } }
     ]
   }
   </script>

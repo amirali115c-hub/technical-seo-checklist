@@ -15,17 +15,18 @@ schema: |
     "dateModified": "2026-08-02"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is faceted navigation in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Faceted navigation lets shoppers refine product lists by attributes like brand, size, color, and price. Every combination creates a new URL, which can generate millions of near-duplicate pages. Without management, this wastes crawl budget and causes index bloat." } },
-      { "@type": "Question", "name": "Should I use canonical or noindex for faceted navigation?", "acceptedAnswer": { "@type": "Answer", "text": "Use canonical for similar pages you want to consolidate into one ranking URL, noindex for low-value utility filters like size and price, and strategic indexing for single-parameter filters with proven search demand. Never combine noindex with canonical on the same page." } },
-      { "@type": "Question", "name": "Does faceted navigation affect crawl budget?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, massively. Research found up to 35% of a typical store's crawl budget goes to faceted URLs, and over 60% in large stores. Google confirmed in December 2024 that faceted navigation is the most common cause of overcrawling reports." } },
-      { "@type": "Question", "name": "How many filter combinations should I index?", "acceptedAnswer": { "@type": "Answer", "text": "Index base categories plus strategic single-parameter filters with proven search demand. Always noindex pages with two or more parameters unless they have substantial search volume, over about 500 searches per month, and avoid indexing more than 20% of total filter combinations." } },
-      { "@type": "Question", "name": "Can I block filters in robots.txt and noindex them?", "acceptedAnswer": { "@type": "Answer", "text": "No, never do both on the same URL. Google cannot read a noindex directive on a page it is blocked from crawling, so the noindex is never processed. robots.txt works as a preventative measure and is best combined with removing internal links to those URLs." } },
-      { "@type": "Question", "name": "Why does parameter ordering matter for faceted navigation?", "acceptedAnswer": { "@type": "Answer", "text": "URLs like /shoes?color=red&brand=nike and /shoes?brand=nike&color=red show identical products but are treated as separate pages, splitting ranking signals. Enforce consistent parameter ordering in URL generation logic." } }
+      { "@type": "Question", "name": "What is faceted navigation in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Filtering products by brand, size, color, and price. Every combination creates a URL, which can generate millions of near-duplicates. Without management it wastes crawl budget and bloats the index." } },
+      { "@type": "Question", "name": "Should I use canonical or noindex for filters?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical for similar pages to consolidate, noindex for utility filters, and strategic indexing for high-demand single parameters. Never combine noindex with canonical on one page." } },
+      { "@type": "Question", "name": "Does faceted navigation affect crawl budget?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Up to 35% of a typical store's crawl budget goes to faceted URLs, over 60% in large stores. Google called faceted navigation the most common overcrawling cause in December 2024." } },
+      { "@type": "Question", "name": "How many filter combinations should I index?", "acceptedAnswer": { "@type": "Answer", "text": "Base categories plus high-demand single filters. Noindex pages with two or more parameters unless they exceed roughly 500 searches per month, and cap indexing at about 20% of combinations." } },
+      { "@type": "Question", "name": "Can I block filters in robots.txt and noindex them?", "acceptedAnswer": { "@type": "Answer", "text": "No. Google cannot read noindex on a page it cannot crawl. robots.txt is preventative; combine it with removing internal links to blocked URLs." } },
+      { "@type": "Question", "name": "Why does parameter ordering matter?", "acceptedAnswer": { "@type": "Answer", "text": "Same products at different parameter orders are treated as separate pages, splitting ranking signals. Generate URLs with one consistent parameter order." } }
     ]
   }
   </script>

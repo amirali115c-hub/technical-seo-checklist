@@ -15,16 +15,19 @@ schema: |
     "dateModified": "2026-08-02"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What does crawled currently not indexed mean?", "acceptedAnswer": { "@type": "Answer", "text": "It means Google crawled the page but chose not to add it to the index. Common causes: thin content, duplicate content, low internal link priority, or pages Google considers low value. It is not an error, but it usually means the page needs more substance or more internal links." } },
-      { "@type": "Question", "name": "What is the difference between canonical and noindex?", "acceptedAnswer": { "@type": "Answer", "text": "A canonical tag tells search engines which URL is the preferred version when duplicate content exists; it consolidates ranking signals. Noindex tells search engines to exclude a page from the index entirely while still crawling it. Use canonical for near-duplicates, noindex for thin or utility pages." } },
-      { "@type": "Question", "name": "Can I use noindex and canonical on the same page?", "acceptedAnswer": { "@type": "Answer", "text": "Never. Combining noindex with a canonical tag is contradictory and sends conflicting signals to Google. Choose one strategy per page: canonical to consolidate, or noindex to exclude." } },
-      { "@type": "Question", "name": "What is the indexifembedded directive?", "acceptedAnswer": { "@type": "Answer", "text": "Googlebot-Extended uses indexifembedded so embedded content such as a video can be indexed even when the host page is noindex. It is written as noindex, indexifembedded in the robots meta tag." } },
-      { "@type": "Question", "name": "How do I fix pages that are not indexed?", "acceptedAnswer": { "@type": "Answer", "text": "Improve the content so it is unique and valuable, add strong internal links from important pages, ensure a self-referencing canonical, submit the URL in Search Console, and request indexing. Give Google time to re-crawl; low-priority pages may still be skipped." } }
+      { "@type": "Question", "name": "What is canonicalization in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Canonicalization is the process of choosing one canonical URL when multiple URLs show the same or similar content. The rel canonical tag tells Google which version is the original so ranking signals consolidate instead of splitting across duplicates." } },
+      { "@type": "Question", "name": "What does crawled currently not indexed mean?", "acceptedAnswer": { "@type": "Answer", "text": "Google crawled the page but did not add it to the index. Causes include thin or duplicate content, weak internal links, or low perceived value. It is not an error; it is Google declining to rank the page right now." } },
+      { "@type": "Question", "name": "What is the difference between canonical and noindex?", "acceptedAnswer": { "@type": "Answer", "text": "A canonical consolidates duplicate pages into one preferred URL and passes ranking signals to it. Noindex excludes a page from the index while still crawling it. Use canonical for near-duplicates and noindex for thin or utility pages." } },
+      { "@type": "Question", "name": "Can I use noindex and canonical together?", "acceptedAnswer": { "@type": "Answer", "text": "No. They send conflicting signals and Google will usually honor the noindex. Choose canonical or noindex per page, never both." } },
+      { "@type": "Question", "name": "What is the indexifembedded directive?", "acceptedAnswer": { "@type": "Answer", "text": "Written as noindex, indexifembedded, it lets embedded content like a video appear in Google results even when the host page is noindex. Useful for embeds on thin pages." } },
+      { "@type": "Question", "name": "How long does it take for a page to be indexed?", "acceptedAnswer": { "@type": "Answer", "text": "High-priority pages can index in hours to days. Low-priority pages, especially in the discovered currently not indexed bucket, can take weeks. Request indexing in URL Inspection and build internal links to speed it up." } },
+      { "@type": "Question", "name": "Does a canonical tag pass PageRank?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A canonical consolidates ranking signals, including link equity, to the preferred URL. That is exactly why correct canonicals matter for duplicate content." } }
     ]
   }
   </script>

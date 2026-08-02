@@ -15,16 +15,18 @@ schema: |
     "dateModified": "2026-07-29"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is schema markup?", "acceptedAnswer": { "@type": "Answer", "text": "Schema markup is structured data added to your HTML that helps search engines understand your content. It enables rich results in SERPs and helps AI systems extract entities and facts." } },
-      { "@type": "Question", "name": "Which schema types are most important for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Organization, Article, Breadcrumb, FAQ, HowTo, Product, LocalBusiness, and VideoObject are the most impactful for most sites. Each enables different rich result types." } },
-      { "@type": "Question", "name": "Does schema markup improve rankings?", "acceptedAnswer": { "@type": "Answer", "text": "Schema markup is not a direct ranking factor but enables rich results that improve CTR by 20-30%. It also helps Google understand your content and is critical for AI search entity recognition." } },
-      { "@type": "Question", "name": "How do I test my schema markup?", "acceptedAnswer": { "@type": "Answer", "text": "Use Google's Rich Results Test for validation, Schema.org Validator for technical correctness, and Google Search Console's enhancements reports to monitor rich result status." } },
-      { "@type": "Question", "name": "What is JSON-LD vs microdata vs RDFa?", "acceptedAnswer": { "@type": "Answer", "text": "JSON-LD is Google's recommended format. It is a script tag in the head or body that is separate from HTML. Microdata and RDFa embed schema attributes directly in HTML tags. JSON-LD is easier to implement and maintain." } }
+      { "@type": "Question", "name": "What is schema markup?", "acceptedAnswer": { "@type": "Answer", "text": "Schema markup is structured data that you add to your HTML to help search engines understand your content. It uses a shared vocabulary from Schema.org and enables rich results like star ratings, FAQs, breadcrumbs, and product prices in search results." } },
+      { "@type": "Question", "name": "Which schema types are most important for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Organization (homepage), Article (content pages), BreadcrumbList (every page), FAQPage (FAQ sections), HowTo (guides), Product (ecommerce), and LocalBusiness (local SEO) are the highest impact. Most sites should start with Organization + Article + Breadcrumb." } },
+      { "@type": "Question", "name": "Does schema markup improve rankings?", "acceptedAnswer": { "@type": "Answer", "text": "Schema is not a direct ranking factor, but it enables rich results that improve CTR by 20-30% on average. Higher CTR often leads to better rankings indirectly. Schema also helps Google understand your content and is critical for AI search entity recognition." } },
+      { "@type": "Question", "name": "How do I test my schema markup?", "acceptedAnswer": { "@type": "Answer", "text": "Use Google's Rich Results Test for a quick validation with rich result preview. Use Schema.org Validator for a complete technical validation. Monitor Google Search Console's Enhancements reports for any schema errors across your site." } },
+      { "@type": "Question", "name": "What is JSON-LD vs microdata vs RDFa?", "acceptedAnswer": { "@type": "Answer", "text": "JSON-LD is a JavaScript object placed in a script tag, separate from your HTML. Microdata and RDFa embed schema attributes directly in HTML tags. Google recommends JSON-LD because it is easier to implement, maintain, and debug without touching your HTML structure." } },
+      { "@type": "Question", "name": "How often should I update my schema?", "acceptedAnswer": { "@type": "Answer", "text": "Update schema whenever your content changes: new articles need fresh Article dates, price changes need updated Product offers, and business hours changes need updated LocalBusiness markup. Review GSC Enhancements reports monthly for errors." } }
     ]
   }
   </script>

@@ -15,16 +15,19 @@ schema: |
     "dateModified": "2026-07-29"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is crawlability in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Crawlability is the ability of search engine bots to discover and access pages on your website. If a page cannot be crawled, it cannot be indexed or ranked." } },
-      { "@type": "Question", "name": "How do I check if my site is crawlable?", "acceptedAnswer": { "@type": "Answer", "text": "Use Google Search Console's Pages report, run Screaming Frog, check robots.txt and sitemap, and test URLs with the URL Inspection tool." } },
-      { "@type": "Question", "name": "What blocks search engine crawling?", "acceptedAnswer": { "@type": "Answer", "text": "Robots.txt disallow rules, noindex tags, password protection, server errors (5xx), redirect chains, broken internal links, orphan pages, and JavaScript-dependent navigation." } },
-      { "@type": "Question", "name": "How do I optimize crawl budget?", "acceptedAnswer": { "@type": "Answer", "text": "Block low-value URLs in robots.txt, consolidate thin content, use noindex on unimportant pages, prioritize best content in your sitemap, and fix crawl errors quickly." } },
-      { "@type": "Question", "name": "What is IndexNow and how does it work?", "acceptedAnswer": { "@type": "Answer", "text": "IndexNow is a protocol that instantly notifies search engines when content changes. Supported by Bing, Yandex, Naver, and Seznam. You ping an API endpoint with the changed URL list." } }
+      { "@type": "Question", "name": "What is crawlability in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Crawlability is the ability of search engine bots to discover and access pages on your website by following links. A page that cannot be crawled cannot be indexed or ranked. Crawlability is the most fundamental requirement for SEO success." } },
+      { "@type": "Question", "name": "How do I check if my site is crawlable?", "acceptedAnswer": { "@type": "Answer", "text": "Use Google Search Console's Pages report, run a Screaming Frog crawl, check your robots.txt and sitemap, and test individual URLs with the URL Inspection tool in GSC. If all return positive signals, your site is crawlable." } },
+      { "@type": "Question", "name": "What blocks search engine crawling?", "acceptedAnswer": { "@type": "Answer", "text": "Robots.txt disallow rules, noindex meta tags, password protection or login gates, server errors (5xx), redirect chains with 3+ hops, broken internal links, orphan pages with zero internal links, JavaScript-dependent navigation that hides links, and pages behind forms." } },
+      { "@type": "Question", "name": "How do I optimize crawl budget?", "acceptedAnswer": { "@type": "Answer", "text": "Block low-value URLs in robots.txt, consolidate thin content pages, apply noindex to unimportant pages (archives, tags, filtered pages), prioritize your best content in your XML sitemap, fix crawl errors immediately, and improve server response time to under 200ms." } },
+      { "@type": "Question", "name": "What is IndexNow and how does it work?", "acceptedAnswer": { "@type": "Answer", "text": "IndexNow is an open protocol that lets websites notify search engines instantly when content is created, updated, or deleted. You send a POST request to the IndexNow API with your host, a verification key, and the list of changed URLs. Supported by Bing, Yandex, Naver, and Seznam." } },
+      { "@type": "Question", "name": "Should I block AI crawlers like GPTBot?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your goal. If you want AI search engines to cite your content in answers, allow GPTBot, Claude-Web, and Google-Extended. If you want to prevent your content from being used for model training but still allow real-time retrieval, use the separate retrieval-only directives." } },
+      { "@type": "Question", "name": "How often does Google crawl my site?", "acceptedAnswer": { "@type": "Answer", "text": "Crawl frequency depends on your site's authority, update frequency, and crawl budget allocation. High-authority news sites may be crawled hourly. Smaller sites may be crawled weekly or monthly. The more high-quality content you publish and the faster your server responds, the more often Google crawls." } }
     ]
   }
   </script>
