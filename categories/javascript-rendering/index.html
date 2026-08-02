@@ -1,0 +1,587 @@
+---
+layout: default
+title: JavaScript SEO Checklist 2026 | Rendering, CSR vs SSR, and Best Practices
+description: Complete JavaScript SEO checklist. How Google renders JavaScript, CSR vs SSR vs SSG, dynamic rendering, two-wave indexing, and next js SEO best practices.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "JavaScript SEO and Rendering Checklist 2026",
+    "description": "14 checks to make your JavaScript site crawlable, indexable, and AI-visible. Covers CSR vs SSR vs SSG, dynamic rendering, hydration, two-wave indexing, and structured data injection.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-02"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Does Google render JavaScript?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Google renders JavaScript with headless Chromium through its Web Rendering Service (WRS). But rendering is a separate second wave after the initial HTML crawl, which can delay indexing by days and slow down discovery of content and links." } },
+      { "@type": "Question", "name": "Is client side rendering bad for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Client side rendering (CSR) is the riskiest pattern for SEO because all content is injected by JavaScript after the page loads. Google can still render it, but indexing is delayed, and most AI crawlers such as GPTBot, ClaudeBot, and PerplexityBot do not execute JavaScript at all, so the content is invisible to AI search." } },
+      { "@type": "Question", "name": "What is the difference between CSR, SSR, and SSG for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "CSR renders everything in the browser, hiding content from non-rendering crawlers. SSR (server side rendering) generates HTML per request, fast to index but slower TTFB. SSG (static site generation) builds static HTML at build time, the best pattern for crawlability and AI visibility. Next.js, Nuxt, and Astro support all three." } },
+      { "@type": "Question", "name": "Do AI search engines render JavaScript?", "acceptedAnswer": { "@type": "Answer", "text": "Mostly no. A Vercel study found that AI crawlers like GPTBot, ClaudeBot, OAI-SearchBot, and PerplexityBot fetch HTML but only roughly 10-25% execute JavaScript. If your key content is JS-rendered, you are largely invisible to AI search engines." } },
+      { "@type": "Question", "name": "Is dynamic rendering still recommended for JavaScript SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Dynamic rendering serves a static snapshot to crawlers and the full app to users. Google deprecated it as a general recommendation. Use it as a temporary stopgap only. The durable fix is SSR or SSG so the same HTML serves crawlers and users." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "JavaScript SEO and Rendering Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/javascript-rendering/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Fix JavaScript SEO and Rendering Issues",
+    "description": "14 checks to make JavaScript-heavy sites crawlable, indexable, and visible to AI search engines.",
+    "step": [
+      { "@type": "HowToStep", "text": "Compare raw HTML against rendered HTML in Google Search Console URL Inspection to see what crawlers actually receive." },
+      { "@type": "HowToStep", "text": "Verify key content appears in the initial HTML response rather than only after JavaScript execution." },
+      { "@type": "HowToStep", "text": "Move SEO-critical pages to server side rendering or static site generation." },
+      { "@type": "HowToStep", "text": "Ensure JSON-LD structured data is present in the raw HTML, not injected by JavaScript after hydration." },
+      { "@type": "HowToStep", "text": "Make internal links crawlable with real href attributes instead of JavaScript click handlers." },
+      { "@type": "HowToStep", "text": "Test that AI crawlers such as GPTBot and ClaudeBot can see your content." }
+    ]
+  }
+  </script>
+---
+
+<section class="category-hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      14 JavaScript SEO Checks - Updated August 2026
+    </div>
+    <h1>JavaScript SEO and <span>Rendering</span> Checklist</h1>
+    <p>Is your JavaScript site visible to Google and invisible to AI search? Most modern sites are built with JavaScript frameworks like React, Next.js, Vue, and Angular. Google renders JavaScript with headless Chromium, but it is a slow second wave. And the AI crawlers that power ChatGPT and Perplexity mostly do not execute JavaScript at all. This checklist collects the JavaScript SEO best practices your stack needs to fix both problems.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>JavaScript SEO <span>Matters More Than Ever</span></h2>
+        <p>JavaScript SEO is the practice of making JavaScript-rendered websites crawlable, indexable, and understandable by search engines and AI systems. If Googlebot cannot see your content in the raw HTML, indexing is delayed. If GPTBot cannot see it, AI search engines never cite you. This page is part of the <a href="{{ site.baseurl }}/">complete technical SEO checklist</a>, and the javascript seo tools below test what crawlers actually receive.</p>
+        <p>Google uses the Web Rendering Service (WRS), a headless Chromium browser, to execute JavaScript. But rendering is the second of two waves: wave one crawls the HTML, wave two renders and re-crawls. That delay is why client side rendering (CSR) sites get indexed slower than server-rendered sites.</p>
+        <p>The bigger problem in 2026 is AI visibility. A Vercel study of the AI crawler ecosystem found that most AI crawlers fetch JavaScript but only about 10-25% execute it. Every line of content you render only in the browser is content those engines never see. Server side rendering (SSR) and static site generation (SSG) fix this at the source.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">14</span>
+            <span class="intro-stat-label">JavaScript SEO checks</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">2</span>
+            <span class="intro-stat-label">waves of Google indexing</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">10-25%</span>
+            <span class="intro-stat-label">of AI crawlers render JS</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Rendering Patterns Compared</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">CSR (client side rendering)</span>
+              <span class="premium-comp-value gray">Risky</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">SSR (server side rendering)</span>
+              <span class="premium-comp-value green">Good</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">SSG (static site generation)</span>
+              <span class="premium-comp-value green">Best</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">ISR (incremental regeneration)</span>
+              <span class="premium-comp-value green">Good</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Dynamic rendering</span>
+              <span class="premium-comp-value yellow">Stopgap</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Google renders JS?</span>
+              <span class="premium-comp-value gold">Yes, two-wave</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">AI crawlers render JS?</span>
+              <span class="premium-comp-value gray">Mostly no</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 14 JavaScript SEO Checks</h2>
+      <p>Audit your rendering pipeline, from raw HTML to hydration and structured data.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Who Does It</th>
+            <th>Tool</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Audit whether your content depends on JavaScript</td>
+            <td class="highlight-cell">You</td>
+            <td>View Source</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Compare raw HTML vs rendered HTML</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC URL Inspection</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Verify key content is in the initial HTML response</td>
+            <td class="highlight-cell">You</td>
+            <td>curl / View Source</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Check if AI crawlers can see your content</td>
+            <td class="highlight-cell">You</td>
+            <td>Bot fetch test</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Confirm visible text is in the DOM, not only in JS bundles</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Puppeteer</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Check that structured data survives rendering</td>
+            <td class="highlight-cell">You</td>
+            <td>Rich Results Test</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Test that internal links are crawlable (real hrefs)</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Screaming Frog</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Move SEO-critical pages to SSR or SSG</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Next.js / Nuxt</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Add prerendering or dynamic rendering as a stopgap</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Prerender.io</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Verify hydration does not wipe or delay content</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Lighthouse</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Remove render-blocking scripts from the critical path</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Lighthouse</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Check GSC "rendered HTML" and coverage warnings</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Add a static HTML fallback or noscript content</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Set up AI crawler access in robots.txt</td>
+            <td class="highlight-cell">You</td>
+            <td>robots.txt</td>
+            <td>Easy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>Why each rendering issue matters and exactly how to fix it.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Audit Whether Your Content Depends on JavaScript</h4>
+      <p>Open any page and press Ctrl+U to view the raw source. If the main text, headings, and links are missing and only a script tag is present, your content is client side rendered. That is your starting point for every fix below.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Compare Raw HTML vs Rendered HTML</h4>
+      <p>In Google Search Console, open URL Inspection, load the page, then click "View Rendered HTML". Compare it to the raw HTML. If key content and links appear only in the rendered version, your site depends on JavaScript execution and will suffer two-wave indexing delays.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Verify Key Content Is in the Initial HTML Response</h4>
+      <p>Run <code>curl -s https://yoursite.com/page</code> and grep for your headline text. If it is not in the initial HTML, neither Googlebot's first wave nor AI crawlers will see it. Server side rendering puts content in this first response.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Check If AI Crawlers Can See Your Content</h4>
+      <p>Most AI crawlers, including GPTBot, ClaudeBot, OAI-SearchBot, and PerplexityBot, fetch HTML but rarely execute JavaScript. Test by fetching your page with the same user agent and inspecting whether your key text appears before any script execution. If it does not, your content is invisible to AI search engines and generative answers.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Confirm Visible Text Is in the DOM, Not Only in JS Bundles</h4>
+      <p>Use Puppeteer or Playwright to render the page and dump the DOM. If the text is present after rendering but absent in the raw response, it lives only in JavaScript. Move it into server-rendered markup or a static snapshot so crawlers can access it without executing your bundle.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Check That Structured Data Survives Rendering</h4>
+      <p>JSON-LD injected by JavaScript after hydration is often ignored or double-counted. Test with Google's Rich Results Test. Schema for articles, FAQs, products, and breadcrumbs must exist in the raw HTML, not be generated at runtime.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Test That Internal Links Are Crawlable</h4>
+      <p>Links rendered by onClick handlers are invisible to crawlers. Run a Screaming Frog crawl and confirm pages appear in the crawl. If navigation only works after JavaScript, add real <code>&lt;a href="/url"&gt;</code> anchors so Googlebot and AI crawlers can follow your architecture.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Move SEO-Critical Pages to SSR or SSG</h4>
+      <p>Server side rendering (SSR) generates HTML per request. Static site generation (SSG) builds HTML at deploy time. Both place content in the initial response. Next.js, Nuxt, SvelteKit, and Astro make this a framework configuration choice, not a rewrite.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Add Prerendering or Dynamic Rendering as a Stopgap</h4>
+      <p>Dynamic rendering serves a static snapshot to crawlers and the full app to users. It works but Google no longer recommends it as a strategy. Treat it as a bridge while you migrate to SSR or SSG. Never make it your long-term architecture.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Verify Hydration Does Not Wipe or Delay Content</h4>
+      <p>Hydration attaches event handlers to server-rendered HTML. If hydration fails or replaces content with a loading state, crawlers and users see nothing. Audit with Lighthouse and check that the server HTML matches the client render to avoid hydration mismatches.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Remove Render-Blocking Scripts From the Critical Path</h4>
+      <p>Large synchronous scripts in the head delay both rendering and crawling. Defer non-critical JavaScript, inline critical CSS, and code-split your bundles. This improves Core Web Vitals and reduces the time until crawlable content is available.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Check GSC Rendered HTML and Coverage Warnings</h4>
+      <p>Review the Coverage report for pages flagged "Crawled currently not indexed" and "Discovered currently not indexed". Both are common on JavaScript-heavy sites because rendering is slow and crawl priority is low. Check the URL Inspection rendered HTML for confirmation.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Add a Static HTML Fallback or noscript Content</h4>
+      <p>For critical text and links, provide a static fallback using a noscript block or an HTML snapshot. This gives non-rendering crawlers a minimal, accurate version of the page without relying on JavaScript at all.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">14</span> Set Up AI Crawler Access in robots.txt</h4>
+      <p>Explicitly allow GPTBot, ClaudeBot, OAI-SearchBot, PerplexityBot, and GeminiBot in robots.txt. Even with access, only server-rendered content will be readable. Never block these crawlers if you want to appear in AI answers, AI Overviews, and generative engines.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>CSR vs SSR vs SSG: Which Rendering Pattern to Pick</h2>
+      <p>The decision that decides whether search engines and AI systems can read your site.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>Pattern</th>
+            <th>Content in raw HTML</th>
+            <th>Indexing speed</th>
+            <th>AI crawler visibility</th>
+            <th>Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CSR (client side rendering)</td>
+            <td>No</td>
+            <td>Slow (two-wave)</td>
+            <td class="highlight-cell">Very low</td>
+            <td>Logged-in apps, dashboards</td>
+          </tr>
+          <tr>
+            <td>SSR (server side rendering)</td>
+            <td>Yes</td>
+            <td>Fast</td>
+            <td>High</td>
+            <td>Content sites, Next.js pages</td>
+          </tr>
+          <tr>
+            <td>SSG (static site generation)</td>
+            <td>Yes</td>
+            <td>Fastest</td>
+            <td class="highlight-cell">Highest</td>
+            <td>Blogs, docs, marketing sites</td>
+          </tr>
+          <tr>
+            <td>ISR (incremental static regeneration)</td>
+            <td>Yes</td>
+            <td>Fast</td>
+            <td>High</td>
+            <td>Large dynamic catalogs</td>
+          </tr>
+          <tr>
+            <td>Dynamic rendering</td>
+            <td>Snapshot for bots</td>
+            <td>Medium</td>
+            <td>Low</td>
+            <td>Stopgap during migration</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common JavaScript SEO Mistakes</h2>
+      <p>These errors keep JavaScript sites hidden from search engines and AI systems.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Client side rendering everything</h4>
+        <p>Placing all content behind JavaScript execution forces every crawler to render before seeing your content. Google delays indexing; AI crawlers skip it entirely.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Click-only navigation</h4>
+        <p>Links triggered by onClick handlers are invisible to crawlers. Every internal link needs a real href so crawlers can follow your architecture.</p>
+      </div>
+      <div class="resource-card">
+        <h4>JSON-LD injected after hydration</h4>
+        <p>Schema added by JavaScript at runtime is often ignored. Structured data must exist in the raw HTML response.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Blocking JS in robots.txt</h4>
+        <p>Disallowing your JavaScript or CSS assets breaks rendering for Googlebot and makes your page look empty. Never block JS and CSS files in robots.txt.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Optimizing for Google only</h4>
+        <p>Google renders JavaScript; AI crawlers mostly do not. If your content is JS-rendered, you rank for Google but vanish from AI answers and AI Overviews.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Dynamic rendering as the permanent fix</h4>
+        <p>Dynamic rendering is deprecated as a general strategy. Use it as a temporary bridge while moving to SSR or SSG.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>JavaScript SEO Tools</h2>
+      <p>Free and paid tools to diagnose rendering problems.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>URL Inspection shows rendered HTML. Coverage report flags slow-to-index JavaScript pages.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Lighthouse</h4>
+        <p>Audits render-blocking resources, hydration issues, and Core Web Vitals in one run.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Screaming Frog</h4>
+        <p>JavaScript rendering crawl shows which links and content are only available after execution.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Rich Results Test</h4>
+        <p>Confirms whether your structured data survives rendering or is lost to JavaScript injection.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Puppeteer / Playwright</h4>
+        <p>Headless browser automation to dump the rendered DOM and compare it to raw HTML.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Mobile-Friendly Test</h4>
+        <p>Google's render-and-inspect tool that shows the fully rendered page as Googlebot sees it.</p>
+        <span class="badge badge-free">Free</span>
+        <div class="resource-card">
+        <h4>BrowserStack</h4>
+        <p>Test JavaScript rendering across 3000+ real browsers and devices to catch client-side issues Googlebot would hit.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Related <span>Checklists</span></h2>
+      <p>Keep exploring the technical SEO series. Every checklist follows the same structure.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/indexing-canonicalization/">Indexing and Canonicalization</a></h4>
+        <p>Coverage report fixes, canonical tags, noindex, and pagination once JavaScript content renders correctly.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/on-page-technical/">On-Page Technical SEO</a></h4>
+        <p>Title tags, meta descriptions, and headings that stay intact when your framework renders them.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/core-web-vitals/">Core Web Vitals and Performance</a></h4>
+        <p>LCP, INP, and CLS on JavaScript-heavy sites, where hydration and bundle size hurt the most.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/crawlability/">Crawlability</a></h4>
+        <p>Robots.txt, crawl issues, and Googlebot access basics that every JavaScript site needs.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/mobile-ux/">Mobile UX</a></h4>
+        <p>How mobile rendering and interaction interact with JavaScript frameworks and Core Web Vitals.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/site-architecture/">Site Architecture</a></h4>
+        <p>URL structure and internal linking patterns that keep JavaScript-rendered links crawlable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Need <span>JavaScript SEO</span> Help?</h2>
+      <p>Get professional JavaScript rendering audits and technical SEO solutions from Clienvora. Our expert team delivers measurable results for JavaScript-heavy websites.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today. Or <a href="{{ site.baseurl }}/assets/pdfs/technical-seo-checklist-2026.pdf" style="color: #C9A227;">download the full checklist PDF</a>.</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>JavaScript SEO Frequently Asked Questions</h2>
+      <p>Direct answers to the questions developers and marketers ask most.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is JavaScript SEO?</div>
+        <div class="faq-answer"><p>JavaScript SEO is the practice of making JavaScript-rendered websites crawlable, indexable, and visible to search engines and AI systems. It covers rendering mode, structured data, and internal linking so crawlers can access content hidden behind JavaScript.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Does Google render JavaScript?</div>
+        <div class="faq-answer"><p>Yes. Google renders JavaScript with headless Chromium through its Web Rendering Service. But rendering is a separate second wave, so indexing is delayed compared to server-rendered pages. Check URL Inspection for the rendered HTML Google actually sees.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is client side rendering bad for SEO?</div>
+        <div class="faq-answer"><p>Client side rendering is the riskiest pattern. Content injected by JavaScript is invisible to most AI crawlers and delays Google indexing. Use SSR or SSG for any page that needs organic traffic.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the difference between CSR, SSR, and SSG?</div>
+        <div class="faq-answer"><p>CSR renders in the browser, hiding content from crawlers. SSR renders HTML per request, fast to index. SSG builds static HTML at deploy time, the best pattern for crawlability and AI visibility. Next.js, Nuxt, and Astro support all three.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do AI search engines render JavaScript?</div>
+        <div class="faq-answer"><p>Mostly no. A Vercel study found only about 10-25% of AI crawlers execute JavaScript. GPTBot, ClaudeBot, OAI-SearchBot, and PerplexityBot largely read raw HTML only.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is Next.js good for SEO?</div>
+        <div class="faq-answer"><p>Next.js is excellent for SEO because it supports SSR, SSG, and ISR out of the box. It serves full HTML to crawlers when you use these modes instead of pure client components.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is dynamic rendering still recommended?</div>
+        <div class="faq-answer"><p>Google deprecated dynamic rendering as a general recommendation. It still works as a stopgap, but the durable fix is server side rendering or static site generation so the same HTML serves everyone.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/">&larr; All Checklists</a>
+    <span style="display: flex; gap: 24px;">
+      <a href="{{ site.baseurl }}/categories/crawlability/">&larr; Previous: Crawlability</a>
+      <a href="{{ site.baseurl }}/categories/indexing-canonicalization/">Next: Indexing and Canonicalization &rarr;</a>
+    </span>
+  </div>
+</div>

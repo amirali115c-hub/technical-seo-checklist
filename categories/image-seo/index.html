@@ -1,0 +1,582 @@
+---
+layout: default
+title: Image SEO Checklist 2026 | SEO Image Optimization and Alt Text Guide
+description: Complete image SEO and SEO image optimization checklist. Alt text, image file names, WebP and AVIF formats, lazy loading, and image sitemaps.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Image SEO Checklist 2026",
+    "description": "15 checks to rank in Google Images and Google Lens: alt text, file names, WebP and AVIF formats, lazy loading, image sitemaps, and structured data.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-02"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the most important image SEO factor?", "acceptedAnswer": { "@type": "Answer", "text": "Alt text remains the single most impactful image SEO signal. It is the primary way search engines understand what an image depicts, a main ranking signal for Google Images, and a WCAG accessibility requirement. Write descriptive alt text under 125 characters without keyword stuffing." } },
+      { "@type": "Question", "name": "How long should image alt text be?", "acceptedAnswer": { "@type": "Answer", "text": "Keep alt text under 125 characters because screen readers typically cut off descriptions after that point. A clear descriptive phrase is enough; you do not need a full sentence." } },
+      { "@type": "Question", "name": "Should I use WebP or AVIF for images?", "acceptedAnswer": { "@type": "Answer", "text": "WebP is the current web standard and roughly 25-35% smaller than JPEG at the same quality. AVIF offers an additional 25-50% savings beyond WebP. Use the picture element to serve AVIF to browsers that support it, with WebP or JPEG as the fallback." } },
+      { "@type": "Question", "name": "Does lazy loading hurt image SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Only if you lazy-load the LCP image or rely on JavaScript to load every image. Never lazy-load the hero or above-the-fold image; preload it instead. Lazy-load below-the-fold images with native loading=lazy, and keep real img tags in the HTML." } },
+      { "@type": "Question", "name": "How do I get images indexed faster by Google?", "acceptedAnswer": { "@type": "Answer", "text": "Use descriptive file names and alt text, serve them from stable URLs without redirects, include images in your XML sitemap, and submit an image sitemap. Image sitemaps can speed indexing, especially on JavaScript-heavy sites." } },
+      { "@type": "Question", "name": "How to name images for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Image file names are indexed and serve as a keyword signal. Use descriptive, hyphen-separated, lowercase names like black-leather-handbag-women.webp instead of IMG_0042.jpg. Google reads hyphens as word separators." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Image SEO Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/image-seo/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Optimize Images for SEO",
+    "description": "15 checks to rank in Google Images and Google Lens.",
+    "step": [
+      { "@type": "HowToStep", "text": "Crawl your site and export every image with its alt text, file name, and size." },
+      { "@type": "HowToStep", "text": "Write descriptive alt text under 125 characters for meaningful images." },
+      { "@type": "HowToStep", "text": "Use empty alt for purely decorative images." },
+      { "@type": "HowToStep", "text": "Rename files with descriptive, hyphen-separated, lowercase slugs." },
+      { "@type": "HowToStep", "text": "Compress and serve next-gen formats with responsive srcset." },
+      { "@type": "HowToStep", "text": "Add images to sitemaps and structured data." },
+      { "@type": "HowToStep", "text": "Monitor image performance in Search Console." }
+    ]
+  }
+  </script>
+---
+
+<section class="category-hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      15 Image SEO Checks - Updated August 2026
+    </div>
+    <h1>Image <span>SEO</span> Checklist</h1>
+    <p>Google Images handles over a billion queries every day, and images appear in roughly a third of all searches. Yet most sites have never deliberately optimized a single image. This checklist covers the full image SEO stack: alt text, file names, WebP and AVIF formats, lazy loading, image sitemaps, and structured data, so your visuals can rank in Google Images, Google Lens, and Discover.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Images Are a <span>Traffic Channel</span></h2>
+        <p>For visual industries, image search is often a primary discovery channel. Sites with optimized image libraries see 20-40% of organic traffic arrive through image search. For ecommerce, food, travel, and interior design, that share is even higher, and Google Lens now processes billions of visual searches every month.</p>
+        <p>Google uses a mix of signals to understand and rank images: the page context around the image, alt text, the file name, image quality, the Core Web Vitals of the host page, structured data, and the backlinks pointing at the page. Alt text remains the single most direct image-specific signal and is also a WCAG accessibility requirement.</p>
+        <p>The performance side matters just as much. A typical WordPress site ships 2-4 MB of images per page, while PageSpeed Insights recommends staying within 300-500 KB. Choosing the right format and serving the right size per device can cut image payload by 50-80% with no visible quality loss. This page is part of the <a href="{{ site.baseurl }}/">complete technical SEO checklist</a>, with every image signal you need.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">15</span>
+            <span class="intro-stat-label">Image SEO checks</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">125</span>
+            <span class="intro-stat-label">Max alt text chars</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">300KB</span>
+            <span class="intro-stat-label">Target per image</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Image Format Cheat Sheet</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">WebP</span>
+              <span class="premium-comp-value green">Web standard</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">AVIF</span>
+              <span class="premium-comp-value green">Best savings</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">JPEG</span>
+              <span class="premium-comp-value yellow">Photos fallback</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">PNG</span>
+              <span class="premium-comp-value yellow">Transparency</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">SVG</span>
+              <span class="premium-comp-value green">Logos and icons</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 15 Image SEO Checks</h2>
+      <p>Optimize every image for discoverability, accessibility, and speed.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Who Does It</th>
+            <th>Tool</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Audit the image library: alt text, names, sizes</td>
+            <td class="highlight-cell">You</td>
+            <td>Screaming Frog</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Write descriptive alt text for meaningful images</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Use empty alt for purely decorative images</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Rename files with descriptive hyphenated slugs</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Compress every image toward target size</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Squoosh / ShortPixel</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Serve WebP or AVIF with picture fallback</td>
+            <td class="highlight-cell">Developer</td>
+            <td>CDN / pipeline</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Add srcset and sizes for responsive delivery</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Set width and height on every image</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Never lazy-load the LCP image, preload it</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Lazy-load below-the-fold images natively</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Add images to the XML sitemap</td>
+            <td class="highlight-cell">You</td>
+            <td>Sitemap</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Add structured data with image properties</td>
+            <td class="highlight-cell">Developer</td>
+            <td>JSON-LD</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Enable max-image-preview:large and add captions</td>
+            <td class="highlight-cell">Developer</td>
+            <td>robots meta</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Optimize for Discover and Lens requirements</td>
+            <td class="highlight-cell">You</td>
+            <td>Photography</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Monitor image performance in Search Console</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>What each optimization does and how to implement it.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Audit the Image Library: Alt Text, Names, Sizes</h4>
+      <p>Run a Screaming Frog crawl and export every image with its alt text, file name, URL, and file size. Filter for missing alt, generic names like IMG_0042.jpg, and files over 300 KB. Prioritize fixing high-value pages first, then roll out the fixes by template.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Write Descriptive Alt Text for Meaningful Images</h4>
+      <p>Describe what the image shows in a natural phrase under 125 characters. Screen readers cut off longer descriptions, and keyword stuffing is discounted by Google. Use the pattern: what the image is, of what subject, in what context. Never open with "image of" or "picture of".</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Use Empty Alt for Purely Decorative Images</h4>
+      <p>Decorative dividers, background textures, and filler icons should have an empty alt attribute. This tells screen readers and crawlers to skip them, keeping your optimization signals clean. Do not omit the attribute entirely; always include it, even when empty.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Rename Files With Descriptive Hyphenated Slugs</h4>
+      <p>File names are indexed and act as a keyword signal. Rename before upload: lowercase, hyphens between words, three to six words, one or two relevant keywords, and no special characters. A name like black-leather-handbag-women.webp beats IMG_0042.jpg every time.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Compress Every Image Toward Target Size</h4>
+      <p>Most web images should stay under 300 KB, and ideally under 100 KB. A typical WordPress site ships 2-4 MB of images per page while the recommended budget is 300-500 KB. Use Squoosh, TinyPNG, or ShortPixel before upload, and avoid letting plugins recompress already optimized files.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Serve WebP or AVIF With Picture Fallback</h4>
+      <p>WebP is roughly 25-35% smaller than JPEG at equal quality and supported everywhere. AVIF adds another 25-50% savings. Use the picture element to serve AVIF to supporting browsers, WebP next, and JPEG as the final fallback. CDNs can convert and negotiate format automatically.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Add Srcset and Sizes for Responsive Delivery</h4>
+      <p>Serve the right image size per device. A hero that displays at 1600px on desktop and 400px on mobile should not push 1600px to phones. The srcset attribute lists candidate sizes and the browser picks the right one. Art-directed crops need the picture element with media queries.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Set Width and Height on Every Image</h4>
+      <p>Explicit width and height attributes reserve space before the image loads, eliminating layout shift and protecting your CLS score. Without them, images that load late push content down the page and hurt Core Web Vitals. Add aspect-ratio in CSS as extra insurance.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Never Lazy-Load the LCP Image, Preload It</h4>
+      <p>The largest contentful paint element is usually an image. Lazy-loading it delays LCP and tanks the score. Give the hero image fetchpriority="high", skip loading="lazy" on it, and add a link rel=preload hint in the document head so it downloads first.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Lazy-Load Below-the-Fold Images Natively</h4>
+      <p>Add loading="lazy" to images below the fold so browsers defer them until scroll. Keep real img tags in the HTML with lazy loading; do not load every image through JavaScript, because Googlebot may not execute scripts to discover them, and AI crawlers often do not render JS at all.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Add Images to the XML Sitemap</h4>
+      <p>Include image tags inside your XML sitemap entries so Google can discover and index them faster. On JavaScript-heavy sites where Googlebot may not render lazy-loaded images, an image sitemap is the reliable path. Submit it through Search Console.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Add Structured Data With Image Properties</h4>
+      <p>Product, Recipe, and Article schema with image properties unlock rich results in image search, including price overlays, recipe thumbnails, and product carousels. List multiple image URLs for products. Keep image URLs stable, with no redirects and no dynamic parameters.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Enable Max-Image-Preview:large and Add Captions</h4>
+      <p>Add the max-image-preview:large robots meta tag so Google can show large previews of your images, a requirement for Discover eligibility. Visible captions below images are high-confidence context signals that often outperform alt text because users can see them.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">14</span> Optimize for Discover and Lens Requirements</h4>
+      <p>Discover needs images at least 1200px wide and the large preview tag. Google Lens matches by visual similarity, so use high-resolution product shots on clean backgrounds with accurate Product schema. Retail pages should shoot multiple angles and a lifestyle shot.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">15</span> Monitor Image Performance in Search Console</h4>
+      <p>Filter the Performance report by Images to see which images earn impressions and clicks. Watch per-image CTR, and replace underperforming visuals. Sites that actively monitor image KPIs consistently outgrow peers that ignore the channel.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Image Ranking Signals</h2>
+      <p>How Google decides which images surface in search.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>Signal</th>
+            <th>Impact</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Page context</td>
+            <td class="highlight-cell">High</td>
+            <td>Surrounding text, title, and headings must match the image topic</td>
+          </tr>
+          <tr>
+            <td>Alt text</td>
+            <td class="highlight-cell">High</td>
+            <td>Descriptive, under 125 chars, no stuffing, no "image of"</td>
+          </tr>
+          <tr>
+            <td>File name</td>
+            <td>Medium</td>
+            <td>Descriptive, hyphenated, lowercase slug</td>
+          </tr>
+          <tr>
+            <td>Image quality</td>
+            <td>Medium</td>
+            <td>High resolution, sharp, correct format</td>
+          </tr>
+          <tr>
+            <td>Core Web Vitals</td>
+            <td class="highlight-cell">High</td>
+            <td>LCP and CLS must pass; images are the top cause of LCP failure</td>
+          </tr>
+          <tr>
+            <td>Structured data</td>
+            <td>Medium</td>
+            <td>ImageObject, Product, Recipe, Article with image URLs</td>
+          </tr>
+          <tr>
+            <td>Page authority</td>
+            <td>Medium</td>
+            <td>Backlinks to the host page transfer to its images</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Image SEO Mistakes</h2>
+      <p>The errors that keep your visuals invisible and slow your pages.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Missing alt attributes</h4>
+        <p>Not the same as empty alt. Missing tells screen readers to announce the file name. Always include the attribute, empty for decorative images.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Keyword-stuffing alt text</h4>
+        <p>Running shoes best running shoes buy running shoes. Google recognizes and discounts this, and it hurts accessibility.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Lazy-loading the hero image</h4>
+        <p>Delaying the LCP image tanks Core Web Vitals. Preload the hero with fetchpriority="high" and lazy-load only below the fold.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Underscores in file names</h4>
+        <p>Google reads hyphens as word separators and underscores as word joiners. Use hyphenated lowercase slugs.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Missing width and height</h4>
+        <p>Images without dimensions cause layout shift on load, hurting CLS and pushing content around for users.</p>
+      </div>
+      <div class="resource-card">
+        <h4>No image sitemap on big sites</h4>
+        <p>Large image libraries and JS-heavy pages need an image sitemap to guarantee discovery without script execution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Image SEO Tools</h2>
+      <p>Audit, compress, and deliver optimized images at scale.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Screaming Frog</h4>
+        <p>Exports every image with alt text, file name, URL, and size to flag failures in bulk.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Squoosh</h4>
+        <p>Google's browser-based image compressor for WebP and AVIF export with visual comparison.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>TinyPNG / ShortPixel</h4>
+        <p>Batch compression plugins that resize and convert images automatically.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Cloudflare Images / ImageKit</h4>
+        <p>CDN image delivery with automatic format negotiation, resizing, and edge caching.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Next.js / Astro image components</h4>
+        <p>Framework image components that auto-generate WebP, AVIF, srcset, and lazy loading.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>Images filter in Performance shows which images earn impressions and clicks.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Related <span>Checklists</span></h2>
+      <p>Keep exploring the technical SEO series. Every checklist follows the same structure.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/core-web-vitals/">Core Web Vitals and Performance</a></h4>
+        <p>Why image payload is the biggest lever for LCP and overall page speed.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/on-page-technical/">On-Page Technical SEO</a></h4>
+        <p>Alt text, file names, and image captions as part of your full on-page audit.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/cdn-caching-hosting/">CDN, Caching, and Hosting</a></h4>
+        <p>How a CDN serves optimized images faster and improves image search signals.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/accessibility-a11y/">Accessibility and A11y</a></h4>
+        <p>Alt text is both an image SEO signal and a WCAG success criterion.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/ecommerce-faceted-nav/">Ecommerce Faceted Navigation</a></h4>
+        <p>Product image optimization across large ecommerce catalogs.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/schema-markup/">Structured Data and Schema</a></h4>
+        <p>ImageObject and Product schema that unlock rich image results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Need <span>Image SEO</span> Help?</h2>
+      <p>Get professional image optimization audits from Clienvora. Our expert team fixes alt text, formats, and image sitemaps so your visuals rank in Google Images and Google Lens.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today. Or <a href="{{ site.baseurl }}/assets/pdfs/technical-seo-checklist-2026.pdf" style="color: #C9A227;">download the full checklist PDF</a>.</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Image SEO Frequently Asked Questions</h2>
+      <p>Direct answers on alt text, formats, and indexing.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is the most important image SEO factor?</div>
+        <div class="faq-answer"><p>Alt text. It is the primary way search engines understand what an image shows, a main Google Images ranking signal, and a WCAG accessibility requirement. Keep it descriptive and under 125 characters.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How long should image alt text be?</div>
+        <div class="faq-answer"><p>Under 125 characters. Screen readers cut off descriptions after that point. A clear descriptive phrase is enough, not a full sentence.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Should I use WebP or AVIF?</div>
+        <div class="faq-answer"><p>WebP is the web standard at 25-35% smaller than JPEG. AVIF adds 25-50% more savings. Serve AVIF with picture fallback to WebP or JPEG.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Does lazy loading hurt image SEO?</div>
+        <div class="faq-answer"><p>Only if you lazy-load the LCP image or load images via JavaScript. Preload the hero and use native loading=lazy below the fold with real img tags.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I get images indexed faster?</div>
+        <div class="faq-answer"><p>Descriptive file names and alt text, stable URLs with no redirects, images in your XML sitemap, and a submitted image sitemap. This matters most on JavaScript-heavy sites.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How to name images for SEO?</div>
+        <div class="faq-answer"><p>Use descriptive, hyphen-separated, lowercase file names like black-leather-handbag-women.webp instead of IMG_0042.jpg. File names are indexed and act as a keyword signal. Google reads hyphens as word separators.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/">&larr; All Checklists</a>
+    <span style="display: flex; gap: 24px;">
+      <a href="{{ site.baseurl }}/categories/crawl-budget-log-analysis/">&larr; Previous: Crawl Budget and Log Analysis</a>
+      <a href="{{ site.baseurl }}/categories/on-page-technical/">Next: On-Page Technical SEO &rarr;</a>
+    </span>
+  </div>
+</div>

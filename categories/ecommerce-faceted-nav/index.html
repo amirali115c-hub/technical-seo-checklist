@@ -1,0 +1,580 @@
+---
+layout: default
+title: Ecommerce Faceted Navigation SEO Checklist 2026 | Faceted Search Guide
+description: Complete ecommerce SEO checklist for faceted search and filtering. Fix filter index bloat, crawl budget waste, and duplicate product URLs.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Ecommerce Faceted Navigation SEO Checklist 2026",
+    "description": "15 checks to control filter index bloat, fix crawl budget waste, and decide index, noindex, or canonical for every faceted URL on your store.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-02"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is faceted navigation in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Faceted navigation lets shoppers refine product lists by attributes like brand, size, color, and price. Every combination creates a new URL, which can generate millions of near-duplicate pages. Without management, this wastes crawl budget and causes index bloat." } },
+      { "@type": "Question", "name": "Should I use canonical or noindex for faceted navigation?", "acceptedAnswer": { "@type": "Answer", "text": "Use canonical for similar pages you want to consolidate into one ranking URL, noindex for low-value utility filters like size and price, and strategic indexing for single-parameter filters with proven search demand. Never combine noindex with canonical on the same page." } },
+      { "@type": "Question", "name": "Does faceted navigation affect crawl budget?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, massively. Research found up to 35% of a typical store's crawl budget goes to faceted URLs, and over 60% in large stores. Google confirmed in December 2024 that faceted navigation is the most common cause of overcrawling reports." } },
+      { "@type": "Question", "name": "How many filter combinations should I index?", "acceptedAnswer": { "@type": "Answer", "text": "Index base categories plus strategic single-parameter filters with proven search demand. Always noindex pages with two or more parameters unless they have substantial search volume, over about 500 searches per month, and avoid indexing more than 20% of total filter combinations." } },
+      { "@type": "Question", "name": "Can I block filters in robots.txt and noindex them?", "acceptedAnswer": { "@type": "Answer", "text": "No, never do both on the same URL. Google cannot read a noindex directive on a page it is blocked from crawling, so the noindex is never processed. robots.txt works as a preventative measure and is best combined with removing internal links to those URLs." } },
+      { "@type": "Question", "name": "Why does parameter ordering matter for faceted navigation?", "acceptedAnswer": { "@type": "Answer", "text": "URLs like /shoes?color=red&brand=nike and /shoes?brand=nike&color=red show identical products but are treated as separate pages, splitting ranking signals. Enforce consistent parameter ordering in URL generation logic." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Ecommerce Faceted Navigation SEO Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/ecommerce-faceted-nav/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Fix Ecommerce Faceted Navigation for SEO",
+    "description": "15 checks to control filter index bloat and protect crawl budget.",
+    "step": [
+      { "@type": "HowToStep", "text": "Audit how many filter URLs are indexed and how much crawl budget they consume." },
+      { "@type": "HowToStep", "text": "Classify every filter type with a three-tier index, noindex, or block framework." },
+      { "@type": "HowToStep", "text": "Always index base category pages and strategic high-demand filters." },
+      { "@type": "HowToStep", "text": "Noindex utility filters and canonicalize similar-content filters." },
+      { "@type": "HowToStep", "text": "Block infinite combinations in robots.txt without adding noindex." },
+      { "@type": "HowToStep", "text": "Monitor indexing and rankings over the 6 to 12 week recovery window." }
+    ]
+  }
+  </script>
+---
+
+<section class="category-hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      15 Ecommerce SEO Checks - Updated August 2026
+    </div>
+    <h1>Ecommerce <span>Faceted Navigation</span> Checklist</h1>
+    <p>Faceted navigation is the silent killer of ecommerce SEO. Every filter combination creates a new URL, and a store with 10,000 products and five filter types can generate over 2.5 million near-duplicate pages. Google confirmed in December 2024 that faceted navigation is the most common source of overcrawling reports. This checklist gives you the index, noindex, or canonical decision framework that protects your money pages, the same faceted search and filtering strategy large ecommerce catalogs use.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Filters Are a <span>Double-Edged Sword</span></h2>
+        <p>Handled carelessly, filters flood Google with millions of near-duplicate URLs that burn crawl budget and dilute link equity. Screaming Frog analysis found that up to 35% of a typical store's crawl budget goes to faceted URLs, and in large stores that share can exceed 60%. New products then take weeks to index because Googlebot is busy with filter combinations nobody searches for.</p>
+        <p>But filters are also an opportunity. The same system that floods the index can capture high-intent long-tail traffic. A shopper searching "red leather sofa" wants the exact filter page you already generate. The difference between an asset and a liability is entirely in your index, noindex, and block decisions.</p>
+        <p>That is why index and noindex choices affect 73% of organic traffic on filter-heavy sites. Apply a tiered framework: index what has search demand, noindex what does not, and block what can never rank. Consistent rules across the catalog protect both crawl budget and rankings. This page is part of the <a href="{{ site.baseurl }}/">complete technical SEO checklist</a> for ecommerce stores.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">15</span>
+            <span class="intro-stat-label">Ecommerce checks</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">35%</span>
+            <span class="intro-stat-label">Crawl budget on filters</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">2.5M</span>
+            <span class="intro-stat-label">Possible filter URLs</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Filter Directive Cheat Sheet</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Base category</span>
+              <span class="premium-comp-value green">Always index</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Brand filter</span>
+              <span class="premium-comp-value green">Index</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Size filter</span>
+              <span class="premium-comp-value yellow">Noindex</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Color filter</span>
+              <span class="premium-comp-value yellow">Canonical</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Price range</span>
+              <span class="premium-comp-value yellow">Noindex</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">2+ parameters</span>
+              <span class="premium-comp-value gray">Noindex</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 15 Faceted Navigation Checks</h2>
+      <p>Audit filter URLs, crawl budget, and indexing across your store.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Who Does It</th>
+            <th>Tool</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Audit indexed filter URLs and crawl budget share</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC / crawl</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Classify every filter type with a 3-tier framework</td>
+            <td class="highlight-cell">You</td>
+            <td>Spreadsheet</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Always index base category pages</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Index strategic single-parameter filters</td>
+            <td class="highlight-cell">You</td>
+            <td>Keyword data</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Noindex low-value utility filters</td>
+            <td class="highlight-cell">Developer</td>
+            <td>robots meta</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Canonicalize similar-content filters</td>
+            <td class="highlight-cell">Developer</td>
+            <td>rel canonical</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Block infinite combinations and sort variations</td>
+            <td class="highlight-cell">Developer</td>
+            <td>robots.txt</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Never combine noindex with canonical</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Never combine robots.txt with noindex</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Enforce consistent parameter ordering</td>
+            <td class="highlight-cell">Developer</td>
+            <td>URL logic</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Add nofollow beyond the first parameter</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Return real 404s for empty result pages</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Add unique copy to indexed filter pages</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Add breadcrumbs and schema to indexed filters</td>
+            <td class="highlight-cell">Developer</td>
+            <td>JSON-LD</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Monitor recovery over the 6-12 week window</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>How to apply index, noindex, or block to every filter type.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Audit Indexed Filter URLs and Crawl Budget Share</h4>
+      <p>Run a site: search and a full crawl to count how many filter URLs are indexed. Use log analysis or the Crawl Stats report to see what share of Googlebot's requests hit filter combinations. A store with 2,000 products once had 47,000 pages indexed from uncontrolled filters before the fixes brought it to 2,500.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Classify Every Filter Type With a 3-Tier Framework</h4>
+      <p>Sort every filter into three buckets: index and optimize for pages with verified search demand, noindex and follow for moderate combinations without confirmed volume, and block entirely for three or more combined filters and sort variations. Apply the same rule everywhere in the catalog.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Always Index Base Category Pages</h4>
+      <p>Base category pages are your money pages and often drive 60-80% of revenue. They must always be indexable, unique, and in the sitemap. Never let filter variants compete with them or canonicalize the category into a filtered page.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Index Strategic Single-Parameter Filters</h4>
+      <p>Single-parameter filters with proven search demand deserve full indexing, unique titles and H1s, and sitemap inclusion. As a rule, index filters drawing over 100-500 searches per month, and index combinations that drive over 2% of total revenue. Avoid indexing more than 20% of all combinations.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Noindex Low-Value Utility Filters</h4>
+      <p>Utility filters like size and price range rarely deserve rankings. Apply meta robots noindex, follow so Googlebot still crawls and passes PageRank while keeping the page out of the index. This preserves link equity without adding index bloat.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Canonicalize Similar-Content Filters</h4>
+      <p>Filters that show near-identical products, like color variants on the same category, should canonicalize to a single representative URL. The canonical consolidates ranking signals into one page instead of splitting them across dozens of variations.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Block Infinite Combinations and Sort Variations</h4>
+      <p>Three or more combined filters and sort-order variations can never rank and should be blocked. Use pattern-based robots.txt disallows matching your parameter structure, such as blocking all URLs with a sort parameter. Empty result pages should return a real 404.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Never Combine Noindex With Canonical</h4>
+      <p>On the same URL these directives contradict each other: noindex says exclude from the index, canonical says the content belongs at another URL. The conflicting signals get you neither outcome. Use one directive per page, chosen deliberately.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Never Combine Robots.txt With Noindex</h4>
+      <p>Google cannot read a noindex directive on a page it is blocked from crawling, so the noindex never gets processed. robots.txt only prevents future crawling; pages already indexed with backlinks may stay in the index. Use robots.txt preventatively and remove internal links to blocked URLs.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Enforce Consistent Parameter Ordering</h4>
+      <p>URLs with parameters in different orders show identical products but are treated as separate pages, splitting signals. /shoes?color=red&brand=nike and /shoes?brand=nike&color=red are duplicates. Generate URLs with a canonical parameter order so each combination has exactly one form.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Add Nofollow Beyond the First Parameter</h4>
+      <p>Ten filter types with fifty options each can generate billions of URLs. Add rel nofollow to filter links beyond the first applied parameter so crawlers stop following the combinatorial explosion. Combine this with robots.txt and noindex for defense in depth.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Return Real 404s for Empty Result Pages</h4>
+      <p>A filter combination with no matching products should return a genuine 404, not a soft 404 with a 200 status. Empty pages add nothing to the index and waste crawl requests. A real 404 lets crawlers move on quickly.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Add Unique Copy to Indexed Filter Pages</h4>
+      <p>Every filter page you index needs unique content: a distinct title, H1, and 150-300 words of genuine description. Pages that are pure product grids look thin to Google and become candidates for deindexing. The copy is what justifies the URL existing.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">14</span> Add Breadcrumbs and Schema to Indexed Filters</h4>
+      <p>Indexed filter pages should carry breadcrumb schema and Product or ItemList structured data so engines understand their place in the catalog. Breadcrumbs also improve the SERP display and support deeper crawl paths through the filter hierarchy.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">15</span> Monitor Recovery Over the 6-12 Week Window</h4>
+      <p>Crawl behavior changes within 2-4 weeks of the fixes, and ranking changes follow in 6-12 weeks. Track index coverage, crawl distribution, and filter page performance in Search Console. If a previously noindexed filter page was ranking, decide consciously whether to keep it indexed or let it drop.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Index, Noindex, or Block</h2>
+      <p>What each directive does for crawling, indexing, and equity.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>Directive</th>
+            <th>Crawling</th>
+            <th>Indexing</th>
+            <th>Link equity</th>
+            <th>Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Index</td>
+            <td>Allowed</td>
+            <td class="highlight-cell">Allowed</td>
+            <td>Preserved</td>
+            <td>Base categories, high-demand filters</td>
+          </tr>
+          <tr>
+            <td>Noindex, follow</td>
+            <td>Allowed</td>
+            <td>Blocked</td>
+            <td class="highlight-cell">Preserved</td>
+            <td>Utility filters, multi-parameter pages</td>
+          </tr>
+          <tr>
+            <td>Canonical</td>
+            <td>Allowed</td>
+            <td>Consolidated</td>
+            <td>Consolidated</td>
+            <td>Similar-content filter variants</td>
+          </tr>
+          <tr>
+            <td>robots.txt block</td>
+            <td>Blocked</td>
+            <td>Unaffected</td>
+            <td>No new equity</td>
+            <td>Infinite combinations, sort pages</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Faceted Navigation Mistakes</h2>
+      <p>The errors that turn filters into crawl budget disasters.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Treating filters as all or nothing</h4>
+        <p>Blocking everything loses long-tail traffic; indexing everything wastes crawl budget. Use a selective three-tier framework per filter type.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Inconsistent parameter ordering</h4>
+        <p>Identical products at different parameter orders split ranking signals. Generate URLs with one canonical parameter order.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Combining noindex with canonical</h4>
+        <p>Contradictory directives get you neither outcome. Choose one directive per URL and apply it deliberately.</p>
+      </div>
+      <div class="resource-card">
+        <h4>robots.txt plus noindex</h4>
+        <p>Google cannot read noindex on a blocked page. Use robots.txt preventatively and remove internal links to blocked URLs.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Over-canonicalizing distinct content</h4>
+        <p>Canonicalizing pages with genuinely different content hides unique products. Canonicalize only near-identical variations.</p>
+      </div>
+      <div class="resource-card">
+        <h4>No nofollow on combination links</h4>
+        <p>Following every possible filter combination creates crawl explosions. Add nofollow beyond the first applied parameter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Ecommerce SEO Tools</h2>
+      <p>Audit filters, parameters, and index coverage on your store.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Screaming Frog</h4>
+        <p>Maps parameterized URLs, redirects, and canonicals to reveal filter-generated duplicates and crawl waste.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>Coverage and Page indexing reports show which filter URLs are indexed and how crawl budget is spent.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>GSC URL Parameters tool</h4>
+        <p>Tell Google how to treat URL parameters, a supporting signal alongside your on-page directives.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Ahrefs Site Audit</h4>
+        <p>Flags duplicate content, index bloat, and parameterized URL growth across large catalogs.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Server log analysis</h4>
+        <p>Ground truth on which filter URLs Googlebot actually requests and how often.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Keyword tools</h4>
+        <p>Confirm search demand before choosing which filter pages deserve indexing.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Related <span>Checklists</span></h2>
+      <p>Keep exploring the technical SEO series. Every checklist follows the same structure.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/crawl-budget-log-analysis/">Crawl Budget and Log Analysis</a></h4>
+        <p>Why filter URLs burn crawl budget and how log analysis spots the waste.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/indexing-canonicalization/">Indexing and Canonicalization</a></h4>
+        <p>The canonical and noindex decisions that keep the right filter pages live.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/redirects-status-codes/">Redirects and Status Codes</a></h4>
+        <p>Keeping category and product URLs clean when filters change structure.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/site-architecture/">Site Architecture</a></h4>
+        <p>How category hierarchy and filter levels shape crawl depth.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/image-seo/">Image SEO</a></h4>
+        <p>Managing product image variants across filter and option URLs.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/site-migrations/">Site Migrations</a></h4>
+        <p>Preserving rankings when filter URLs or platforms change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Need <span>Ecommerce SEO</span> Help?</h2>
+      <p>Get professional ecommerce SEO audits from Clienvora. Our expert team fixes filter index bloat and crawl budget waste so your money pages rank.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today. Or <a href="{{ site.baseurl }}/assets/pdfs/technical-seo-checklist-2026.pdf" style="color: #C9A227;">download the full checklist PDF</a>.</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Ecommerce SEO Frequently Asked Questions</h2>
+      <p>Direct answers on filters, crawl budget, and indexing.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is faceted navigation in SEO?</div>
+        <div class="faq-answer"><p>Filtering products by brand, size, color, and price. Every combination creates a URL, which can generate millions of near-duplicates. Without management it wastes crawl budget and bloats the index.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Should I use canonical or noindex for filters?</div>
+        <div class="faq-answer"><p>Canonical for similar pages to consolidate, noindex for utility filters, and strategic indexing for high-demand single parameters. Never combine noindex with canonical on one page.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Does faceted navigation affect crawl budget?</div>
+        <div class="faq-answer"><p>Yes. Up to 35% of a typical store's crawl budget goes to faceted URLs, over 60% in large stores. Google called faceted navigation the most common overcrawling cause in December 2024.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How many filter combinations should I index?</div>
+        <div class="faq-answer"><p>Base categories plus high-demand single filters. Noindex pages with two or more parameters unless they exceed roughly 500 searches per month, and cap indexing at about 20% of combinations.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I block filters in robots.txt and noindex them?</div>
+        <div class="faq-answer"><p>No. Google cannot read noindex on a page it cannot crawl. robots.txt is preventative; combine it with removing internal links to blocked URLs.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Why does parameter ordering matter?</div>
+        <div class="faq-answer"><p>Same products at different parameter orders are treated as separate pages, splitting ranking signals. Generate URLs with one consistent parameter order.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/">&larr; All Checklists</a>
+    <span style="display: flex; gap: 24px;">
+      <a href="{{ site.baseurl }}/categories/cdn-caching-hosting/">&larr; Previous: CDN, Caching, and Hosting</a>
+      <a href="{{ site.baseurl }}/categories/accessibility-a11y/">Next: Accessibility and A11y &rarr;</a>
+    </span>
+  </div>
+</div>

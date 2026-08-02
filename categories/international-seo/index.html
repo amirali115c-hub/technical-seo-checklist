@@ -1,0 +1,572 @@
+---
+layout: default
+title: International SEO Checklist 2026 | Hreflang and Global SEO Strategy
+description: Complete international SEO strategy and hreflang checklist. Fix hreflang tags, x-default, ccTLD vs subdirectory vs subdomain, and multilingual SEO.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "International SEO and Hreflang Checklist 2026",
+    "description": "14 checks to rank in every country you target. Master hreflang tags, x-default, URL structure for international SEO, and the Google International Targeting report.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-02"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is hreflang in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Hreflang is an HTML attribute that tells search engines which language and regional version of a page to show for a given user. It prevents wrong-language pages from competing in the wrong countries and is the core of international SEO." } },
+      { "@type": "Question", "name": "Which URL structure is best for international SEO?", "acceptedAnswer": { "@type": "Answer", "text": "For most businesses the subdirectory structure (site.com/fr/) is best: easy to manage, consolidates domain authority, and works with hreflang. ccTLDs give the strongest local signal but split authority. Subdomains and gTLD+path are also valid with correct hreflang." } },
+      { "@type": "Question", "name": "Do I need x-default in hreflang?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. x-default tells Google which page to show when a user's language or region is not covered by any specific hreflang version. Usually points to the English or homepage version." } },
+      { "@type": "Question", "name": "Can I use hreflang and canonical together?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each localized page keeps a self-referencing canonical, and hreflang tags declare the full set of language versions. Never canonicalize localized pages to a single URL; that would defeat hreflang." } },
+      { "@type": "Question", "name": "What is the difference between hreflang and translated content?", "acceptedAnswer": { "@type": "Answer", "text": "Hreflang tells Google which version to serve; translation is the content itself. You need both: genuine translations plus correct hreflang. Machine-translated duplicate content with correct hreflang still risks a thin-content quality problem." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "International SEO and Hreflang Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/international-seo/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Set Up International SEO and Hreflang",
+    "description": "14 checks to target multiple countries and languages without creating duplicate content or wrong-language pages.",
+    "step": [
+      { "@type": "HowToStep", "text": "Choose your URL structure: ccTLD, subdirectory, subdomain, or gTLD with path." },
+      { "@type": "HowToStep", "text": "Map every localized page to a complete language and region set." },
+      { "@type": "HowToStep", "text": "Implement hreflang with one method only: head, sitemap, or HTTP header." },
+      { "@type": "HowToStep", "text": "Add self-referencing hreflang and bidirectional return tags on every page." },
+      { "@type": "HowToStep", "text": "Add x-default for users whose language is not covered." },
+      { "@type": "HowToStep", "text": "Validate everything with Google's hreflang testing tool and the International Targeting report." }
+    ]
+  }
+  </script>
+---
+
+<section class="category-hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      14 International SEO Checks - Updated August 2026
+    </div>
+    <h1>International SEO and <span>Hreflang</span> Checklist</h1>
+    <p>Ranking in one country does not mean ranking in the next. Wrong hreflang tags create wrong-language pages competing in the wrong countries, and duplicated international content loses rankings everywhere. This checklist targets every country and language you serve, using the right URL structure, correct hreflang tags, and the Google International Targeting report. It is the international SEO strategy you need to win markets beyond your home country.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>International SEO Is <span>Hreflang Done Right</span></h2>
+        <p>International SEO is the practice of optimizing a website so search engines serve the correct language and regional version of a page to each user, in every country you target. The signal that makes this possible is hreflang, an attribute that declares the relationship between localized versions of the same page.</p>
+        <p>Without hreflang, Google treats your French, German, and English versions as competitors. It may rank the wrong language in the wrong country, or worse, decide the pages are duplicates and index only one. That is why hreflang errors never show up in coverage reports; they show up as lost rankings and traffic in specific countries.</p>
+        <p>The second decision is URL structure. ccTLDs, subdirectories, subdomains, and gTLD with path each carry different authority and operational trade-offs. Combined with correct hreflang, they tell Google exactly who each version is for. This page is part of the <a href="{{ site.baseurl }}/">complete technical SEO checklist</a> for multilingual and global sites.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">14</span>
+            <span class="intro-stat-label">International SEO checks</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">4</span>
+            <span class="intro-stat-label">URL structure options</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">1</span>
+            <span class="intro-stat-label">x-default per page set</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>URL Structure Compared</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">ccTLD (site.fr)</span>
+              <span class="premium-comp-value green">Strong local</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Subdirectory (site.com/fr/)</span>
+              <span class="premium-comp-value gold">Best default</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Subdomain (fr.site.com)</span>
+              <span class="premium-comp-value yellow">Splits authority</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">gTLD + path (site.com/en/)</span>
+              <span class="premium-comp-value green">Good with hreflang</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Language vs region</span>
+              <span class="premium-comp-value gray">BCP 47 codes</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Missing x-default</span>
+              <span class="premium-comp-value yellow">Wrong fallback</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 14 International SEO Checks</h2>
+      <p>From URL structure to hreflang validation and per-country performance.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Who Does It</th>
+            <th>Tool</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Choose the right URL structure for your markets</td>
+            <td class="highlight-cell">You</td>
+            <td>Planning</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Map every localized page to a full language set</td>
+            <td class="highlight-cell">You</td>
+            <td>Spreadsheet</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Implement hreflang with one method only</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code / CMS</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Add self-referencing hreflang on every page</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Add bidirectional return tags on all versions</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Add x-default for regionless fallback</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Validate hreflang with Google's testing tool</td>
+            <td class="highlight-cell">You</td>
+            <td>hreflang tester</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Keep hreflang and canonicals consistent</td>
+            <td class="highlight-cell">You</td>
+            <td>Screaming Frog</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Set language targeting in Google Search Console</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Review the International Targeting report</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Audit BCP 47 language codes on every tag</td>
+            <td class="highlight-cell">You</td>
+            <td>Code</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Ensure translations are genuine, not duplicates</td>
+            <td class="highlight-cell">You</td>
+            <td>Content</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Localize currency, prices, and measurement</td>
+            <td class="highlight-cell">You</td>
+            <td>Content</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Monitor per-country performance in Search Console</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>The URL architecture, hreflang mechanics, and country targeting details behind a global site.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Choose the Right URL Structure</h4>
+      <p>ccTLDs like site.fr give the strongest local signal but split authority and raise operational cost. Subdirectories like site.com/fr/ are the best default: one domain, one authority pool, easy hreflang. Subdomains like fr.site.com and gTLD+path like site.com/en/ work too but require deliberate hreflang. For most small and mid-size businesses, subdirectories win.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Map Every Localized Page to a Full Language Set</h4>
+      <p>Build a spreadsheet where each row is a concept and each column is a locale: /fr/, /de/, /en-gb/, /pt-br/. Every version must exist for every other version to be referenced. A missing page breaks the hreflang loop for the whole set.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Implement Hreflang With One Method Only</h4>
+      <p>Three valid methods exist: link tags in the head, hreflang entries in the XML sitemap, or HTTP headers for non-HTML files. Pick one and use it consistently. Mixing methods causes conflicting signals. Head tags work up to a few hundred pages; sitemaps scale better for large multilingual sites.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Add Self-Referencing Hreflang on Every Page</h4>
+      <p>Each localized page must include itself in its own hreflang set. A French page references fr, de, en-gb, and fr again. Self-reference makes the set unambiguous and is a best practice Google recommends.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Add Bidirectional Return Tags</h4>
+      <p>If the French page links to the German page, the German page must link back to the French page. A one-directional hreflang link is ignored. Every version in the set must reference every other version.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Add x-Default for Regionless Fallback</h4>
+      <p>x-default tells Google which page to show when a user's language or region is not covered by the set. Point it at your English version or homepage. Without x-default, Google guesses, and guessers land on the wrong page in new markets.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Validate Hreflang With Google's Testing Tool</h4>
+      <p>Google's hreflang testing tool accepts a URL and shows you exactly which hreflang annotations it detects and whether they are valid. Run every version of a few key pages. Fix missing return tags, malformed codes, and URLs that 404.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Keep Hreflang and Canonicals Consistent</h4>
+      <p>Every localized page needs a self-referencing canonical. Never canonicalize localized pages to one URL; that would tell Google they are duplicates and defeat hreflang entirely. Canonical and hreflang coexist: canonical declares the preferred version, hreflang declares the full language set.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Set Language Targeting in Search Console</h4>
+      <p>For ccTLDs and gTLDs, open the International Targeting report and verify the country targeting setting. Subdomains and subdirectories are recognized automatically. This report is the official place Google surfaces hreflang errors.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Review the International Targeting Report</h4>
+      <p>The report lists hreflang errors by page: missing return tags, incorrect language codes, and URLs that return errors. Treat every error as a lost market. Re-check after any hreflang deployment.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Audit BCP 47 Language Codes</h4>
+      <p>Use full BCP 47 codes: en-US and en-GB are different regions, pt-BR differs from pt-PT. A bare "en" or "fr" is valid but loses region precision. Keep codes consistent across head tags, sitemaps, and headers.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Ensure Translations Are Genuine, Not Duplicates</h4>
+      <p>Hreflang does not make duplicate machine-translated content good. Each localized page needs real, human-quality translation with localized structure. Otherwise you get thin-content penalties plus hreflang that points to worthless pages.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Localize Currency, Prices, and Measurement</h4>
+      <p>International SEO is also international UX. Prices in local currency, correct date formats, local units, and local payment methods all affect engagement and conversions. Search engines read these signals of genuine localization too.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">14</span> Monitor Per-Country Performance in Search Console</h4>
+      <p>In the Performance report, segment by country to see which markets are growing and which are stalled. A market with hreflang errors shows as missing or wrong-language impressions. Watch clicks, impressions, and position per country after changes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Which URL Structure Should You Choose?</h2>
+      <p>The trade-offs behind the four standard international SEO architectures.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>Structure</th>
+            <th>Example</th>
+            <th>Local signal</th>
+            <th>Authority</th>
+            <th>Ops complexity</th>
+            <th>Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ccTLD</td>
+            <td>site.fr</td>
+            <td class="highlight-cell">Strongest</td>
+            <td>Split</td>
+            <td>High</td>
+            <td>Large markets, local offices</td>
+          </tr>
+          <tr>
+            <td>Subdirectory</td>
+            <td>site.com/fr/</td>
+            <td>Good</td>
+            <td class="highlight-cell">Consolidated</td>
+            <td>Low</td>
+            <td>Most small and mid businesses</td>
+          </tr>
+          <tr>
+            <td>Subdomain</td>
+            <td>fr.site.com</td>
+            <td>Good</td>
+            <td>Split</td>
+            <td>Medium</td>
+            <td>Separate infrastructure</td>
+          </tr>
+          <tr>
+            <td>gTLD + path</td>
+            <td>site.com/en/</td>
+            <td>Good with hreflang</td>
+            <td>Consolidated</td>
+            <td>Low</td>
+            <td>Global brands, no ccTLD budget</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common International SEO Mistakes</h2>
+      <p>The hreflang and structure errors that silently cost you whole countries.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Missing x-default</h4>
+        <p>Without x-default, users in uncovered regions land wherever Google guesses, usually the wrong language.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Missing return tags</h4>
+        <p>One-directional hreflang links are ignored entirely. Every version must reference every other version.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Two hreflang methods at once</h4>
+        <p>Head tags plus sitemap entries plus headers send conflicting signals. Pick one method and use it everywhere.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Hreflang to broken URLs</h4>
+        <p>Pointing hreflang at a 404 or redirect breaks the loop for the whole page set.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Canonical overriding hreflang</h4>
+        <p>Canonicalizing localized pages to one URL tells Google they are duplicates. Keep self-referencing canonicals.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Machine-translated duplicates</h4>
+        <p>Hreflang cannot fix low-quality translations. Duplicate content with hreflang still fails quality checks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>International SEO Tools</h2>
+      <p>Validate hreflang and track country performance without guessing.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Google hreflang testing tool</h4>
+        <p>Official validator that shows every hreflang annotation Google detects on a URL.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>International Targeting report and per-country Performance segmentation.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Screaming Frog</h4>
+        <p>Audits hreflang tags, canonicals, and return-tag completeness across the crawl.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Ahrefs Site Audit</h4>
+        <p>Flags hreflang errors, missing return tags, and malformed language codes.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Aleyda Solis hreflang checker</h4>
+        <p>Free web-based checker for single-page hreflang validation.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>hreflang generator</h4>
+        <p>Generates correct tag sets from your page map to reduce manual errors.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Related <span>Checklists</span></h2>
+      <p>Keep exploring the technical SEO series. Every checklist follows the same structure.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/site-architecture/">Site Architecture</a></h4>
+        <p>URL structure and internal linking decisions that support country and language versions.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/schema-markup/">Structured Data and Schema</a></h4>
+        <p>Organization, Person, and breadcrumb schema that carry multilingual and country signals.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/on-page-technical/">On-Page Technical SEO</a></h4>
+        <p>Localized title tags and meta descriptions for every language version of your site.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/indexing-canonicalization/">Indexing and Canonicalization</a></h4>
+        <p>Why hreflang and canonical must never fight over the same international page.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/ai-search-geo/">AI Search and GEO</a></h4>
+        <p>How AI engines pick which language version to cite in answers and overviews.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/eeat-entities/">E-E-A-T and Entities</a></h4>
+        <p>Global brand entity consistency across country sites and author profiles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Need <span>International SEO</span> Help?</h2>
+      <p>Get professional multilingual SEO audits and hreflang implementation from Clienvora. Our expert team delivers measurable results in every country you serve.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today. Or <a href="{{ site.baseurl }}/assets/pdfs/technical-seo-checklist-2026.pdf" style="color: #C9A227;">download the full checklist PDF</a>.</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>International SEO Frequently Asked Questions</h2>
+      <p>Direct answers on hreflang, URL structure, and multilingual targeting.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is hreflang in SEO?</div>
+        <div class="faq-answer"><p>Hreflang is an HTML attribute declaring which language and regional version of a page to show for a user. It is the signal that prevents wrong-language pages from competing in the wrong countries.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Which URL structure is best for international SEO?</div>
+        <div class="faq-answer"><p>Subdirectories like site.com/fr/ are best for most businesses: one authority pool, easy management, works with hreflang. ccTLDs give the strongest local signal but split authority and cost more to run.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I need x-default in hreflang?</div>
+        <div class="faq-answer"><p>Yes. x-default tells Google which page to show when no specific language or region matches the user, usually your English version or homepage.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I use hreflang and canonical together?</div>
+        <div class="faq-answer"><p>Yes. Each localized page keeps a self-referencing canonical while hreflang declares the full language set. Never canonicalize localized pages to a single URL.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I check hreflang errors?</div>
+        <div class="faq-answer"><p>Use Google's hreflang testing tool and the Search Console International Targeting report. Both surface missing return tags, malformed codes, and broken URLs.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is machine translation enough for international SEO?</div>
+        <div class="faq-answer"><p>No. Hreflang handles serving, but content quality still matters. Machine-translated duplicates without genuine localization risk thin-content penalties in every market.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/">&larr; All Checklists</a>
+    <span style="display: flex; gap: 24px;">
+      <a href="{{ site.baseurl }}/categories/indexing-canonicalization/">&larr; Previous: Indexing</a>
+      <a href="{{ site.baseurl }}/categories/redirects-status-codes/">Next: Redirects and Status Codes &rarr;</a>
+    </span>
+  </div>
+</div>

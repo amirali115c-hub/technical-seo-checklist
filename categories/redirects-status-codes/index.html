@@ -1,0 +1,578 @@
+---
+layout: default
+title: Redirect Status Codes Checklist 2026 | 301 vs 302 HTTP Redirect Guide
+description: Complete redirect status codes and HTTP redirect SEO checklist. Fix 301 vs 302 redirects, redirect chains, soft 404s, and 410 gone responses.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "HTTP Status Codes and Redirects Checklist 2026",
+    "description": "14 checks to master 301 vs 302 redirects, redirect chains, soft 404s, 410 gone pages, and 5xx errors so link equity never leaks.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-02"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the difference between 301 and 302 redirects?", "acceptedAnswer": { "@type": "Answer", "text": "A 301 is a permanent redirect that passes most ranking signals and updates the index to the new URL. A 302 is a temporary redirect that does not permanently pass equity and keeps the old URL canonical. Use 301 for permanent moves, 302 only for short-term changes like A/B tests." } },
+      { "@type": "Question", "name": "Do 301 redirects pass link equity?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A 301 passes the vast majority of PageRank and ranking signals to the destination URL. That is why correct redirect mapping is critical during site migrations. Redirect chains and loops reduce the equity that gets through." } },
+      { "@type": "Question", "name": "Is a 404 bad for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "No. A true 404 for a genuinely gone page is fine and expected. The problems are soft 404s, where a page returns 200 but shows not-found content, and important pages that 404 without a redirect. Use 410 Gone for intentionally removed content to speed deindexing." } },
+      { "@type": "Question", "name": "What is a redirect chain?", "acceptedAnswer": { "@type": "Answer", "text": "A redirect chain is a series of redirects where URL A redirects to B, which redirects to C. Each hop delays the user, wastes crawl budget, and dilutes link equity. Flatten chains by pointing every old URL directly at its final destination." } },
+      { "@type": "Question", "name": "What is a soft 404 and how do I fix it?", "acceptedAnswer": { "@type": "Answer", "text": "A soft 404 is a page that returns a 200 OK status but shows not-found content. Google flags these in Search Console. Fix by returning a real 404 or 410 status code, or by redirecting to a relevant live page." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "HTTP Status Codes and Redirects Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/redirects-status-codes/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Fix HTTP Status Codes and Redirects",
+    "description": "14 checks to eliminate redirect chains, soft 404s, and link equity leaks.",
+    "step": [
+      { "@type": "HowToStep", "text": "Crawl the site and audit every redirect, its type, chains, and loops." },
+      { "@type": "HowToStep", "text": "Replace temporary 302s with permanent 301s for permanent moves." },
+      { "@type": "HowToStep", "text": "Flatten redirect chains so every old URL points directly to the final destination." },
+      { "@type": "HowToStep", "text": "Fix soft 404s by returning real 404 or 410 status codes." },
+      { "@type": "HowToStep", "text": "Use 410 Gone for intentionally removed content." },
+      { "@type": "HowToStep", "text": "Set up coverage alerts for 404 and 500 spikes." }
+    ]
+  }
+  </script>
+---
+
+<section class="category-hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      14 Status Code Checks - Updated August 2026
+    </div>
+    <h1>HTTP Status Codes and <span>Redirects</span> Checklist</h1>
+    <p>Every URL change is a re-rank event. Redirect chains, broken 301s, and soft 404s silently bleed link equity, and the effects are invisible until rankings drop. This checklist covers the full status code map: 301 vs 302, redirect chains and loops, 404 vs 410, soft 404s, and server errors, with the exact fixes for each. Whether you need a permanent redirect status code or a temporary 302, the right HTTP redirect protects your rankings.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Status Codes Are <span>Search Signals</span></h2>
+        <p>Every response your server sends is a message to search engines. A 301 says "this page moved permanently, transfer the equity." A 302 says "temporary, keep the old URL." A 404 says "gone," and a 410 says "gone forever, stop looking." Returning the wrong code sends the wrong message and costs rankings.</p>
+        <p>Redirect chains are the most common silent killer. When URL A redirects to B, and B redirects to C, every hop delays the crawler and dilutes the equity that reaches the final page. The fix is always the same: point every old URL directly at its final destination.</p>
+        <p>Soft 404s are the second silent killer: pages that return 200 but display not-found content. Google indexes them as thin pages, wasting your index and confusing your structure. Each code in this checklist has a clear job, and this page shows exactly when to use which. It is part of the <a href="{{ site.baseurl }}/">complete technical SEO checklist</a>, alongside every other status and redirect fix.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">14</span>
+            <span class="intro-stat-label">Status code checks</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">301</span>
+            <span class="intro-stat-label">permanent redirect</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">410</span>
+            <span class="intro-stat-label">gone forever</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Status Code Cheat Sheet</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">301 permanent</span>
+              <span class="premium-comp-value green">Passes equity</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">302 temporary</span>
+              <span class="premium-comp-value yellow">No equity</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">404 not found</span>
+              <span class="premium-comp-value yellow">Fine if real</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">410 gone</span>
+              <span class="premium-comp-value green">Faster deindex</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">500 server error</span>
+              <span class="premium-comp-value gray">Blocking</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">503 maintenance</span>
+              <span class="premium-comp-value yellow">Short only</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 14 Status Code Checks</h2>
+      <p>Audit every redirect, error, and response type on your site.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Who Does It</th>
+            <th>Tool</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Audit all redirects: count, type, chains, loops</td>
+            <td class="highlight-cell">You</td>
+            <td>Screaming Frog</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Replace 302s with 301s for permanent moves</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Flatten redirect chains to direct destinations</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Fix redirect loops immediately</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Map every deleted URL to a 301</td>
+            <td class="highlight-cell">You</td>
+            <td>Spreadsheet</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Convert soft 404s to real 404 or 410</td>
+            <td class="highlight-cell">Developer</td>
+            <td>GSC / server</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Use 410 Gone for permanently removed content</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Return real 404s for genuinely missing pages</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Verify 503 is only for short maintenance</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Audit and fix 500 server errors</td>
+            <td class="highlight-cell">Developer</td>
+            <td>GSC / logs</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Redirect old file extensions after platform moves</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Keep redirect maps indefinitely</td>
+            <td class="highlight-cell">You</td>
+            <td>Docs</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Avoid meta refresh and JavaScript redirects</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Set up coverage alerts for 404 and 500 spikes</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>What each status code does, when to use it, and how to fix the silent killers.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Audit All Redirects: Count, Type, Chains, Loops</h4>
+      <p>Run a Screaming Frog crawl and export the redirect report. Count total redirects, list which are 301 vs 302, and flag chains and loops. You cannot fix what you have not measured. Make this a quarterly audit.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Replace 302s With 301s for Permanent Moves</h4>
+      <p>A 302 tells Google the move is temporary, so the old URL stays canonical and equity does not transfer. If the move is permanent, every 302 is leaking authority. Replace 302s with 301s at the server level.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Flatten Redirect Chains to Direct Destinations</h4>
+      <p>URL A to B to C is a chain. Each hop delays users, wastes crawl budget, and reduces equity transfer. Change A to point directly at C. Chains grow during migrations and URL restructuring; audit and flatten them regularly.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Fix Redirect Loops Immediately</h4>
+      <p>A loop is a chain that never terminates: A redirects to B, B redirects to A. Users see "too many redirects" and crawlers give up. These are emergencies. Fix the underlying rules at the server or CDN level.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Map Every Deleted URL to a 301</h4>
+      <p>Every removed page needs a destination. Blanket or homepage-only redirects signal content loss and drain equity. Build a one-to-one map from old URL to closest new equivalent, and give backlink-heavy pages top priority.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Convert Soft 404s to Real 404 or 410</h4>
+      <p>A soft 404 returns 200 with not-found content. Google flags these in Search Console and may index them as thin pages. Return a genuine 404 or 410 status, or redirect to a relevant live page. Never serve a "not found" body with a 200 header.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Use 410 Gone for Permanently Removed Content</h4>
+      <p>A 410 tells search engines the content is gone permanently and should be deindexed faster than a 404. Use it for intentionally removed products, pages, and content you know will never return.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Return Real 404s for Genuinely Missing Pages</h4>
+      <p>A true 404 for a page that does not exist is correct behavior and fine for SEO. Pair it with a helpful 404 page that links back to relevant content. The problem is only when real pages incorrectly return 404 without a redirect.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Verify 503 Is Only for Short Maintenance</h4>
+      <p>A 503 with Retry-After tells crawlers to come back later. Use it for maintenance lasting hours, not weeks. A long-running 503 makes Google treat the site as unavailable and can devalue it.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Audit and Fix 500 Server Errors</h4>
+      <p>500, 502, and 503 errors block crawling entirely. Check Search Console coverage and server logs for 5xx spikes. These need developer attention: memory limits, database connection issues, and failing plugins are common causes.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Redirect Old File Extensions After Platform Moves</h4>
+      <p>Moving from .php, .aspx, or .html to clean URLs leaves hundreds of old links pointing at dead extensions. Map each legacy extension pattern to its new URL with 301s so inbound links keep flowing.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Keep Redirect Maps Indefinitely</h4>
+      <p>Never remove redirects after a migration "stabilizes." Old URLs live in backlinks, bookmarks, and email forever. A redirect map is permanent infrastructure, not a launch-day tool.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Avoid Meta Refresh and JavaScript Redirects</h4>
+      <p>Meta refresh and window.location redirects lose equity, slow users, and are unreliable. Redirect at the server level with a 301 so crawlers get a clean signal. JavaScript redirects are especially risky for AI crawlers that do not execute JS.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">14</span> Set Up Coverage Alerts for 404 and 500 Spikes</h4>
+      <p>Enable Search Console notifications and monitor the coverage report weekly. A sudden spike in 404s usually means a broken redirect map; a 500 spike means a server problem. Catch both within days.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>301 vs 302 vs 404 vs 410</h2>
+      <p>The complete status code map for SEO decisions.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Meaning</th>
+            <th>Equity</th>
+            <th>Indexing effect</th>
+            <th>Use for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>301</td>
+            <td>Moved permanently</td>
+            <td class="highlight-cell">Passes ~all</td>
+            <td>Old URL deindexed</td>
+            <td>Permanent URL moves</td>
+          </tr>
+          <tr>
+            <td>302 / 307</td>
+            <td>Moved temporarily</td>
+            <td>Does not pass</td>
+            <td>Old URL stays canonical</td>
+            <td>A/B tests, short maintenance</td>
+          </tr>
+          <tr>
+            <td>404</td>
+            <td>Not found</td>
+            <td>None</td>
+            <td>URL removed from index</td>
+            <td>Genuinely missing pages</td>
+          </tr>
+          <tr>
+            <td>410</td>
+            <td>Gone</td>
+            <td>None</td>
+            <td class="highlight-cell">Faster deindex</td>
+            <td>Intentionally removed content</td>
+          </tr>
+          <tr>
+            <td>500 / 502 / 503</td>
+            <td>Server errors</td>
+            <td>None</td>
+            <td>Blocks crawling</td>
+            <td>Fix immediately</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Redirect Mistakes</h2>
+      <p>The status code errors that quietly drain rankings.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Homepage-only redirects</h4>
+        <p>Redirecting everything to the homepage signals content loss. Every old URL needs a relevant one-to-one destination.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Keeping 302s for permanent moves</h4>
+        <p>A 302 keeps the old URL canonical and leaks equity. Permanent moves must be 301s at the server level.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Soft 404s returning 200</h4>
+        <p>Not-found content served with a 200 header gets indexed as thin pages. Return a real 404 or 410.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Removing redirect maps after launch</h4>
+        <p>Old URLs live in backlinks and email forever. Redirect maps are permanent infrastructure.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Meta refresh and JS redirects</h4>
+        <p>Client-side redirects lose equity and confuse AI crawlers. Redirect at the server level with a 301.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Ignoring 5xx spikes</h4>
+        <p>Server errors block crawling entirely. A 500 spike left unfixed can delay indexing of all new content.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Redirect and Status Code Tools</h2>
+      <p>Audit and verify responses across your whole site.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Screaming Frog</h4>
+        <p>Complete redirect audit: chains, loops, 404s, soft 404s, and response codes across the crawl.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>Coverage report, page indexing, and error alerts for 404 and 5xx responses.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>httpstatus.io</h4>
+        <p>Follows redirect chains and shows every status code a URL returns.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Ahrefs Site Audit</h4>
+        <p>Flags redirect chains, loops, soft 404s, and broken backlinks.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Server logs</h4>
+        <p>Ground truth on 5xx errors, redirect behavior, and where Googlebot spends crawl requests.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>curl</h4>
+        <p>Command-line status and redirect inspection for quick checks of individual URLs.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Related <span>Checklists</span></h2>
+      <p>Keep exploring the technical SEO series. Every checklist follows the same structure.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/indexing-canonicalization/">Indexing and Canonicalization</a></h4>
+        <p>How redirect status codes and canonical tags work together on the same URL.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/crawlability/">Crawlability</a></h4>
+        <p>Robots.txt, crawl issues, and how crawlers react to every status code you return.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/site-migrations/">SEO Site Migrations</a></h4>
+        <p>The golden 301 map that makes redirects part of a planned migration, not an accident.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/crawl-budget-log-analysis/">Crawl Budget and Log Analysis</a></h4>
+        <p>How redirect chains waste crawl requests and what log analysis reveals about them.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/core-web-vitals/">Core Web Vitals and Performance</a></h4>
+        <p>Why each redirect hop adds latency and hurts LCP and overall page speed.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/audit-checklist/">Full Technical SEO Audit</a></h4>
+        <p>Run the complete audit to catch every redirect and status code issue in one pass.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Need <span>Redirect</span> Help?</h2>
+      <p>Get professional redirect audits and technical SEO solutions from Clienvora. Our expert team finds chains, soft 404s, and equity leaks before they cost you rankings.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today. Or <a href="{{ site.baseurl }}/assets/pdfs/technical-seo-checklist-2026.pdf" style="color: #C9A227;">download the full checklist PDF</a>.</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Status Codes Frequently Asked Questions</h2>
+      <p>Direct answers on redirects, errors, and link equity.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is a redirect status code?</div>
+        <div class="faq-answer"><p>A redirect status code is the three-digit HTTP response that tells browsers and crawlers a URL has moved. A 301 means permanent, a 302 means temporary, and both have different effects on link equity and how Google treats the old URL.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the difference between 301 and 302 redirects?</div>
+        <div class="faq-answer"><p>A 301 is permanent and passes most ranking signals. A 302 is temporary, keeps the old URL canonical, and does not pass equity. Use 301 for permanent moves only.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do 301 redirects pass link equity?</div>
+        <div class="faq-answer"><p>Yes. A 301 passes the vast majority of PageRank to the destination URL, which is why correct mapping matters during migrations. Chains and loops reduce what gets through.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is a 404 bad for SEO?</div>
+        <div class="faq-answer"><p>No, if it is a real 404 for a gone page. Use 410 Gone for intentionally removed content to speed deindexing. The problems are soft 404s and important pages that 404 without redirects.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is a redirect chain?</div>
+        <div class="faq-answer"><p>A series of redirects where A goes to B and B goes to C. Each hop delays users and dilutes equity. Flatten chains so every URL points directly to its final destination.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is a soft 404?</div>
+        <div class="faq-answer"><p>A page returning a 200 status with not-found content. Google flags it in Search Console. Fix by returning a real 404 or 410, or redirecting to a relevant page.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How long should I keep redirects?</div>
+        <div class="faq-answer"><p>Indefinitely. Old URLs live in backlinks, bookmarks, and email forever. Redirect maps are permanent infrastructure, not temporary launch tools.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/">&larr; All Checklists</a>
+    <span style="display: flex; gap: 24px;">
+      <a href="{{ site.baseurl }}/categories/international-seo/">&larr; Previous: International SEO</a>
+      <a href="{{ site.baseurl }}/categories/crawl-budget-log-analysis/">Next: Crawl Budget and Log Analysis &rarr;</a>
+    </span>
+  </div>
+</div>

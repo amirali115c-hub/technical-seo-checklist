@@ -1,0 +1,588 @@
+---
+layout: default
+title: Crawl Budget and Log Analysis SEO Checklist 2026 | What Is Crawl Budget
+description: Complete crawl budget SEO checklist. What is crawl budget, crawl budget optimization, server log file analysis, and Googlebot crawl stats.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Crawl Budget and Log Analysis Checklist 2026",
+    "description": "15 checks to see exactly what Googlebot, Bingbot, and AI crawlers actually fetch, stop crawl budget waste, and get priority pages indexed faster.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-02"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is crawl budget in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Crawl budget is the number of URLs Googlebot is willing and able to crawl on your site within a given timeframe. It depends on crawl rate limit (server capacity, response time, error rate) and crawl demand (page popularity and freshness). Google says it only becomes a limiting factor for very large sites." } },
+      { "@type": "Question", "name": "What is log file analysis in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Log file analysis is reading your server access logs to see exactly which URLs search engine and AI crawlers requested, when, and what status code they received. It is the only source of data showing real crawler behavior rather than an estimate from third-party crawlers." } },
+      { "@type": "Question", "name": "How do I check my crawl budget in Google Search Console?", "acceptedAnswer": { "@type": "Answer", "text": "Open Search Console, go to Settings, then Crawl stats. The report shows total crawl requests, download size, and average response time over a 90-day window. It is only available for root-level domain properties and aimed at advanced users." } },
+      { "@type": "Question", "name": "Does crawl budget affect small sites?", "acceptedAnswer": { "@type": "Answer", "text": "Almost never. Google states that sites with fewer than about a thousand pages do not need to worry about crawl budget. If your pages are crawled the same day they are published, crawl budget is not your bottleneck." } },
+      { "@type": "Question", "name": "How do I verify a request is really Googlebot?", "acceptedAnswer": { "@type": "Answer", "text": "User agents can be spoofed. Run a reverse DNS lookup on the requesting IP; genuine Googlebot resolves to a googlebot.com or google.com hostname, then forward-confirm the hostname resolves back to the same IP. Alternatively match the IP against Google's published crawler ranges." } },
+      { "@type": "Question", "name": "How do I find AI crawlers in my logs?", "acceptedAnswer": { "@type": "Answer", "text": "Filter server logs by known AI crawler user agents: GPTBot, OAI-SearchBot, and ChatGPT-User from OpenAI; ClaudeBot from Anthropic; PerplexityBot from Perplexity; and GoogleOther from Google. Google-Extended is a robots.txt token, not a separate user agent." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Crawl Budget and Log Analysis Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/crawl-budget-log-analysis/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Audit Crawl Budget and Server Logs",
+    "description": "15 checks to stop crawl budget waste and get priority pages indexed faster.",
+    "step": [
+      { "@type": "HowToStep", "text": "Confirm your site is large enough that crawl budget matters." },
+      { "@type": "HowToStep", "text": "Review the Crawl Stats report in Search Console for response times and error trends." },
+      { "@type": "HowToStep", "text": "Export server logs and segment by crawler user agent." },
+      { "@type": "HowToStep", "text": "Verify bot identity with reverse DNS against published IP ranges." },
+      { "@type": "HowToStep", "text": "Find crawl waste on parameters, duplicates, and low-value pages." },
+      { "@type": "HowToStep", "text": "Block waste in robots.txt, fix errors, and prioritize sitemap URLs." },
+      { "@type": "HowToStep", "text": "Repeat the audit monthly and alert on crawl anomalies." }
+    ]
+  }
+  </script>
+---
+
+<section class="category-hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      15 Crawl Budget Checks - Updated August 2026
+    </div>
+    <h1>Crawl Budget and <span>Log Analysis</span> Checklist</h1>
+    <p>Third-party crawlers guess what Googlebot does. Your server logs know the truth. Log file analysis is the only way to see exactly which URLs search engines and AI crawlers request, how often, and what status code they receive. This checklist shows you how to read your logs, stop crawl budget waste, and make sure priority pages get crawled and indexed fast. Start with what is crawl budget and how it is set, then optimize where it actually matters.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Stop Guessing, <span>Read the Logs</span></h2>
+        <p>Crawl budget is the number of URLs Googlebot is willing and able to crawl on your site in a given timeframe. It is set by two forces: crawl rate limit, which is how fast your server can respond without breaking, and crawl demand, which is how much Google wants your pages based on popularity and freshness.</p>
+        <p>Google is clear that for most sites, crawl budget is not a limiting factor. If your pages are crawled the same day they are published, you do not have a crawl problem. But for large sites, duplicate pages, parameterized URLs, orphan content, and crawl traps quietly burn requests that should go to money pages.</p>
+        <p>Log files show real bot behavior: which URLs are crawled, which are ignored, and where crawlers hit errors. They also reveal AI crawler activity from GPTBot, ClaudeBot, and PerplexityBot, which does not appear in Search Console at all. That makes log analysis one of the highest-leverage audits on a large site. This page is part of the <a href="{{ site.baseurl }}/">complete technical SEO checklist</a>.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">15</span>
+            <span class="intro-stat-label">Crawl budget checks</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">3</span>
+            <span class="intro-stat-label">Clicks max depth</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">90</span>
+            <span class="intro-stat-label">Days of crawl stats</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Who Crawls Your Site</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Googlebot</span>
+              <span class="premium-comp-value green">Core index</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Bingbot</span>
+              <span class="premium-comp-value yellow">Bing index</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">GPTBot</span>
+              <span class="premium-comp-value yellow">OpenAI training</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">ClaudeBot</span>
+              <span class="premium-comp-value yellow">Anthropic</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">PerplexityBot</span>
+              <span class="premium-comp-value yellow">Perplexity</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">GoogleOther</span>
+              <span class="premium-comp-value gray">General fetches</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 15 Crawl Budget Checks</h2>
+      <p>Audit Googlebot behavior, server logs, and crawl waste across your site.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Who Does It</th>
+            <th>Tool</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Confirm crawl budget work is worth it for your site size</td>
+            <td class="highlight-cell">You</td>
+            <td>Site audit</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Baseline Googlebot behavior in the Crawl Stats report</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC Crawl Stats</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Export server logs and segment by crawler user agent</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Logs / LFA</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Verify bot identity via reverse DNS and IP ranges</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Log file analyser</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Find crawl waste on parameters, filters, and thin pages</td>
+            <td class="highlight-cell">You</td>
+            <td>Logs / GSC</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Block low-value sections and parameters in robots.txt</td>
+            <td class="highlight-cell">Developer</td>
+            <td>robots.txt</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Fix 4xx and 5xx responses consuming crawl requests</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Logs / server</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Flatten redirect chains and remove crawl loops</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Logs / server</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Compare crawl frequency against page importance</td>
+            <td class="highlight-cell">You</td>
+            <td>Logs / GSC</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Audit AI crawler activity and set robots.txt policy</td>
+            <td class="highlight-cell">You</td>
+            <td>Logs</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Optimize the XML sitemap for priority URLs only</td>
+            <td class="highlight-cell">You</td>
+            <td>Sitemap</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Add lastmod and keep sitemaps fresh</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Sitemap</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Strengthen internal linking, keep depth under 3 clicks</td>
+            <td class="highlight-cell">You</td>
+            <td>Crawl</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Consolidate duplicates and near-duplicates with canonicals</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Crawl</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Schedule monthly log analysis and crawl anomaly alerts</td>
+            <td class="highlight-cell">You</td>
+            <td>Logs / GSC</td>
+            <td>Medium</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>What each audit step reveals and how to act on it.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Confirm Crawl Budget Work Is Worth It for Your Site Size</h4>
+      <p>Google states that sites with fewer than about a thousand pages should not worry about crawl budget, and sites under roughly ten thousand pages rarely hit limits. If your new pages get crawled the same day they publish, skip most of this list and spend time elsewhere. Reserve crawl budget work for large or frequently changing sites.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Baseline Googlebot Behavior in the Crawl Stats Report</h4>
+      <p>Search Console Settings then Crawl stats shows total crawl requests, download size, and average response time over 90 days. It is only available for root-level domain properties. A rising response time or a crawl request drop without traffic loss are early warning signs of server degradation or deprioritization.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Export Server Logs and Segment by Crawler User Agent</h4>
+      <p>Every request writes a log line: IP, timestamp, URL, status code, response size, and user agent. Filter for Googlebot, Bingbot, and AI crawler user agents, then sort by URL and frequency. This reveals which pages crawlers actually visit versus what Search Console reports.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Verify Bot Identity via Reverse DNS and IP Ranges</h4>
+      <p>User agents can be spoofed by scrapers. Reverse-lookup the requesting IP; genuine Googlebot resolves to a googlebot.com or google.com hostname, then forward-confirm the hostname resolves back to the same IP. Or match against Google's published crawler IP ranges. Bingbot verifies against search.msn.com.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Find Crawl Waste on Parameters, Filters, and Thin Pages</h4>
+      <p>Logs expose URLs that should never be crawled: session IDs, sort parameters, filter combinations, search result pages, and near-empty archives. When 404 errors consume more than 10% of crawl requests, broken internal links and deleted products are burning budget. List the top crawled low-value URLs and eliminate them.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Block Low-Value Sections and Parameters in robots.txt</h4>
+      <p>Disallow filter, sort, and session URL patterns so bots stop requesting them. Block only what you are sure you do not need indexed, and never block CSS, JavaScript, or images that Googlebot needs to render content. Removing robots.txt blocks after a few days is normal once crawl rate adapts.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Fix 4xx and 5xx Responses Consuming Crawl Requests</h4>
+      <p>High error or redirect ratios in logs indicate crawl anomalies. Fix broken internal links, restore or redirect deleted high-value pages, and return real 404 or 410 codes. Persistent 5xx responses make Googlebot throttle back and crawl the site less often.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Flatten Redirect Chains and Remove Crawl Loops</h4>
+      <p>Long redirect chains force Googlebot to make multiple requests for one page, consuming crawl budget. Audit logs for chains and point every URL directly at its final destination. Remove loops entirely; they waste budget and block access.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Compare Crawl Frequency Against Page Importance</h4>
+      <p>Merge your log crawl frequency with your sitemap and page priority tiers. Money pages crawled weekly while thin pages are crawled daily means the budget is misallocated. Fix by removing the thin pages and adding strong internal links to priority pages.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Audit AI Crawler Activity and Set robots.txt Policy</h4>
+      <p>Filter logs for GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot, and GoogleOther. Unlike Googlebot, AI crawlers appear sporadically and in bursts, and their activity never shows in Search Console. Decide per crawler whether to allow, block, or throttle, based on real log data, not guesses.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Optimize the XML Sitemap for Priority URLs Only</h4>
+      <p>A sitemap with millions of URLs wastes prioritization. Include only indexable, canonical URLs, no redirects, no 404s, and no noindex pages. Split large sitemaps by section and reference them from a sitemap index. Submit updates through Search Console to nudge recrawls.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Add Lastmod and Keep Sitemaps Fresh</h4>
+      <p>A correct lastmod date is a recrawl trigger. Keep it accurate and regenerate the sitemap when content changes. A stale sitemap teaches crawlers to ignore it.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Strengthen Internal Linking, Keep Depth Under 3 Clicks</h4>
+      <p>Googlebot follows internal links like a user. Important pages buried beyond three clicks from the homepage are discovered late or never. Use descriptive anchor text, breadcrumbs, and contextual links from high-authority pages to keep priority content shallow.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">14</span> Consolidate Duplicates and Near-Duplicates With Canonicals</h4>
+      <p>Parameter variations, printer versions, and similar products all burn crawl requests. Pick one canonical URL per piece of content, point the rest at it, and stop crawling the variations. This cleans the crawl path and strengthens the surviving page.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">15</span> Schedule Monthly Log Analysis and Crawl Anomaly Alerts</h4>
+      <p>Log analysis is not a one-time audit. Review logs monthly for large sites, watch for 404 and 5xx spikes, track Googlebot mobile versus desktop, and monitor crawl activity after any site change. Store logs long-term so trends and anomalies become visible.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Crawler User Agents to Know</h2>
+      <p>What each bot does and why it shows up in your logs.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>Bot</th>
+            <th>Operator</th>
+            <th>Role</th>
+            <th>Where it appears</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Googlebot</td>
+            <td>Google</td>
+            <td>Core search indexing</td>
+            <td class="highlight-cell">Search Console + logs</td>
+          </tr>
+          <tr>
+            <td>GoogleOther</td>
+            <td>Google</td>
+            <td>General-purpose fetches</td>
+            <td>Logs only</td>
+          </tr>
+          <tr>
+            <td>Bingbot</td>
+            <td>Microsoft</td>
+            <td>Bing indexing</td>
+            <td>Logs + Bing Webmaster</td>
+          </tr>
+          <tr>
+            <td>GPTBot / OAI-SearchBot</td>
+            <td>OpenAI</td>
+            <td>Training and ChatGPT search</td>
+            <td>Logs only</td>
+          </tr>
+          <tr>
+            <td>ClaudeBot</td>
+            <td>Anthropic</td>
+            <td>Training and Claude search</td>
+            <td>Logs only</td>
+          </tr>
+          <tr>
+            <td>PerplexityBot</td>
+            <td>Perplexity</td>
+            <td>Indexing and answer retrieval</td>
+            <td>Logs only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Crawl Budget Mistakes</h2>
+      <p>The errors that quietly waste Googlebot's limited attention.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Worrying about crawl budget on a small site</h4>
+        <p>If pages get crawled the day they publish, crawl budget is not your bottleneck. Optimize content and structure instead.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Blocking CSS and JavaScript in robots.txt</h4>
+        <p>Googlebot needs these to render pages. Blocking them breaks rendering and wastes every request on unrendered pages.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Dumping every URL into one sitemap</h4>
+        <p>Massive sitemaps dilute prioritization. Include only indexable, canonical URLs, split by section, and add accurate lastmod.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Ignoring AI crawler traffic</h4>
+        <p>AI crawlers never appear in Search Console. Only logs show whether GPTBot and PerplexityBot waste bandwidth or reach your content.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Trusting user agents at face value</h4>
+        <p>Scrapers spoof Googlebot. Verify with reverse DNS against published IP ranges before acting on log data.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Treating log analysis as a one-off</h4>
+        <p>Crawl behavior changes as you change the site. Monthly analysis is the only way to catch anomalies before they cost rankings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Crawl Budget and Log Analysis Tools</h2>
+      <p>Turn raw log lines into crawl intelligence.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Google Search Console Crawl Stats</h4>
+        <p>Google's official view of crawl requests, response times, and download size over 90 days.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Screaming Frog Log File Analyser</h4>
+        <p>Loads raw logs, segments by user agent, verifies Googlebot by IP, and exposes crawl waste.</p>
+        <span class="badge badge-free">Free (1GB)</span>
+      </div>
+      <div class="resource-card">
+        <h4>JetOctopus</h4>
+        <p>Cloud log analysis with crawl path visualization and anomaly detection.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>OnCrawl</h4>
+        <p>Correlates logs, crawls, and Search Console data into one technical SEO view.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Splunk / ELK Stack</h4>
+        <p>Enterprise log processing for huge sites with custom queries and dashboards.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>awk / grep</h4>
+        <p>Command-line parsing of multi-gigabyte log files for quick bot segmentation.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Related <span>Checklists</span></h2>
+      <p>Keep exploring the technical SEO series. Every checklist follows the same structure.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/crawlability/">Crawlability</a></h4>
+        <p>Robots.txt and crawl issues that determine what Googlebot can even reach.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/indexing-canonicalization/">Indexing and Canonicalization</a></h4>
+        <p>How not-indexed pages in Search Console point to crawl budget problems.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/redirects-status-codes/">Redirects and Status Codes</a></h4>
+        <p>How redirect chains and soft 404s waste crawl requests in your logs.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/on-page-technical/">On-Page Technical SEO</a></h4>
+        <p>Content and metadata signals that increase crawl demand for priority pages.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/ai-search-geo/">AI Search and GEO</a></h4>
+        <p>How GPTBot, ClaudeBot, and PerplexityBot traffic shows up in your logs.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/security/">Security</a></h4>
+        <p>Harden your server so crawl and bot traffic does not become a liability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Need <span>Crawl Budget</span> Help?</h2>
+      <p>Get professional crawl audits and log file analysis from Clienvora. Our expert team finds crawl waste and AI crawler issues before they cost you rankings.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today. Or <a href="{{ site.baseurl }}/assets/pdfs/technical-seo-checklist-2026.pdf" style="color: #C9A227;">download the full checklist PDF</a>.</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Crawl Budget Frequently Asked Questions</h2>
+      <p>Direct answers on crawl rate, log files, and AI crawlers.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is crawl budget in SEO?</div>
+        <div class="faq-answer"><p>Crawl budget is the number of URLs Googlebot can and wants to crawl on your site in a given timeframe. It is driven by crawl rate limit (server capacity) and crawl demand (popularity and freshness). Google says it only limits very large sites.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is log file analysis in SEO?</div>
+        <div class="faq-answer"><p>Reading your server access logs to see exactly which URLs search and AI crawlers requested, when, and what status they got. It is the only data source showing real crawler behavior, not an estimate.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I check crawl budget in Search Console?</div>
+        <div class="faq-answer"><p>Go to Settings, then Crawl stats. The report shows crawl requests, download size, and response time over 90 days. It requires a root-level domain property and is aimed at advanced users.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Does crawl budget affect small sites?</div>
+        <div class="faq-answer"><p>Almost never. If your pages are crawled the day they publish, crawl budget is not your bottleneck. Reserve this work for large, frequently changing sites.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I verify a request is really Googlebot?</div>
+        <div class="faq-answer"><p>Run a reverse DNS lookup on the IP. Genuine Googlebot resolves to a googlebot.com or google.com hostname that forward-confirms back to the same IP, or matches Google's published crawler ranges.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I find AI crawlers in my logs?</div>
+        <div class="faq-answer"><p>Filter for GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot, and GoogleOther. Google-Extended is a robots.txt token, not a user agent. AI crawlers appear sporadically and never show in Search Console.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/">&larr; All Checklists</a>
+    <span style="display: flex; gap: 24px;">
+      <a href="{{ site.baseurl }}/categories/redirects-status-codes/">&larr; Previous: HTTP Status Codes and Redirects</a>
+      <a href="{{ site.baseurl }}/categories/image-seo/">Next: Image SEO &rarr;</a>
+    </span>
+  </div>
+</div>

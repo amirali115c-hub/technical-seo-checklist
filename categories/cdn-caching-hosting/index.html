@@ -1,0 +1,575 @@
+---
+layout: default
+title: CDN Caching and Hosting SEO Checklist 2026 | What Is a CDN Cache
+description: Complete CDN caching and hosting SEO checklist. What is a CDN cache, cdn vs cache, TTFB, cache-control headers, browser caching, and CDN cache hit rates.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CDN, Caching, and Hosting SEO Checklist 2026",
+    "description": "15 checks to cut TTFB, fix cache-control headers, browser caching, CDN cache hit rates, and hosting bottlenecks that silently cap your rankings.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-02"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Does a CDN affect SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, usually positively. A CDN reduces Time to First Byte, improves Core Web Vitals field scores, and absorbs traffic spikes. The catch is misconfiguration: wrong cache headers serve stale content, and bot management can throttle Googlebot. Configure caching and allowlist Googlebot properly." } },
+      { "@type": "Question", "name": "What is browser caching?", "acceptedAnswer": { "@type": "Answer", "text": "Browser caching lets a user's browser store static resources like images, CSS, and JavaScript locally using Cache-Control headers, so repeat visits load them from disk with zero network requests. Versioned static assets should use a long max-age such as one year with the immutable directive." } },
+      { "@type": "Question", "name": "What is a good TTFB for SEO?", "acceptedAnswer": { "@type": "Answer", "text": "TTFB is a diagnostic metric, not a direct ranking factor, but it feeds LCP. If TTFB from multiple global locations is over 300ms, hosting or CDN configuration is the bottleneck. A CDN should serve cached responses from edge locations in roughly 10-50ms." } },
+      { "@type": "Question", "name": "How do I improve cache hit rate on my CDN?", "acceptedAnswer": { "@type": "Answer", "text": "Audit your cache hit rate and target above 80%. Most CDNs run at 15-30% hit rates due to misconfiguration. Common culprits are query strings, Set-Cookie headers, and Vary header abuse. Fix them and check HIT versus MISS via x-cache or cf-cache-status headers." } },
+      { "@type": "Question", "name": "Can a CDN cause duplicate content issues?", "acceptedAnswer": { "@type": "Answer", "text": "Rarely. It happens when your CDN serves assets on a different hostname than your origin, like cdn.example.com and example.com both being crawlable without canonicalization. Serve assets from one hostname only, or set HTTP Link canonical headers." } },
+      { "@type": "Question", "name": "Does HTTP/3 improve SEO performance?", "acceptedAnswer": { "@type": "Answer", "text": "HTTP/3 with QUIC reduces connection setup to a single round-trip versus two or three for HTTP/2 over TLS. For most sites using edge caching it provides a 5-15% improvement in connection establishment time and TTFB, about 20-100ms in absolute terms." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "CDN, Caching, and Hosting SEO Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/cdn-caching-hosting/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Fix CDN, Caching, and Hosting for SEO",
+    "description": "15 checks to cut TTFB and keep Googlebot happy.",
+    "step": [
+      { "@type": "HowToStep", "text": "Test TTFB from multiple global locations." },
+      { "@type": "HowToStep", "text": "Identify which layer owns the delay: hosting, CDN, caching, or database." },
+      { "@type": "HowToStep", "text": "Deploy a CDN and configure Cache-Control headers." },
+      { "@type": "HowToStep", "text": "Set browser caching for static assets with long max-age." },
+      { "@type": "HowToStep", "text": "Audit cache hit rate and fix HIT versus MISS causes." },
+      { "@type": "HowToStep", "text": "Enable HTTP/2 and HTTP/3 and verify Googlebot is not throttled." }
+    ]
+  }
+  </script>
+---
+
+<section class="category-hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      15 CDN and Hosting Checks - Updated August 2026
+    </div>
+    <h1>CDN, Caching, and <span>Hosting</span> Checklist</h1>
+    <p>Your hosting and CDN determine your speed floor. No amount of front-end optimization compensates for a slow server response. Time to First Byte is the starting line for every other performance metric, and a server hundreds of milliseconds away silently caps your Core Web Vitals. This checklist covers TTFB, cache-control headers, browser and CDN caching, cache hit rates, and the hosting choices that keep Googlebot crawling fast. Start with what is a cdn cache and how it serves your pages from the edge.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Infrastructure Sets the <span>Speed Floor</span></h2>
+        <p>Time to First Byte is the moment between a request and the first byte of the response. LCP and everything downstream cannot begin until TTFB completes. It is a diagnostic metric rather than a direct ranking factor, but a high TTFB makes every other performance fix harder.</p>
+        <p>A server in New York responding to a user in Tokyo carries at least 140ms of unavoidable network latency. A CDN solves this by serving cached responses from edge locations near the user, typically in 10-50ms. Layered caching then removes work at every level: browser, CDN edge, page cache, object cache, and opcode cache.</p>
+        <p>The most common failure is not missing infrastructure but misconfiguration. CDNs frequently run at 15-30% cache hit rates because of query strings, Set-Cookie headers, and Vary header abuse. Wrong Cache-Control headers serve stale content, and overzealous bot management throttles legitimate Googlebot. Get the headers right and the infrastructure pays for itself. This page is part of the <a href="{{ site.baseurl }}/">complete technical SEO checklist</a>.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">15</span>
+            <span class="intro-stat-label">Infrastructure checks</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">300ms</span>
+            <span class="intro-stat-label">TTFB warning line</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">80%</span>
+            <span class="intro-stat-label">Cache hit target</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Caching Layer Stack</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Browser cache</span>
+              <span class="premium-comp-value green">Zero network</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">CDN edge cache</span>
+              <span class="premium-comp-value green">10-50ms</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Page cache</span>
+              <span class="premium-comp-value green">Prebuilt HTML</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Object cache</span>
+              <span class="premium-comp-value yellow">Redis queries</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Opcode cache</span>
+              <span class="premium-comp-value yellow">OPcache PHP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 15 CDN and Hosting Checks</h2>
+      <p>Audit infrastructure, caching, and crawler access across your stack.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Who Does It</th>
+            <th>Tool</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Test TTFB from multiple global locations</td>
+            <td class="highlight-cell">You</td>
+            <td>WebPageTest</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Identify the layer owning the delay</td>
+            <td class="highlight-cell">Developer</td>
+            <td>DevTools</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Upgrade hosting tier if on shared hosting</td>
+            <td class="highlight-cell">You</td>
+            <td>Hosting</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Match hosting location or use a CDN</td>
+            <td class="highlight-cell">You</td>
+            <td>Hosting</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Deploy a CDN for global edge delivery</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Cloudflare / Fastly</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Configure Cache-Control headers correctly</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server / CDN</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Enable stale-while-revalidate for fresh content</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server / CDN</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Set long browser caching for static assets</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Use content hashing in file names</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Build</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Audit CDN cache hit rate</td>
+            <td class="highlight-cell">Developer</td>
+            <td>CDN analytics</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Check HIT versus MISS via response headers</td>
+            <td class="highlight-cell">Developer</td>
+            <td>curl</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Verify Googlebot is not throttled</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Logs / WAF</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Serve from one hostname to avoid duplicates</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Enable HTTP/2 and HTTP/3</td>
+            <td class="highlight-cell">Developer</td>
+            <td>CDN / server</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Set up cache invalidation on publishing</td>
+            <td class="highlight-cell">Developer</td>
+            <td>CI / CDN</td>
+            <td>Medium</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>What each infrastructure audit reveals and how to fix it.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Test TTFB From Multiple Global Locations</h4>
+      <p>Measure Time to First Byte from several locations around the world using WebPageTest or similar. If TTFB is over 300ms everywhere, hosting or CDN configuration is the bottleneck. If it is only slow far from your server region, you have a geographic latency problem that a CDN solves.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Identify the Layer Owning the Delay</h4>
+      <p>Slow TTFB can come from hosting, CDN, caching, redirects, DNS, database queries, or platform logic. Use Chrome DevTools and the request waterfall to see where the wait happens. Compare templates: if only one template is slow, the problem is application logic; if most pages are slow, the infrastructure is at fault.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Upgrade Hosting Tier if on Shared Hosting</h4>
+      <p>Shared hosting packs hundreds of sites on one server, and one noisy neighbor slows everyone. Moving to managed or cloud hosting commonly cuts TTFB by 60-80%. Match your hosting tier to your traffic and processing needs before layering on caching.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Match Hosting Location or Use a CDN</h4>
+      <p>A server in New York answering a user in Tokyo carries at least 140ms of unavoidable latency per round trip. Host near your audience, or better, put a CDN in front so every user hits an edge location close to them. Do not rely on one origin region for a global audience.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Deploy a CDN for Global Edge Delivery</h4>
+      <p>A CDN serves cached content from edge locations worldwide in 10-50ms, absorbs traffic spikes, and keeps Googlebot happy during crawl surges. Choose a provider with strong caching, HTTP/3, and cache purge. The free tier of most CDNs is enough for the majority of sites.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Configure Cache-Control Headers Correctly</h4>
+      <p>The Cache-Control header drives all caching behavior. Use public for cacheable content, max-age for browser TTL in seconds, s-maxage for the CDN TTL, and stale-while-revalidate for background refresh. A misconfigured header is the most common reason content goes stale or never caches.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Enable Stale-While-Revalidate for Fresh Content</h4>
+      <p>Stale-while-revalidate serves the expired cached version instantly while fetching a fresh one in the background. The next request gets the update. This keeps near-zero TTFB for editorial and ecommerce pages while propagating changes within minutes.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Set Long Browser Caching for Static Assets</h4>
+      <p>Images, CSS, and JavaScript should be served with a long max-age, typically one year with the immutable directive for versioned files. Repeat visits then load them from the user's disk with zero network requests. HTML pages should use no-cache with must-revalidate so updates show immediately.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Use Content Hashing in File Names</h4>
+      <p>Versioned filenames like style.a1b2c3.css make each new release a new URL, so the long browser cache never serves stale assets. Without hashing, you either cache too long and ship old code, or cache too short and lose the benefit.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Audit CDN Cache Hit Rate</h4>
+      <p>Check your CDN analytics and target a hit rate above 80%. Most CDNs run at 15-30% because of misconfiguration. The top culprits are query strings creating infinite cache variations, Set-Cookie headers preventing caching, and Vary header abuse. Fix these and hit rates climb.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Check HIT Versus MISS via Response Headers</h4>
+      <p>Run curl -I on a URL and inspect x-cache, cf-cache-status, or x-vercel-cache for HIT or MISS, plus the age header to confirm the resource is genuinely served from cache. A high age value confirms caching works; repeated MISS reveals configuration problems.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Verify Googlebot Is Not Throttled</h4>
+      <p>Bot management and WAF rules can accidentally throttle legitimate Googlebot traffic. Check logs for Googlebot 429 or 403 responses and verify Google's published IP ranges are allowlisted. A CDN should protect you from bad bots, not block the crawler that ranks you.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Serve From One Hostname to Avoid Duplicates</h4>
+      <p>If your CDN serves assets on cdn.example.com while the page lives on example.com, and both are crawlable, you can create duplicate content. Serve everything from one hostname, or set HTTP Link canonical headers. Keep static asset URLs stable with no redirects.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">14</span> Enable HTTP/2 and HTTP/3</h4>
+      <p>HTTP/2 multiplexes requests over one connection, removing per-request connection overhead. HTTP/3 with QUIC cuts connection setup to a single round trip and delivers roughly 5-15% faster connection establishment and TTFB. Most modern CDNs support both automatically.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">15</span> Set Up Cache Invalidation on Publishing</h4>
+      <p>For time-sensitive content, integrate publishing with CDN cache purge so new pages appear immediately. For evergreen content, natural TTL expiry is fine. Without invalidation, editors publish changes that users and crawlers cannot see for hours or days.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Cache-Control Cheat Sheet</h2>
+      <p>The headers that control every caching layer.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>Content type</th>
+            <th>Recommended header</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Versioned static assets</td>
+            <td>public, max-age=31536000, immutable</td>
+            <td class="highlight-cell">One year, never refetch</td>
+          </tr>
+          <tr>
+            <td>HTML pages</td>
+            <td>public, max-age=0, must-revalidate</td>
+            <td>Always check for updates</td>
+          </tr>
+          <tr>
+            <td>Product pages</td>
+            <td>public, max-age=300, s-maxage=3600</td>
+            <td>Fresh prices, cached at edge</td>
+          </tr>
+          <tr>
+            <td>Dynamic / personal content</td>
+            <td>private, no-store</td>
+            <td>Never shared across users</td>
+          </tr>
+          <tr>
+            <td>CDN-specific TTL</td>
+            <td>s-maxage or CDN-Cache-Control</td>
+            <td class="highlight-cell">Edge TTL separate from browser</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Infrastructure Mistakes</h2>
+      <p>The configuration errors that quietly cap your speed and rankings.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Shared hosting for a growing site</h4>
+        <p>Hundreds of sites on one server means noisy neighbors and slow TTFB. Managed hosting cuts response time dramatically.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Low CDN cache hit rates</h4>
+        <p>Query strings and Vary abuse push hit rates to 15-30%. Target 80%+ by fixing the cache key.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Throttling Googlebot in the WAF</h4>
+        <p>Aggressive bot management blocks legitimate crawlers. Allowlist Google's IP ranges and verify in logs.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Serving assets on a second hostname</h4>
+        <p>cdn.example.com and example.com both crawlable creates duplicate content. Serve from one hostname.</p>
+      </div>
+      <div class="resource-card">
+        <h4>No stale-while-revalidate</h4>
+        <p>Every cache miss waits on the origin. Stale-while-revalidate serves instantly while refreshing in the background.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Never purging cache on publish</h4>
+        <p>Content changes stay invisible to users and crawlers until TTL expires. Invalidate on publish for time-sensitive pages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>CDN, Caching, and Hosting Tools</h2>
+      <p>Measure, diagnose, and deliver fast responses globally.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>WebPageTest</h4>
+        <p>Tests TTFB from multiple global locations and shows the request waterfall for any template.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Chrome DevTools</h4>
+        <p>Network tab and waterfall reveal which layer owns the delay: DNS, TLS, server, or cache.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Cloudflare</h4>
+        <p>CDN with edge caching, HTTP/3, WAF, and cache purge on a generous free tier.</p>
+        <span class="badge badge-free">Free tier</span>
+      </div>
+      <div class="resource-card">
+        <h4>Fastly / CloudFront</h4>
+        <p>Enterprise edge caching with granular per-object TTL control and instant purge.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>curl</h4>
+        <p>Inspect cache-control, x-cache, and age headers for HIT versus MISS verification.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Lighthouse / PSI</h4>
+        <p>Field and lab Core Web Vitals including LCP, which TTFB feeds directly.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Related <span>Checklists</span></h2>
+      <p>Keep exploring the technical SEO series. Every checklist follows the same structure.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/core-web-vitals/">Core Web Vitals and Performance</a></h4>
+        <p>Why TTFB and cache hit rates set the floor for LCP, INP, and CLS.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/security/">Security</a></h4>
+        <p>HTTPS, TLS, and header hardening that hosting and CDN layers must provide.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/image-seo/">Image SEO</a></h4>
+        <p>How CDNs serve optimized images and cut image payload at the edge.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/crawl-budget-log-analysis/">Crawl Budget and Log Analysis</a></h4>
+        <p>How server response time and crawl rate limit interact in your logs.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/redirects-status-codes/">Redirects and Status Codes</a></h4>
+        <p>Edge-level redirects and cache behavior on redirected URLs.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/audit-checklist/">Full Technical SEO Audit</a></h4>
+        <p>Run the complete audit to catch hosting and caching issues in one pass.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Need <span>Hosting</span> Help?</h2>
+      <p>Get professional CDN and hosting performance audits from Clienvora. Our expert team finds TTFB bottlenecks and caching misconfigurations before they cap your rankings.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today. Or <a href="{{ site.baseurl }}/assets/pdfs/technical-seo-checklist-2026.pdf" style="color: #C9A227;">download the full checklist PDF</a>.</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>CDN and Hosting Frequently Asked Questions</h2>
+      <p>Direct answers on TTFB, caching, and infrastructure.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is a CDN cache?</div>
+        <div class="faq-answer"><p>A CDN cache is a copy of your static files stored on servers at edge locations around the world. When a user requests a cached asset, the nearest edge server answers in 10-50ms instead of the origin's hundreds of milliseconds. This is the core of how CDN caching speeds up your site.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Does a CDN affect SEO?</div>
+        <div class="faq-answer"><p>Yes, usually positively. It reduces TTFB, improves Core Web Vitals, and absorbs traffic spikes. Misconfiguration can serve stale content or throttle Googlebot, so configure caching and allowlist the crawler.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is browser caching?</div>
+        <div class="faq-answer"><p>Browsers store static resources locally using Cache-Control headers, so repeat visits load from disk with zero network requests. Versioned assets use a long max-age with immutable.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is a good TTFB for SEO?</div>
+        <div class="faq-answer"><p>TTFB is diagnostic, not a direct ranking factor, but it feeds LCP. If it exceeds 300ms from global locations, hosting or CDN is the bottleneck. A CDN serves edges in 10-50ms.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I improve CDN cache hit rate?</div>
+        <div class="faq-answer"><p>Target above 80%. Most CDNs run at 15-30% due to query strings, Set-Cookie headers, and Vary abuse. Fix the cache key and verify with x-cache or cf-cache-status headers.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can a CDN cause duplicate content?</div>
+        <div class="faq-answer"><p>Rarely. It happens when assets are served from a second hostname without canonicalization. Serve from one hostname or set Link canonical headers.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Does HTTP/3 improve SEO performance?</div>
+        <div class="faq-answer"><p>HTTP/3 with QUIC cuts connection setup to one round trip. For edge-cached sites it delivers about 5-15% faster connection establishment and TTFB, roughly 20-100ms.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/">&larr; All Checklists</a>
+    <span style="display: flex; gap: 24px;">
+      <a href="{{ site.baseurl }}/categories/on-page-technical/">&larr; Previous: On-Page Technical SEO</a>
+      <a href="{{ site.baseurl }}/categories/ecommerce-faceted-nav/">Next: Ecommerce and Faceted Navigation &rarr;</a>
+    </span>
+  </div>
+</div>

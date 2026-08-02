@@ -1,0 +1,595 @@
+---
+layout: default
+title: Canonicalization and Indexing SEO Checklist 2026 | Canonical Tag Guide
+description: Complete canonicalization and indexing SEO checklist. Canonical tag meaning, URL canonicalization, crawled currently not indexed fixes, and noindex nofollow.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Indexing and Canonicalization Checklist 2026",
+    "description": "16 checks to fix index coverage issues in Google Search Console. Master noindex, nofollow, rel canonical, indexifembedded, duplicate content, and the crawled currently not indexed fix.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-02"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What does crawled currently not indexed mean?", "acceptedAnswer": { "@type": "Answer", "text": "It means Google crawled the page but chose not to add it to the index. Common causes: thin content, duplicate content, low internal link priority, or pages Google considers low value. It is not an error, but it usually means the page needs more substance or more internal links." } },
+      { "@type": "Question", "name": "What is the difference between canonical and noindex?", "acceptedAnswer": { "@type": "Answer", "text": "A canonical tag tells search engines which URL is the preferred version when duplicate content exists; it consolidates ranking signals. Noindex tells search engines to exclude a page from the index entirely while still crawling it. Use canonical for near-duplicates, noindex for thin or utility pages." } },
+      { "@type": "Question", "name": "Can I use noindex and canonical on the same page?", "acceptedAnswer": { "@type": "Answer", "text": "Never. Combining noindex with a canonical tag is contradictory and sends conflicting signals to Google. Choose one strategy per page: canonical to consolidate, or noindex to exclude." } },
+      { "@type": "Question", "name": "What is the indexifembedded directive?", "acceptedAnswer": { "@type": "Answer", "text": "Googlebot-Extended uses indexifembedded so embedded content such as a video can be indexed even when the host page is noindex. It is written as noindex, indexifembedded in the robots meta tag." } },
+      { "@type": "Question", "name": "How do I fix pages that are not indexed?", "acceptedAnswer": { "@type": "Answer", "text": "Improve the content so it is unique and valuable, add strong internal links from important pages, ensure a self-referencing canonical, submit the URL in Search Console, and request indexing. Give Google time to re-crawl; low-priority pages may still be skipped." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Indexing and Canonicalization Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/indexing-canonicalization/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Fix Indexing and Canonicalization Issues",
+    "description": "16 checks to get every important page indexed and stop duplicate content from splitting ranking signals.",
+    "step": [
+      { "@type": "HowToStep", "text": "Open the Google Search Console Pages report and audit which URLs are indexed vs not indexed." },
+      { "@type": "HowToStep", "text": "Fix crawled currently not indexed pages with better content and stronger internal links." },
+      { "@type": "HowToStep", "text": "Fix discovered currently not indexed pages with sitemap submission and crawl priority." },
+      { "@type": "HowToStep", "text": "Verify every URL has exactly one self-referencing canonical tag." },
+      { "@type": "HowToStep", "text": "Remove noindex tags from pages that should be indexed." },
+      { "@type": "HowToStep", "text": "Consolidate duplicate pages with 301 redirects or canonical tags." }
+    ]
+  }
+  </script>
+---
+
+<section class="category-hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#C9A227"/></svg>
+      16 Indexing Checks - Updated August 2026
+    </div>
+    <h1>Indexing and <span>Canonicalization</span> Checklist</h1>
+    <p>Indexing is the gate between your site and the search results. If a page is not indexed, it cannot rank, period. This checklist fixes the two most common Google Search Console coverage problems: crawled currently not indexed and discovered currently not indexed. It also masters rel canonical, noindex, nofollow, duplicate content, and indexifembedded so ranking signals never split across duplicate URLs. Canonicalization is how Google decides which of several similar URLs is the original, and getting it right consolidates authority instead of scattering it.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Indexing Is <span>Where Rankings Begin</span></h2>
+        <p>Indexing is the process of adding a crawled page to Google's index, the database Google draws from when it builds search results. Crawling finds the page; indexing decides whether it is good enough to keep. Most sites waste a large share of their content in the "not indexed" buckets of Search Console.</p>
+        <p>Canonicalization is the other half of this checklist. A canonical tag tells Google which URL is the preferred version when several URLs carry the same or similar content. Without correct canonicals, PageRank scatters across duplicate URLs, and the right page never accumulates the signals it needs to rank.</p>
+        <p>The combination decides your index coverage: how many of your important pages are actually eligible to rank. Get both right and every fix you make elsewhere in technical SEO actually reaches the search results. This page is part of the <a href="{{ site.baseurl }}/">complete technical SEO checklist</a>, with every indexing and canonicalization step you need.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">16</span>
+            <span class="intro-stat-label">Indexing checks</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">2</span>
+            <span class="intro-stat-label">main not-indexed reasons</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">1</span>
+            <span class="intro-stat-label">canonical per page</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Directive Cheat Sheet</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Canonical</span>
+              <span class="premium-comp-value green">Consolidates</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Noindex</span>
+              <span class="premium-comp-value yellow">Excludes</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Nofollow</span>
+              <span class="premium-comp-value yellow">No equity flow</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">indexifembedded</span>
+              <span class="premium-comp-value green">Embeds only</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Canonical + noindex</span>
+              <span class="premium-comp-value gray">Never combine</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Self-referencing canonical</span>
+              <span class="premium-comp-value gold">Always needed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 16 Indexing Checks</h2>
+      <p>Audit coverage, canonicalization, and indexing directives from top to bottom.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Who Does It</th>
+            <th>Tool</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Audit index coverage in the Pages report</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Fix crawled currently not indexed pages</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Fix discovered currently not indexed pages</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Verify every URL has one self-referencing canonical</td>
+            <td class="highlight-cell">You</td>
+            <td>Screaming Frog</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Audit canonical targets resolve to 200 (no chains)</td>
+            <td class="highlight-cell">You</td>
+            <td>SEO spider</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Check noindex is only on intended pages</td>
+            <td class="highlight-cell">You</td>
+            <td>Screaming Frog</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Confirm noindex and canonical are never combined</td>
+            <td class="highlight-cell">You</td>
+            <td>Screaming Frog</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Audit cross-domain canonical usage</td>
+            <td class="highlight-cell">You</td>
+            <td>SEO spider</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Review parameter-based duplicates</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC / spider</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Check indexifembedded on embeddable content</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Code</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Handle pagination canonicals correctly</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Fix soft 404s and near-duplicate templates</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC / spider</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Remove or noindex low-value templated pages</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Use 301 redirects for consolidated content</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Submit clean sitemaps with canonical URLs only</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>Set up weekly coverage monitoring and alerts</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>Understand the coverage report, then fix each exclusion reason with a clear workflow.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Audit Index Coverage in the Pages Report</h4>
+      <p>Open Google Search Console, go to Indexing &gt; Pages. Note the "Indexed" count and every "Not indexed" reason. Export the affected URL lists. The two buckets that consume most sites are crawled currently not indexed and discovered currently not indexed.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Fix Crawled Currently Not Indexed Pages</h4>
+      <p>Google crawled these pages but decided not to index them. Common fixes: make the content unique and substantive, add strong internal links from important pages, and ensure a clean self-referencing canonical. Pages with very little unique value may never be indexed; that is acceptable if they are not important.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Fix Discovered Currently Not Indexed Pages</h4>
+      <p>Google found these URLs (usually via sitemap) but has not crawled them yet. This often means low crawl priority or a slow crawl rate. Fixes: submit the URL in the URL Inspection tool, request indexing, add internal links, and ensure the page is in the sitemap. Patience matters; low-priority pages can wait weeks.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Verify One Self-Referencing Canonical Per Page</h4>
+      <p>Every indexable page should point its canonical to itself with the absolute URL, including the homepage. A missing or cross-pointing canonical lets Google pick a version for you. Run a Screaming Frog crawl and flag pages with missing or duplicate canonicals.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Audit Canonical Targets Resolve to 200</h4>
+      <p>A canonical pointing to a 404, a redirect, or a loop is a wasted directive. Each canonical target must return 200 and be indexable itself. Check for canonical chains where URL A canonicals to B and B canonicals to C.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Check Noindex Is Only on Intended Pages</h4>
+      <p>Audit which pages carry noindex. If a money page has a noindex tag, Google will not rank it. Watch for noindex leaking across templates, staging environments left live, or page builders that add noindex by default.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Confirm Noindex and Canonical Are Never Combined</h4>
+      <p>A noindex tag plus a canonical on the same page is contradictory. Google will usually honor the noindex and ignore the canonical. Choose one strategy per page: canonical to consolidate duplicates, or noindex to exclude thin or utility pages.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Audit Cross-Domain Canonical Usage</h4>
+      <p>A canonical that points to another domain is a strong signal that this page should not rank at all. Use it deliberately for syndicated content. Audit all cross-domain canonicals so you know exactly which pages surrender their ranking eligibility.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Review Parameter-Based Duplicates</h4>
+      <p>Tracking parameters, sorting options, and session IDs create duplicate URLs. Consolidate them with self-referencing canonicals, configure parameter handling in Search Console, or block obvious parameters in robots.txt. Never let parameter URLs split ranking signals from your canonical page.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Check indexifembedded on Embeddable Content</h4>
+      <p>When you embed content such as a video on a noindex page, use <code>noindex, indexifembedded</code>. This allows the embedded content to appear in Google results even though the host page is excluded. The indexifembedded directive applies to content indexed via Googlebot-Extended.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Handle Pagination Canonicals Correctly</h4>
+      <p>For paginated series that are continuations of one result set, canonicalizing page 2 and 3 to page 1 works. For pages with meaningfully different content, keep self-referencing canonicals. Never mix both patterns across the same series. Rel next/prev was dropped by Google in 2019.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Fix Soft 404s and Near-Duplicate Templates</h4>
+      <p>A soft 404 is a page that returns 200 but shows "not found" content. Search Console flags these. Fix by returning a real 404 or 410, or by redirecting to a relevant page. Near-duplicate templates, like empty tag and category archives, should be noindexed or removed.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Remove or Noindex Low-Value Templated Pages</h4>
+      <p>Search, tag, filter, and parameter archive pages rarely deserve the index. Noindex them with <code>noindex, follow</code> so link equity still flows, or remove them entirely. This concentrates your index on pages that can actually rank.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">14</span> Use 301 Redirects for Consolidated Content</h4>
+      <p>When two pages should be one, 301 the weaker URL to the stronger one. A 301 passes the vast majority of ranking signals. This is the permanent fix for duplicate content and for content you have merged. Never use 302s for permanent consolidation.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">15</span> Submit Clean Sitemaps With Canonical URLs Only</h4>
+      <p>Your XML sitemap should list only indexable, canonical URLs. Including noindexed, redirected, or parameter-heavy URLs wastes crawl budget and produces misleading coverage reports. Review sitemap contents after every canonical change.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">16</span> Set Up Weekly Coverage Monitoring and Alerts</h4>
+      <p>Enable email notifications in Search Console for coverage changes, and review the Pages report weekly. Sudden drops in indexed pages usually trace to a canonical change, a noindex rollout, or a robots.txt mistake. Catch them within days, not months.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Canonical vs Noindex vs Nofollow</h2>
+      <p>Three directives, three jobs. Choose correctly and you control exactly what gets indexed.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>Directive</th>
+            <th>What it does</th>
+            <th>Indexing effect</th>
+            <th>Link equity</th>
+            <th>Use for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>rel canonical</td>
+            <td>Declares the preferred URL</td>
+            <td>Consolidates signals</td>
+            <td>Flows to canonical</td>
+            <td>Near-duplicate pages</td>
+          </tr>
+          <tr>
+            <td>noindex</td>
+            <td>Excludes page from index</td>
+            <td class="highlight-cell">Page not indexed</td>
+            <td>Still flows</td>
+            <td>Thin and utility pages</td>
+          </tr>
+          <tr>
+            <td>nofollow</td>
+            <td>Blocks link equity transfer</td>
+            <td>No direct effect</td>
+            <td class="highlight-cell">Blocked</td>
+            <td>Untrusted external links</td>
+          </tr>
+          <tr>
+            <td>noindex, indexifembedded</td>
+            <td>Index embedded content only</td>
+            <td>Embed indexed, page not</td>
+            <td>Follows the embed</td>
+            <td>Videos on noindex pages</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Indexing Mistakes</h2>
+      <p>Small directive errors that quietly shrink your index coverage.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Combining noindex and canonical</h4>
+        <p>Sending both directives on one page is contradictory. Google honors the noindex and your consolidation intent is lost. Pick one strategy.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Missing self-referencing canonicals</h4>
+        <p>Pages without a canonical let Google guess the preferred version, which is often not the one you want to rank.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Canonical to a redirect or 404</h4>
+        <p>A canonical that does not resolve to a 200 wastes the directive and can cause the wrong page to be considered canonical.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Noindex on money pages</h4>
+        <p>One misplaced noindex in a template or plugin setting can drop a revenue page out of the index entirely.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Ignoring crawled vs discovered</h4>
+        <p>The two not-indexed buckets have different causes. Crawled means content or priority is the problem; discovered means crawl priority is the problem.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Pagination canonical mixing</h4>
+        <p>Canonicalizing some pagination pages and not others confuses Google. Apply one consistent pattern per series.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Indexing Tools</h2>
+      <p>The tools that surface coverage problems and verify your fixes.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>The Pages report, URL Inspection, and Sitemaps are the ground truth for index coverage.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Screaming Frog</h4>
+        <p>Audits canonical tags, noindex tags, and indexability across every crawled URL.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Sitebulb</h4>
+        <p>Visual crawl reports for indexation, canonical errors, and duplicate content clusters.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Ahrefs Site Audit</h4>
+        <p>Flags pages with canonical errors, noindex conflicts, and coverage anomalies.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+      <div class="resource-card">
+        <h4>Rich Results Test</h4>
+        <p>Verifies structured data and indexability signals on individual URLs.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Bing Webmaster Tools</h4>
+        <p>Index coverage and URL submission for Bing, mirroring your Search Console workflow.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Related <span>Checklists</span></h2>
+      <p>Keep exploring the technical SEO series. Every checklist follows the same structure.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/crawlability/">Crawlability</a></h4>
+        <p>Robots.txt, crawl issues, and Googlebot access before a page can ever be indexed.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/redirects-status-codes/">Redirects and Status Codes</a></h4>
+        <p>How 301s, 302s, and soft 404s change which URLs Google decides to index.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/on-page-technical/">On-Page Technical SEO</a></h4>
+        <p>Title tags and meta descriptions that give indexed pages the signals they need.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/javascript-rendering/">JavaScript SEO and Rendering</a></h4>
+        <p>Why JavaScript-rendered content lands in the discovered but not indexed bucket.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/site-architecture/">Site Architecture</a></h4>
+        <p>Internal linking and URL structure that drive deeper crawl and index coverage.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/audit-checklist/">Full Technical SEO Audit</a></h4>
+        <p>Run the complete audit checklist to catch every indexing issue in one pass.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Need <span>Indexing</span> Help?</h2>
+      <p>Get professional index coverage audits and technical SEO solutions from Clienvora. Our expert team delivers measurable results and fixes the root cause of not-indexed pages.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today. Or <a href="{{ site.baseurl }}/assets/pdfs/technical-seo-checklist-2026.pdf" style="color: #C9A227;">download the full checklist PDF</a>.</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Indexing Frequently Asked Questions</h2>
+      <p>Direct answers to the questions that come up in every coverage audit.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is canonicalization in SEO?</div>
+        <div class="faq-answer"><p>Canonicalization is the process of choosing one canonical URL when multiple URLs show the same or similar content. The rel canonical tag tells Google which version is the original so ranking signals consolidate instead of splitting across duplicates.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What does crawled currently not indexed mean?</div>
+        <div class="faq-answer"><p>Google crawled the page but did not add it to the index. Causes include thin or duplicate content, weak internal links, or low perceived value. It is not an error; it is Google declining to rank the page right now.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the difference between canonical and noindex?</div>
+        <div class="faq-answer"><p>A canonical consolidates duplicate pages into one preferred URL and passes ranking signals to it. Noindex excludes a page from the index while still crawling it. Use canonical for near-duplicates and noindex for thin or utility pages.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I use noindex and canonical together?</div>
+        <div class="faq-answer"><p>No. They send conflicting signals and Google will usually honor the noindex. Choose canonical or noindex per page, never both.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the indexifembedded directive?</div>
+        <div class="faq-answer"><p>Written as noindex, indexifembedded, it lets embedded content like a video appear in Google results even when the host page is noindex. Useful for embeds on thin pages.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How long does it take for a page to be indexed?</div>
+        <div class="faq-answer"><p>High-priority pages can index in hours to days. Low-priority pages, especially in the discovered currently not indexed bucket, can take weeks. Request indexing in URL Inspection and build internal links to speed it up.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Does a canonical tag pass PageRank?</div>
+        <div class="faq-answer"><p>Yes. A canonical consolidates ranking signals, including link equity, to the preferred URL. That is exactly why correct canonicals matter for duplicate content.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/">&larr; All Checklists</a>
+    <span style="display: flex; gap: 24px;">
+      <a href="{{ site.baseurl }}/categories/javascript-rendering/">&larr; Previous: JavaScript SEO</a>
+      <a href="{{ site.baseurl }}/categories/international-seo/">Next: International SEO &rarr;</a>
+    </span>
+  </div>
+</div>

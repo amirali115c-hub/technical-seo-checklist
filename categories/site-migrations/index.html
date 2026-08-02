@@ -1,0 +1,575 @@
+---
+layout: default
+title: SEO Site Migration Checklist 2026 | Domain and Platform Migration Guide
+description: Complete site migration SEO checklist. Golden 301 redirect map, staging lockdown, launch steps, change of address, and the recovery U-curve explained.
+schema: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "SEO Site Migration Checklist 2026",
+    "description": "15 checks to migrate a domain or platform without losing rankings, from the golden 301 map to post-launch monitoring.",
+    "author": { "@type": "Person", "name": "Amir Ali", "url": "https://www.clienvora.com" },
+    "publisher": { "@type": "Organization", "name": "Clienvora", "url": "https://www.clienvora.com" },
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-02"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is a site migration in SEO?", "acceptedAnswer": { "@type": "Answer", "text": "A site migration is a major change to a website, such as moving to a new domain, changing platform, or restructuring URLs, that requires careful SEO planning to preserve rankings, traffic, and link equity." } },
+      { "@type": "Question", "name": "How long does SEO recovery take after a migration?", "acceptedAnswer": { "@type": "Answer", "text": "Expect a traffic U-curve: a dip of 10-25% after launch, with recovery typically starting within 2-8 months. Some sites take longer, especially large sites or migrations with redirect errors." } },
+      { "@type": "Question", "name": "What is the golden 301 map?", "acceptedAnswer": { "@type": "Answer", "text": "A complete old URL to new URL redirect map covering every page, not just top pages. A golden 301 map is one-to-one where possible, avoids chains and loops, and passes link equity from every old URL to its closest new equivalent." } },
+      { "@type": "Question", "name": "Should I keep the old domain after migrating?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Keep the old domain alive with 301 redirects for at least 6-12 months, ideally indefinitely. This preserves direct traffic, legacy links, and lets Google fully transfer signals." } },
+      { "@type": "Question", "name": "What is the Change of Address tool?", "acceptedAnswer": { "@type": "Answer", "text": "A Search Console feature for domain moves that tells Google the old site has moved to the new domain. It only works for whole-domain moves with 301 redirects, and requires verified properties for both domains." } },
+      { "@type": "Question", "name": "Why did my rankings drop after a migration?", "acceptedAnswer": { "@type": "Answer", "text": "Usually a redirect error, missing metadata, a noindexed new site, a staging site leaked to crawlers, or simply the normal U-curve dip. A post-launch audit finds the cause before it becomes permanent." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/" },
+      { "@type": "ListItem", "position": 2, "name": "SEO Site Migration Checklist", "item": "{{ site.url }}{{ site.baseurl }}/categories/site-migrations/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Migrate a Website Without Losing Rankings",
+    "description": "15 checks from planning to post-launch monitoring.",
+    "step": [
+      { "@type": "HowToStep", "text": "Crawl the current site and record the baseline of indexed URLs and traffic." },
+      { "@type": "HowToStep", "text": "Build the complete old to new URL mapping as a golden 301 map." },
+      { "@type": "HowToStep", "text": "Lock down the staging environment so search engines cannot index it." },
+      { "@type": "HowToStep", "text": "Preserve metadata, status codes, and internal links on the new site." },
+      { "@type": "HowToStep", "text": "Launch, update the sitemap, and submit the change of address for domain moves." },
+      { "@type": "HowToStep", "text": "Monitor crawls, 404s, and rankings through the recovery U-curve." }
+    ]
+  }
+  </script>
+---
+
+<section class="category-hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="#EF4444"/></svg>
+      15 Migration Checks - Updated August 2026
+    </div>
+    <h1>SEO Site <span>Migration</span> Checklist</h1>
+    <p>A site migration is the highest-risk project in SEO. Move a domain, platform, or URL structure badly and you lose rankings, traffic, and years of accumulated link equity. Done right, a migration follows a predictable U-curve: a dip of roughly 10-25% after launch, then recovery over 2-8 months. This checklist covers the golden 301 map, staging lockdown, launch sequence, and the monitoring that turns a risky migration into a routine one.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>A Migration Is a <span>Data Transfer</span></h2>
+        <p>Google does not automatically understand your new domain. It understands redirects, sitemaps, and metadata. The entire job is transferring signals from old URLs to new ones, page by page, with nothing lost to 404s, chains, or noindex mistakes. Every top page redirecting to the homepage is a small disaster; every old URL mapped to its closest new equivalent is a clean transfer.</p>
+        <p>The failures cluster in predictable places: staging environments leaked to crawlers, metadata dropped by the new platform, internal links still pointing at old URLs, and robots.txt blocking the wrong paths. Each one is preventable with a pre-launch checklist and a post-launch audit.</p>
+        <p>Plan the migration like a launch, because that is what it is. Pick a low-traffic window, prepare a rollback plan, and treat the first 48 hours after launch as the highest-attention period of the project. This page is part of the <a href="{{ site.baseurl }}/">complete technical SEO checklist</a>.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-number">10-25%</span>
+            <span class="intro-stat-label">Typical traffic dip</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">2-8 mo</span>
+            <span class="intro-stat-label">Recovery window</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-number">15</span>
+            <span class="intro-stat-label">Migration checks</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="premium-comp-card">
+          <div class="premium-comp-header">
+            <h3>Migration Types and Risk</h3>
+          </div>
+          <div class="premium-comp-body">
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Domain change</span>
+              <span class="premium-comp-value yellow">High risk</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Platform change</span>
+              <span class="premium-comp-value yellow">High risk</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">URL restructure</span>
+              <span class="premium-comp-value yellow">Medium risk</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">HTTP to HTTPS</span>
+              <span class="premium-comp-value green">Low risk</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Design refresh</span>
+              <span class="premium-comp-value green">Low risk</span>
+            </div>
+            <div class="premium-comp-row">
+              <span class="premium-comp-label">Server change</span>
+              <span class="premium-comp-value green">Low risk</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The 15 Migration Checks</h2>
+      <p>From baseline crawl to post-launch recovery monitoring.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Check</th>
+            <th>Who Does It</th>
+            <th>Tool</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Record a pre-migration baseline crawl</td>
+            <td class="highlight-cell">You</td>
+            <td>Screaming Frog</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Build the golden 301 redirect map</td>
+            <td class="highlight-cell">You</td>
+            <td>Spreadsheet</td>
+            <td>Hard</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Lock down staging with authentication</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Auth / robots</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Keep URLs stable where possible</td>
+            <td class="highlight-cell">You</td>
+            <td>URL planning</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Preserve titles, meta descriptions, and H1s</td>
+            <td class="highlight-cell">You</td>
+            <td>CMS</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Match status codes, avoid soft 404s</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Server / crawl</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Update internal links to new URLs</td>
+            <td class="highlight-cell">Developer</td>
+            <td>CMS / find-replace</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Update canonicals, hreflang, and sitemaps</td>
+            <td class="highlight-cell">Developer</td>
+            <td>CMS</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Launch in a low-traffic window</td>
+            <td class="highlight-cell">You</td>
+            <td>Analytics</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Check robots.txt and noindex after launch</td>
+            <td class="highlight-cell">Developer</td>
+            <td>Test</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Submit the Change of Address for domain moves</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Verify old and new properties in Search Console</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Monitor crawls, indexation, and 404s post-launch</td>
+            <td class="highlight-cell">You</td>
+            <td>GSC / logs</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Track the U-curve and recovery timeline</td>
+            <td class="highlight-cell">You</td>
+            <td>Analytics</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Keep the old site alive with redirects</td>
+            <td class="highlight-cell">You</td>
+            <td>DNS / server</td>
+            <td>Medium</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Deep Dive: Every Check Explained</h2>
+      <p>How to execute each phase of the migration safely.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">1</span> Record a Pre-Migration Baseline Crawl</h4>
+      <p>Before touching anything, crawl the entire site and export every URL, status code, title, and meta description. Record traffic and rankings per page. This baseline is the ground truth you compare against after launch to know exactly what was lost, gained, or missing.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">2</span> Build the Golden 301 Redirect Map</h4>
+      <p>Create a one-to-one mapping of every old URL to its closest new equivalent. Redirect the homepage to the homepage, category to category, product to product. Every old URL with links or traffic needs a destination. Top pages dumped on the homepage leak most of their equity. Avoid redirect chains and loops.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">3</span> Lock Down Staging With Authentication</h4>
+      <p>A staging site indexed by Google is a classic migration disaster: duplicate content, split signals, and diluted rankings. Protect staging with HTTP authentication and a robots.txt disallow, and verify with the URL Inspection tool that Google cannot see it. The staging site must never be publicly crawlable.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">4</span> Keep URLs Stable Where Possible</h4>
+      <p>The best redirect is no redirect. If the platform allows it, preserve existing URL slugs during migration. Every URL you keep unchanged is link equity that never has to travel. Change URLs only when the platform forces it or the new structure is genuinely better.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">5</span> Preserve Titles, Meta Descriptions, and H1s</h4>
+      <p>New platforms frequently drop or truncate metadata. Export the old titles, meta descriptions, and H1s and import them into the new site. Missing metadata means lost CTR and weaker relevance signals. Do not let a template default overwrite years of optimized copy.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">6</span> Match Status Codes, Avoid Soft 404s</h4>
+      <p>Every migrated page must return a real status: 200 for live pages, 301 for redirected pages, and 404 or 410 for genuinely removed content. Soft 404s, pages returning 200 with no content, confuse crawlers and waste crawl budget. Validate the status code matrix after launch.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">7</span> Update Internal Links to New URLs</h4>
+      <p>Internal links still pointing at old URLs force crawlers through redirects on every hop. Find and replace old internal links with new ones sitewide. This preserves internal link equity and keeps the crawl path clean. Redirects for legacy external links stay, but your own navigation should be direct.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">8</span> Update Canonicals, Hreflang, and Sitemaps</h4>
+      <p>Every canonical tag, hreflang annotation, and sitemap entry must reference the new URLs. An old canonical on a new page points Google back to a redirected URL and undermines the transfer. Regenerate the XML sitemap from the new site and submit it fresh.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">9</span> Launch in a Low-Traffic Window</h4>
+      <p>Migrate during the quietest hours for your audience, typically overnight or a weekend for most businesses. A low-traffic launch window limits the number of users hitting errors during the highest-risk period and gives you hours of crawl data before peak traffic.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">10</span> Check Robots.txt and Noindex After Launch</h4>
+      <p>The new platform often ships a restrictive robots.txt or accidentally inherits noindex rules from staging. Test the live site with the URL Inspection tool immediately after launch. A sitewide noindex left in place is a silent killer that looks like a normal migration dip for weeks.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">11</span> Submit the Change of Address for Domain Moves</h4>
+      <p>For whole-domain moves, use Search Console's Change of Address tool. It tells Google the old domain has permanently moved to the new one and only works with verified properties on both domains plus 301 redirects in place. It cannot be undone, so submit it only after the redirects are verified live.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">12</span> Verify Old and New Properties in Search Console</h4>
+      <p>Keep both old and new Search Console properties verified for months. The old property shows redirect traffic and legacy 404s; the new property shows the indexation build. Comparing the two tells you whether signals are transferring or stalling.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">13</span> Monitor Crawls, Indexation, and 404s Post-Launch</h4>
+      <p>Watch the new property for crawl activity, indexed pages, and 404 reports. A spike in 404s means a redirect gap. Check server logs to confirm Googlebot is following redirects and not hitting chains. Fix gaps daily during the first two weeks.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">14</span> Track the U-Curve and Recovery Timeline</h4>
+      <p>Expect the dip and do not panic. A 10-25% traffic decline after launch is normal, with recovery typically beginning within 2-8 months as Google re-crawls and re-ranks the new URLs. Track weekly. If traffic keeps sliding past the expected window, audit for redirect and indexation problems.</p>
+    </div>
+
+    <div class="check-card">
+      <h4><span class="check-num">15</span> Keep the Old Site Alive With Redirects</h4>
+      <p>Maintain the old domain with 301 redirects for at least 6-12 months, ideally indefinitely. Old bookmarks, external links, and direct traffic all depend on it. Letting the old domain lapse or serve dead content destroys residual equity you do not need to lose.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Migration Launch Sequence</h2>
+      <p>The ordered steps from go-live to recovery.</p>
+    </div>
+    <div class="premium-table-wrapper">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>Phase</th>
+            <th>Timing</th>
+            <th>Key action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pre-launch</td>
+            <td>Weeks before</td>
+            <td class="highlight-cell">Baseline crawl, golden 301 map, staging lockdown</td>
+          </tr>
+          <tr>
+            <td>Launch day</td>
+            <td>Day of</td>
+            <td class="highlight-cell">Switch DNS, verify live, test status codes</td>
+          </tr>
+          <tr>
+            <td>48 hours</td>
+            <td>Days 1-2</td>
+            <td class="highlight-cell">Fix redirect gaps, check robots and noindex</td>
+          </tr>
+          <tr>
+            <td>Two weeks</td>
+            <td>Days 3-14</td>
+            <td class="highlight-cell">Submit Change of Address, regenerate sitemaps</td>
+          </tr>
+          <tr>
+            <td>Recovery</td>
+            <td>Months 1-8</td>
+            <td class="highlight-cell">Track U-curve, monitor indexation weekly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Migration Mistakes</h2>
+      <p>The failures behind most post-migration traffic drops.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Redirecting everything to the homepage</h4>
+        <p>Dumping every old URL on the homepage leaks most link equity and breaks user intent. Map each URL to its closest equivalent.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Leaking the staging site</h4>
+        <p>A crawlable staging environment creates duplicate content and splits signals. Lock it down with auth and robots.txt.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Sitewide noindex after launch</h4>
+        <p>Inherited noindex rules from staging look like a normal dip for weeks while the whole site stays out of the index.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Redirect chains and loops</h4>
+        <p>Redirects that bounce through multiple hops lose equity and eventually stop resolving. Test every chain length.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Dropped metadata</h4>
+        <p>New platforms truncate titles and descriptions. Without an import, CTR and relevance signals disappear with them.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Letting the old domain die</h4>
+        <p>Lapsing the old domain breaks legacy links and direct traffic. Keep it alive with 301s for at least 6-12 months.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Migration Tools</h2>
+      <p>Audit redirects, crawls, and indexation through the transition.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Screaming Frog</h4>
+        <p>Crawls old and new sites, exports the URL list for your 301 map, and finds redirect chains and soft 404s.</p>
+        <span class="badge badge-free">Free (500 URLs)</span>
+      </div>
+      <div class="resource-card">
+        <h4>Google Search Console</h4>
+        <p>Change of Address, URL Inspection, crawl reports, and 404 coverage across old and new properties.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Redirect checkers</h4>
+        <p>Validate every redirect chain and status code from the map before and after launch.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Server log analyzers</h4>
+        <p>Confirm Googlebot is following redirects to the new URLs and not hitting errors or chains.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Analytics</h4>
+        <p>Track the U-curve, compare pre- and post-migration traffic, and spot lost landing pages.</p>
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="resource-card">
+        <h4>Site crawler suites</h4>
+        <p>Continuous post-launch audits for indexation gaps, metadata loss, and internal link errors.</p>
+        <span class="badge badge-paid">Paid</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Related <span>Checklists</span></h2>
+      <p>Keep exploring the technical SEO series. Every checklist follows the same structure.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/redirects-status-codes/">Redirects and Status Codes</a></h4>
+        <p>The 301 and 410 decisions that make or break a migration.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/indexing-canonicalization/">Indexing and Canonicalization</a></h4>
+        <p>Getting the new site indexed after Google has processed the redirects.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/site-architecture/">Site Architecture</a></h4>
+        <p>Plan the new URL structure and internal linking before you move.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/crawl-budget-log-analysis/">Crawl Budget and Log Analysis</a></h4>
+        <p>Use logs to confirm Googlebot is following the golden map.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/ecommerce-faceted-nav/">Ecommerce Faceted Navigation</a></h4>
+        <p>Extra care when migrating a catalog with filter URL structures.</p>
+      </div>
+      <div class="resource-card">
+        <h4><a href="{{ site.baseurl }}/categories/audit-checklist/">Full Technical SEO Audit</a></h4>
+        <p>Audit before and after launch to confirm nothing was dropped.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" style="padding: 64px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header">
+      <h2>Planning a <span>Migration</span>?</h2>
+      <p>Get professional migration support from Clienvora. Our expert team builds your golden 301 map, locks down staging, and monitors recovery so your rankings survive the move.</p>
+    </div>
+    <div class="download-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://www.clienvora.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #C9A227; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Visit Clienvora Homepage
+      </a>
+      <a href="https://wa.link/m9rotk" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25D366; color: #0a0a1a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem;">
+        Chat on WhatsApp for SEO Services
+      </a>
+    </div>
+    <p style="color: #94a3b8; margin-top: 16px; font-size: 0.9rem;">Free consultation. Get a personalized technical SEO audit for your website today. Or <a href="{{ site.baseurl }}/assets/pdfs/technical-seo-checklist-2026.pdf" style="color: #C9A227;">download the full checklist PDF</a>.</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Migration Frequently Asked Questions</h2>
+      <p>Direct answers on redirects, recovery, and risk.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">What is a site migration in SEO?</div>
+        <div class="faq-answer"><p>A major site change such as a new domain, platform, or URL structure that requires careful SEO planning to preserve rankings, traffic, and link equity.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How long does SEO recovery take after a migration?</div>
+        <div class="faq-answer"><p>Expect a U-curve: a 10-25% dip after launch, with recovery typically starting within 2-8 months. Large sites or migrations with redirect errors can take longer.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the golden 301 map?</div>
+        <div class="faq-answer"><p>A complete old to new URL redirect map covering every page. One-to-one where possible, no chains or loops, passing link equity from every old URL to its closest new equivalent.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Should I keep the old domain after migrating?</div>
+        <div class="faq-answer"><p>Yes, keep it alive with 301s for at least 6-12 months, ideally indefinitely, to preserve direct traffic and legacy links.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the Change of Address tool?</div>
+        <div class="faq-answer"><p>A Search Console feature for whole-domain moves that tells Google the old domain moved to the new one. Requires verified properties on both and 301s live.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Why did my rankings drop after a migration?</div>
+        <div class="faq-answer"><p>Usually a redirect gap, dropped metadata, a sitewide noindex, a leaked staging site, or simply the normal U-curve dip. A post-launch audit identifies the cause.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container">
+    <div class="author-card">
+      <div class="author-avatar">AA</div>
+      <div class="author-info">
+        <h4>Amir Ali</h4>
+        <p>Founder of <a href="https://www.clienvora.com" target="_blank">Clienvora</a> &mdash; AI-driven lead generation and SEO solutions. This checklist is maintained and updated regularly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="category-navigation">
+    <a href="{{ site.baseurl }}/">&larr; All Checklists</a>
+    <span style="display: flex; gap: 24px;">
+      <a href="{{ site.baseurl }}/categories/eeat-entities/">&larr; Previous: E-E-A-T and Entities</a>
+      <a href="{{ site.baseurl }}/categories/core-web-vitals/">Next: Core Web Vitals &rarr;</a>
+    </span>
+  </div>
+</div>
